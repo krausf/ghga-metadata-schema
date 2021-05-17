@@ -94,43 +94,38 @@
                 <h1 id="class-dataaccesscommittee">Class: DataAccessCommittee</h1>
 <p>A group of members that are delegated to grant access to one or more datasets after ensuring the minimum criteria for data sharing has been met, and request for data use does not raise ethical and/or legal concerns.</p>
 <p>URI: <a href="https://w3id.org/GHGA/DataAccessCommittee">GHGA:DataAccessCommittee</a></p>
-<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]^-[DataAccessCommittee&#124;title:string;name:string;email:string%20%3F;telephone:string;organization:string;main_contact:string;id(i):string]" /></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Member],[DataAccessPolicy],[Member]&lt;has%20members%200..*-%20[DataAccessCommittee&#124;title:string;description:string%20%3F;id(i):string],[Member]&lt;main%20contact%200..1-%20[DataAccessCommittee],[DataAccessPolicy]-%20has%20data%20access%20committee%201..1&gt;[DataAccessCommittee],[DataAccessPolicy]-%20has%20data%20access%20committee(i)%200..1&gt;[DataAccessCommittee],[Committee]^-[DataAccessCommittee],[Committee]" /></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.</li>
+<li>is_a: <a href="../Committee/">Committee</a> - A group of people organized for a specific purpose.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by class</h2>
+<ul>
+<li><strong><a href="../DataAccessPolicy/">DataAccessPolicy</a></strong> <em><a href="../data_access_policy_has_data_access_committee/">data access policy➞has data access committee</a></em>  <sub>REQ</sub>  <strong><a href="./">DataAccessCommittee</a></strong></li>
+<li><strong>None</strong> <em><a href="../has_data_access_committee/">has data access committee</a></em>  <sub>OPT</sub>  <strong><a href="./">DataAccessCommittee</a></strong></li>
+</ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../data_access_committee_main_contact/">data access committee➞main contact</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
+<li><a href="../data_access_committee_has_members/">data access committee➞has members</a>  <sub>0..*</sub><ul>
+<li>Description: All the members that are part of this data access committee.</li>
+<li>range: <a href="../Member/">Member</a></li>
 </ul>
 </li>
-<li><a href="../data_access_committee_name/">data access committee➞name</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../data_access_committee_organization/">data access committee➞organization</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../data_access_committee_telephone/">data access committee➞telephone</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
+<li><a href="../data_access_committee_main_contact/">data access committee➞main contact</a>  <sub>OPT</sub><ul>
+<li>Description: The main contact for the data access committee.</li>
+<li>range: <a href="../Member/">Member</a></li>
 </ul>
 </li>
 <li><a href="../data_access_committee_title/">data access committee➞title</a>  <sub>REQ</sub><ul>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../email/">email</a>  <sub>OPT</sub><ul>
-<li>Description: Email of the contact.</li>
+<li><a href="../description/">description</a>  <sub>OPT</sub><ul>
+<li>Description: Description of an entity.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-</ul>
-<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
-<ul>
 <li><a href="../id/">id</a>  <sub>REQ</sub><ul>
 <li>Description: An identifier that uniquely represents an entity.</li>
 <li>range: <a href="../types/String/">String</a></li>

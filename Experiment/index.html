@@ -94,56 +94,50 @@
                 <h1 id="class-experiment">Class: Experiment</h1>
 <p>An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Experiment">GHGA:Experiment</a></p>
-<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]^-[Experiment&#124;related_study:string;design_name:string;instrument_model:string;library_name:string%20%3F;library_layout:string;library_source:string;library_selection:string;library_strategy:string;library_construction_protocol:string%20%3F;id(i):string]" /></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Sample],[ResearchActivity],[Protocol],[Library],[Protocol]&lt;has%20protocol%200..1-%20[Experiment&#124;name:string;description:string%20%3F;instrument_model:string;id(i):string],[Sample]&lt;has%20sample%201..1-%20[Experiment],[Library]&lt;has%20library%201..1-%20[Experiment],[Study]&lt;has%20study%201..1-%20[Experiment],[ResearchActivity]^-[Experiment]" /></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.</li>
+<li>is_a: <a href="../ResearchActivity/">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by class</h2>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../experiment_design_name/">experiment➞design name</a>  <sub>REQ</sub><ul>
+<li><a href="../experiment_description/">experiment➞description</a>  <sub>OPT</sub><ul>
+<li>Description: A description for the experiment.</li>
 <li>range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../experiment_has_library/">experiment➞has library</a>  <sub>REQ</sub><ul>
+<li>Description: The library associated with this experiment.</li>
+<li>range: <a href="../Library/">Library</a></li>
+</ul>
+</li>
+<li><a href="../experiment_has_protocol/">experiment➞has protocol</a>  <sub>OPT</sub><ul>
+<li>Description: The protocol associated with this experiment.</li>
+<li>range: <a href="../Protocol/">Protocol</a></li>
+</ul>
+</li>
+<li><a href="../experiment_has_sample/">experiment➞has sample</a>  <sub>REQ</sub><ul>
+<li>Description: The sample associated with this experiment.</li>
+<li>range: <a href="../Sample/">Sample</a></li>
+</ul>
+</li>
+<li><a href="../experiment_has_study/">experiment➞has study</a>  <sub>REQ</sub><ul>
+<li>Description: The study associated with this experiment.</li>
+<li>range: <a href="../Study/">Study</a></li>
 </ul>
 </li>
 <li><a href="../experiment_instrument_model/">experiment➞instrument model</a>  <sub>REQ</sub><ul>
+<li>Description: The instrument model.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../experiment_library_layout/">experiment➞library layout</a>  <sub>REQ</sub><ul>
+<li><a href="../experiment_name/">experiment➞name</a>  <sub>REQ</sub><ul>
+<li>Description: Name for the experiment.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../experiment_library_selection/">experiment➞library selection</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../experiment_library_source/">experiment➞library source</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../experiment_library_strategy/">experiment➞library strategy</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../experiment_related_study/">experiment➞related study</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../library_construction_protocol/">library construction protocol</a>  <sub>OPT</sub><ul>
-<li>Description: Description of how the library was constructed.</li>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../library_name/">library name</a>  <sub>OPT</sub><ul>
-<li>Description: The library name.</li>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
-<ul>
 <li><a href="../id/">id</a>  <sub>REQ</sub><ul>
 <li>Description: An identifier that uniquely represents an entity.</li>
 <li>range: <a href="../types/String/">String</a></li>

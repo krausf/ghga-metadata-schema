@@ -94,46 +94,51 @@
                 <h1 id="class-study">Class: Study</h1>
 <p>Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Study">GHGA:Study</a></p>
-<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]^-[Study&#124;descriptive_title:string;study_type:string;short_name:string%20%3F;abstract:string;pubmed_id:string%20%3F;custom_tags:string%20*;id(i):string],[NamedThing]" /></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]&lt;attributes%200..*-++[Study&#124;title:string;type:string;name:string%20%3F;abstract:string;id(i):string],[Publication]&lt;publications%200..*-%20[Study],[Experiment]-%20has%20study%201..1&gt;[Study],[Experiment]-%20has%20study(i)%200..1&gt;[Study],[ResearchActivity]^-[Study],[ResearchActivity],[Publication],[Experiment],[Attribute]" /></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.</li>
+<li>is_a: <a href="../ResearchActivity/">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by class</h2>
+<ul>
+<li><strong><a href="../Experiment/">Experiment</a></strong> <em><a href="../experiment_has_study/">experiment➞has study</a></em>  <sub>REQ</sub>  <strong><a href="./">Study</a></strong></li>
+<li><strong>None</strong> <em><a href="../has_study/">has study</a></em>  <sub>OPT</sub>  <strong><a href="./">Study</a></strong></li>
+</ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../pubmed_id/">pubmed id</a>  <sub>OPT</sub><ul>
-<li>Description: The PubMed ID related to a study.</li>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../short_name/">short name</a>  <sub>OPT</sub><ul>
-<li>Description: A short name for the study.</li>
+<li><a href="../id/">id</a>  <sub>REQ</sub><ul>
+<li>Description: An identifier that uniquely represents an entity.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 <li><a href="../study_abstract/">study➞abstract</a>  <sub>REQ</sub><ul>
+<li>Description: The study abstract that describes the goals. Can also hold abstract from a publication related to the study.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../study_custom_tags/">study➞custom tags</a>  <sub>0..*</sub><ul>
+<li><a href="../study_attributes/">study➞attributes</a>  <sub>0..*</sub><ul>
+<li>Description: Custom key/value pairs that further characterizes the study.</li>
+<li>range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../study_name/">study➞name</a>  <sub>OPT</sub><ul>
+<li>Description: A short name for the study.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../study_descriptive_title/">study➞descriptive title</a>  <sub>REQ</sub><ul>
+<li><a href="../study_publications/">study➞publications</a>  <sub>0..*</sub><ul>
+<li>Description: The publication(s) associated with this study.</li>
+<li>range: <a href="../Publication/">Publication</a></li>
+</ul>
+</li>
+<li><a href="../study_title/">study➞title</a>  <sub>REQ</sub><ul>
+<li>Description: A descriptive title for the study.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../study_study_type/">study➞study type</a>  <sub>REQ</sub><ul>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
-<ul>
-<li><a href="../id/">id</a>  <sub>REQ</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
+<li><a href="../study_type/">study➞type</a>  <sub>REQ</sub><ul>
+<li>Description: The study type. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>

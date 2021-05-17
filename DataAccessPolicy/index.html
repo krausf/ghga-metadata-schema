@@ -94,35 +94,38 @@
                 <h1 id="class-dataaccesspolicy">Class: DataAccessPolicy</h1>
 <p>A data access policy specifies under which circumstances, legal or otherwise, a user can have access to one or more datasets belonging to one or more studies.</p>
 <p>URI: <a href="https://w3id.org/GHGA/DataAccessPolicy">GHGA:DataAccessPolicy</a></p>
-<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]^-[DataAccessPolicy&#124;data_access_committees:string;short_description:string;policy:string;policy_url:string%20%3F;id(i):string]" /></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[Dataset],[DataAccessCommittee]&lt;has%20data%20access%20committee%201..1-%20[DataAccessPolicy&#124;description:string;policy_text:string;policy_url:string%20%3F;id(i):string],[Dataset]-%20has%20data%20access%20policy%201..1&gt;[DataAccessPolicy],[Dataset]-%20has%20data%20access%20policy(i)%200..1&gt;[DataAccessPolicy],[InformationContentEntity]^-[DataAccessPolicy],[DataAccessCommittee]" /></p>
 <h2 id="parents">Parents</h2>
 <ul>
-<li>is_a: <a href="../NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.</li>
+<li>is_a: <a href="../InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.</li>
 </ul>
 <h2 id="referenced-by-class">Referenced by class</h2>
+<ul>
+<li><strong><a href="../Dataset/">Dataset</a></strong> <em><a href="../dataset_has_data_access_policy/">dataset➞has data access policy</a></em>  <sub>REQ</sub>  <strong><a href="./">DataAccessPolicy</a></strong></li>
+<li><strong>None</strong> <em><a href="../has_data_access_policy/">has data access policy</a></em>  <sub>OPT</sub>  <strong><a href="./">DataAccessPolicy</a></strong></li>
+</ul>
 <h2 id="attributes">Attributes</h2>
 <h3 id="own">Own</h3>
 <ul>
-<li><a href="../data_access_policy_data_access_committees/">data access policy➞data access committees</a>  <sub>REQ</sub><ul>
+<li><a href="../data_access_policy_description/">data access policy➞description</a>  <sub>REQ</sub><ul>
+<li>Description: A short description for the Data Access Policy.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../data_access_policy_policy/">data access policy➞policy</a>  <sub>REQ</sub><ul>
+<li><a href="../data_access_policy_has_data_access_committee/">data access policy➞has data access committee</a>  <sub>REQ</sub><ul>
+<li>Description: The Data Access Committee linked to this policy.</li>
+<li>range: <a href="../DataAccessCommittee/">DataAccessCommittee</a></li>
+</ul>
+</li>
+<li><a href="../data_access_policy_policy_text/">data access policy➞policy text</a>  <sub>REQ</sub><ul>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../data_access_policy_short_description/">data access policy➞short description</a>  <sub>REQ</sub><ul>
+<li><a href="../data_access_policy_policy_url/">data access policy➞policy url</a>  <sub>OPT</sub><ul>
+<li>Description: The URL for the policy, if available.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../policy_url/">policy url</a>  <sub>OPT</sub><ul>
-<li>Description: Alternative to pasting the Data Access Policy text.</li>
-<li>range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="inherited-from-named-thing">Inherited from named thing:</h3>
-<ul>
 <li><a href="../id/">id</a>  <sub>REQ</sub><ul>
 <li>Description: An identifier that uniquely represents an entity.</li>
 <li>range: <a href="../types/String/">String</a></li>

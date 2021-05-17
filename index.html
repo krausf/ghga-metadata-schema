@@ -54,19 +54,13 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href=".">Index</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#domain-and-range">Domain and Range</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#mixins">Mixins</a>
+    <li class="toctree-l2"><a class="reference internal" href="#parents">Parents</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#slots">Slots</a>
+    <li class="toctree-l2"><a class="reference internal" href="#children">Children</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#types">Types</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#built-in">Built in</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#defined">Defined</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#used-by">Used by</a>
     </li>
     </ul>
                     </li>
@@ -107,185 +101,17 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ghga-schema-schema">Ghga-Schema schema</h1>
-<p>The GHGA Core Schema is similar to the EGA Schema.</p>
-<h3 id="classes">Classes</h3>
+                <h1 id="slot-index">Slot: index</h1>
+<p>The index file corresponding to the file.</p>
+<p>URI: <a href="https://w3id.org/GHGA/index">GHGA:index</a></p>
+<h2 id="domain-and-range">Domain and Range</h2>
+<p>None -&gt;  <sub>OPT</sub> <a href="types/String/">String</a></p>
+<h2 id="parents">Parents</h2>
+<h2 id="children">Children</h2>
 <ul>
-<li><a href="NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.<ul>
-<li><a href="DataAccessCommittee/">DataAccessCommittee</a> - A group of members that are delegated to grant access to one or more datasets after ensuring the minimum criteria for data sharing has been met, and request for data use does not raise ethical and/or legal concerns.</li>
-<li><a href="DataAccessPolicy/">DataAccessPolicy</a> - A data access policy specifies under which circumstances, legal or otherwise, a user can have access to one or more datasets belonging to one or more studies.</li>
-<li><a href="Dataset/">Dataset</a> - A dataset is a collection of files that represents data generated from a particular sample.</li>
-<li><a href="Experiment/">Experiment</a> - An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis.</li>
-<li><a href="Sample/">Sample</a> - A sample is a limited quantity of something to be used for testing, analysis, inspection, investigation, demonstration, or trial use. This could be either an individual, or sets of individuals from a population, or a portion of a substance like an isolate or tissue.</li>
-<li><a href="Study/">Study</a> - Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</li>
+<li><a href="file_index/">file➞index</a></li>
 </ul>
-</li>
-</ul>
-<h3 id="mixins">Mixins</h3>
-<h3 id="slots">Slots</h3>
-<ul>
-<li><a href="abstract/">abstract</a> - The study abstract that describes the goals. Can also hold abstract from a publication related to the study.<ul>
-<li><a href="study_abstract/">study➞abstract</a></li>
-</ul>
-</li>
-<li><a href="alias/">alias</a> - Name which is matching the uploaded sample(s).<ul>
-<li><a href="sample_alias/">sample➞alias</a></li>
-</ul>
-</li>
-<li><a href="biosample_id/">biosample id</a> - Specific sample ID from a submission to EBI BioSamples.</li>
-<li><a href="case_or_control/">case or control</a> - Is the sample case or control.</li>
-<li><a href="cell_line/">cell line</a> - Which cell line was used.</li>
-<li><a href="custom_tags/">custom tags</a> - Key/value pairs corresponding to the study.<ul>
-<li><a href="study_custom_tags/">study➞custom tags</a></li>
-</ul>
-</li>
-<li><a href="data_access_committees/">data access committees</a> - One or more DACs associated with this Data Access Policy.<ul>
-<li><a href="data_access_policy_data_access_committees/">data access policy➞data access committees</a></li>
-</ul>
-</li>
-<li><a href="data_access_policies/">data access policies</a> - One or more DAPs associated with this dataset.<ul>
-<li><a href="dataset_data_access_policies/">dataset➞data access policies</a></li>
-</ul>
-</li>
-<li><a href="dataset_description/">dataset description</a> - A through description of this dataset.<ul>
-<li><a href="dataset_dataset_description/">dataset➞dataset description</a></li>
-</ul>
-</li>
-<li><a href="dataset_title/">dataset title</a> - A descriptive title for this dataset.<ul>
-<li><a href="dataset_dataset_title/">dataset➞dataset title</a></li>
-</ul>
-</li>
-<li><a href="dataset_type/">dataset type</a> - The type of dataset. For example, Whole Genome Sequencing, Whole Exome Sequencing, etc.<ul>
-<li><a href="dataset_dataset_type/">dataset➞dataset type</a></li>
-</ul>
-</li>
-<li><a href="description/">description</a> - Description of experiment.</li>
-<li><a href="descriptive_title/">descriptive title</a> - A descriptive title for the study.<ul>
-<li><a href="study_descriptive_title/">study➞descriptive title</a></li>
-</ul>
-</li>
-<li><a href="design_name/">design name</a> - The name of the experiment.<ul>
-<li><a href="experiment_design_name/">experiment➞design name</a></li>
-</ul>
-</li>
-<li><a href="email/">email</a> - Email of the contact.</li>
-<li><a href="files/">files</a> - One or more files that are linked to an entity.<ul>
-<li><a href="dataset_files/">dataset➞files</a> - One or more files that collectively make this dataset.</li>
-<li><a href="sample_files/">sample➞files</a> - One or more files that are linked to this Sample.</li>
-</ul>
-</li>
-<li><a href="gender/">gender</a> - Gender of the subject.<ul>
-<li><a href="sample_gender/">sample➞gender</a></li>
-</ul>
-</li>
-<li><a href="geographical_region/">geographical region</a> - Ethinicity.</li>
-<li><a href="id/">id</a> - An identifier that uniquely represents an entity.</li>
-<li><a href="instrument_model/">instrument model</a> - The instrument on which the data was generated.<ul>
-<li><a href="experiment_instrument_model/">experiment➞instrument model</a></li>
-</ul>
-</li>
-<li><a href="library_construction_protocol/">library construction protocol</a> - Description of how the library was constructed.</li>
-<li><a href="library_layout/">library layout</a> - The layout of the library. Whether it is single-end, paired-end.<ul>
-<li><a href="experiment_library_layout/">experiment➞library layout</a></li>
-</ul>
-</li>
-<li><a href="library_name/">library name</a> - The library name.</li>
-<li><a href="library_selection/">library selection</a> - Library selection process. For example, random, cDNA, etc.<ul>
-<li><a href="experiment_library_selection/">experiment➞library selection</a></li>
-</ul>
-</li>
-<li><a href="library_source/">library source</a> - The source of the library. For example, Metagenome, Transcriptome, etc.<ul>
-<li><a href="experiment_library_source/">experiment➞library source</a></li>
-</ul>
-</li>
-<li><a href="library_strategy/">library strategy</a> - Library strategy. For example, ChIP-Seq, RNA-Seq, DNA-Seq, etc.<ul>
-<li><a href="experiment_library_strategy/">experiment➞library strategy</a></li>
-</ul>
-</li>
-<li><a href="main_contact/">main contact</a> - Is the contact the main contact for the DAC<ul>
-<li><a href="data_access_committee_main_contact/">data access committee➞main contact</a></li>
-</ul>
-</li>
-<li><a href="name/">name</a> - The name of the point of contact for the DAC.<ul>
-<li><a href="data_access_committee_name/">data access committee➞name</a></li>
-</ul>
-</li>
-<li><a href="organism_part/">organism part</a> - From where the sample was collected: Liver, Blood, Stool, etc.</li>
-<li><a href="organization/">organization</a> - The organization of the point of contact for the DAC.<ul>
-<li><a href="data_access_committee_organization/">data access committee➞organization</a></li>
-</ul>
-</li>
-<li><a href="phenotype_or_disease/">phenotype or disease</a> - Disease or phenotype that the subject is associated with.<ul>
-<li><a href="sample_phenotype_or_disease/">sample➞phenotype or disease</a></li>
-</ul>
-</li>
-<li><a href="policy/">policy</a> - The complete text for the Data Access Policy.<ul>
-<li><a href="data_access_policy_policy/">data access policy➞policy</a></li>
-</ul>
-</li>
-<li><a href="policy_url/">policy url</a> - Alternative to pasting the Data Access Policy text.</li>
-<li><a href="pubmed_id/">pubmed id</a> - The PubMed ID related to a study.</li>
-<li><a href="related_study/">related study</a> - The study to which the experiment belongs to.<ul>
-<li><a href="experiment_related_study/">experiment➞related study</a></li>
-</ul>
-</li>
-<li><a href="short_description/">short description</a> - A short description for the Data Access Policy.<ul>
-<li><a href="data_access_policy_short_description/">data access policy➞short description</a></li>
-</ul>
-</li>
-<li><a href="short_name/">short name</a> - A short name for the study.</li>
-<li><a href="study_type/">study type</a> - The study type. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".<ul>
-<li><a href="study_study_type/">study➞study type</a></li>
-</ul>
-</li>
-<li><a href="subject_id/">subject id</a> - The subject ID of the patient from experiment. Note that this ID should be non-identifiable.<ul>
-<li><a href="sample_subject_id/">sample➞subject id</a></li>
-</ul>
-</li>
-<li><a href="telephone/">telephone</a> - The telephone number of the point of contact for the DAC.<ul>
-<li><a href="data_access_committee_telephone/">data access committee➞telephone</a></li>
-</ul>
-</li>
-<li><a href="title/">title</a> - Brief description of an entity.<ul>
-<li><a href="data_access_committee_title/">data access committee➞title</a></li>
-<li><a href="sample_title/">sample➞title</a> - Brief description of a sample.</li>
-</ul>
-</li>
-</ul>
-<h3 id="types">Types</h3>
-<h4 id="built-in">Built in</h4>
-<ul>
-<li><strong>Bool</strong></li>
-<li><strong>Decimal</strong></li>
-<li><strong>ElementIdentifier</strong></li>
-<li><strong>NCName</strong></li>
-<li><strong>NodeIdentifier</strong></li>
-<li><strong>URI</strong></li>
-<li><strong>URIorCURIE</strong></li>
-<li><strong>XSDDate</strong></li>
-<li><strong>XSDDateTime</strong></li>
-<li><strong>XSDTime</strong></li>
-<li><strong>float</strong></li>
-<li><strong>int</strong></li>
-<li><strong>str</strong></li>
-</ul>
-<h4 id="defined">Defined</h4>
-<ul>
-<li><a href="types/Boolean/">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
-<li><a href="types/Date/">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
-<li><a href="types/Datetime/">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
-<li><a href="types/Decimal/">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
-<li><a href="types/Double/">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
-<li><a href="types/Float/">Float</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:float specification</li>
-<li><a href="types/Integer/">Integer</a>  (<strong>int</strong>)  - An integer</li>
-<li><a href="types/Ncname/">Ncname</a>  (<strong>NCName</strong>)  - Prefix part of CURIE</li>
-<li><a href="types/Nodeidentifier/">Nodeidentifier</a>  (<strong>NodeIdentifier</strong>)  - A URI, CURIE or BNODE that represents a node in a model.</li>
-<li><a href="types/Objectidentifier/">Objectidentifier</a>  (<strong>ElementIdentifier</strong>)  - A URI or CURIE that represents an object in the model.</li>
-<li><a href="types/String/">String</a>  (<strong>str</strong>)  - A character string</li>
-<li><a href="types/Time/">Time</a>  (<strong>XSDTime</strong>)  - A time object represents a (local) time of day, independent of any particular day</li>
-<li><a href="types/Uri/">Uri</a>  (<strong>URI</strong>)  - a complete URI</li>
-<li><a href="types/Uriorcurie/">Uriorcurie</a>  (<strong>URIorCURIE</strong>)  - a URI or a CURIE</li>
-</ul>
+<h2 id="used-by">Used by</h2>
               
             </div>
           </div>
@@ -343,5 +169,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-05-10 11:53:11.416984+00:00
+Build Date UTC : 2021-05-17 18:04:59.629102+00:00
 -->
