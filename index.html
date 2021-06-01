@@ -54,13 +54,19 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href=".">Index</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#domain-and-range">Domain and Range</a>
+    <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#parents">Parents</a>
+    <li class="toctree-l2"><a class="reference internal" href="#mixins">Mixins</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#children">Children</a>
+    <li class="toctree-l2"><a class="reference internal" href="#slots">Slots</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#used-by">Used by</a>
+    <li class="toctree-l2"><a class="reference internal" href="#types">Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#built-in">Built in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#defined">Defined</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -101,17 +107,275 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="slot-index">Slot: index</h1>
-<p>The index file corresponding to the file.</p>
-<p>URI: <a href="https://w3id.org/GHGA/index">GHGA:index</a></p>
-<h2 id="domain-and-range">Domain and Range</h2>
-<p>None -&gt;  <sub>OPT</sub> <a href="types/String/">String</a></p>
-<h2 id="parents">Parents</h2>
-<h2 id="children">Children</h2>
+                <h1 id="ghga-schema-schema">Ghga-Schema schema</h1>
+<p>The metadata model for the German Human Genome-Phenome Archive (GHGA).</p>
+<h3 id="classes">Classes</h3>
 <ul>
-<li><a href="file_index/">file➞index</a></li>
+<li><a href="Attribute/">Attribute</a> - A key/value pair that further characterizes an entity.</li>
+<li><a href="NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.<ul>
+<li><a href="Activity/">Activity</a> - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.<ul>
+<li><a href="ResearchActivity/">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.<ul>
+<li><a href="Experiment/">Experiment</a> - An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis.</li>
+<li><a href="Study/">Study</a> - Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</li>
 </ul>
-<h2 id="used-by">Used by</h2>
+</li>
+</ul>
+</li>
+<li><a href="BiologicalEntity/">BiologicalEntity</a> - A biological entity is a heterogeneous substance that contains genomic material or is the product of a biological process.<ul>
+<li><a href="AnatomicalEntity/">AnatomicalEntity</a> - An anatomical entity is an object that is a structural part (material or immaterial) of a biological entity.</li>
+<li><a href="CellLine/">CellLine</a> - A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history</li>
+<li><a href="DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> - A disease or phenotypic feature.</li>
+<li><a href="Sample/">Sample</a> - A sample is a limited quantity of something to be used for testing, analysis, inspection, investigation, demonstration, or trial use. This could be either an individual, or sets of individuals from a population, or a portion of a substance like an isolate or tissue.</li>
+</ul>
+</li>
+<li><a href="Committee/">Committee</a> - A group of people organized for a specific purpose.<ul>
+<li><a href="DataAccessCommittee/">DataAccessCommittee</a> - A group of members that are delegated to grant access to one or more datasets after ensuring the minimum criteria for data sharing has been met, and request for data use does not raise ethical and/or legal concerns.</li>
+</ul>
+</li>
+<li><a href="InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.<ul>
+<li><a href="DataAccessPolicy/">DataAccessPolicy</a> - A data access policy specifies under which circumstances, legal or otherwise, a user can have access to one or more datasets belonging to one or more studies.</li>
+<li><a href="Dataset/">Dataset</a> - A dataset is a collection of files that represents data generated from a particular sample.<ul>
+<li><a href="ProcessedDataset/">ProcessedDataset</a> - A dataset that is generated by processing an existing dataset.</li>
+<li><a href="SyntheticDataset/">SyntheticDataset</a> - A dataset that is built by combining one or more datasets.</li>
+</ul>
+</li>
+<li><a href="File/">File</a></li>
+<li><a href="Protocol/">Protocol</a> - A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</li>
+<li><a href="Publication/">Publication</a> - Represents a publication.</li>
+</ul>
+</li>
+<li><a href="MaterialEntity/">MaterialEntity</a> - A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass.<ul>
+<li><a href="Library/">Library</a> - A library that is used in an experiment protocol to generate the input for an instrument.</li>
+</ul>
+</li>
+<li><a href="Person/">Person</a> - A member of the species Homo sapiens.<ul>
+<li><a href="Individual/">Individual</a></li>
+<li><a href="Member/">Member</a> - Member of an organization or a committee.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mixins">Mixins</h3>
+<h3 id="slots">Slots</h3>
+<ul>
+<li><a href="abstract/">abstract</a> - The abstract - a short blurb - associated with an entity.<ul>
+<li><a href="study_abstract/">study➞abstract</a> - The study abstract that describes the goals. Can also hold abstract from a publication related to the study.</li>
+</ul>
+</li>
+<li><a href="age/">age</a> - The age of a person.<ul>
+<li><a href="individual_age/">individual➞age</a> - Age of an individual.</li>
+</ul>
+</li>
+<li><a href="attributes/">attributes</a> - Key/value pairs corresponding to an entity.<ul>
+<li><a href="study_attributes/">study➞attributes</a> - Custom key/value pairs that further characterizes the study.</li>
+</ul>
+</li>
+<li><a href="biosample_accession/">biosample accession</a> - BioSample accession. For example, if the Sample is from EBI BioSamples.<ul>
+<li><a href="sample_biosample_accession/">sample➞biosample accession</a></li>
+</ul>
+</li>
+<li><a href="category/">category</a> - The file category.<ul>
+<li><a href="file_category/">file➞category</a> - The category for this file: Whole Genome Sequencing, Whole Exome Sequencing, etc.</li>
+</ul>
+</li>
+<li><a href="construction_protocol/">construction protocol</a> - Description of how the library was constructed.</li>
+<li><a href="description/">description</a> - Description of an entity.<ul>
+<li><a href="data_access_policy_description/">data access policy➞description</a> - A short description for the Data Access Policy.</li>
+<li><a href="dataset_description/">dataset➞description</a></li>
+<li><a href="experiment_description/">experiment➞description</a> - A description for the experiment.</li>
+<li><a href="sample_description/">sample➞description</a> - Brief description of a sample.</li>
+</ul>
+</li>
+<li><a href="email/">email</a> - Email of a person.</li>
+<li><a href="file_index/">file_index</a> - The index file corresponding to the file.<ul>
+<li><a href="file_file_index/">file➞file_index</a> - The index for this file. Commonly for BAM/VCF files.</li>
+</ul>
+</li>
+<li><a href="files/">files</a> - One or more files that are linked to an entity.<ul>
+<li><a href="dataset_files/">dataset➞files</a> - One or more files that collectively make this dataset.</li>
+<li><a href="sample_files/">sample➞files</a> - One or more files that are linked to this Sample.</li>
+</ul>
+</li>
+<li><a href="format/">format</a> - The format of a file.<ul>
+<li><a href="file_format/">file➞format</a> - The format of the file: BAM, SAM, CRAM, BAI, etc.</li>
+</ul>
+</li>
+<li><a href="gender/">gender</a> - The assemblage of properties that distinguish people on the basis of the societal role s expected for the two sexes. [NCI]<ul>
+<li><a href="individual_gender/">individual➞gender</a> - Gender of an individual.</li>
+</ul>
+</li>
+<li><a href="geographical_region/">geographical region</a> - The geographical region linked to an entity.<ul>
+<li><a href="sample_geographical_region/">sample➞geographical region</a> - A geographical region associated with the sample.</li>
+</ul>
+</li>
+<li><a href="has_anatomical_site/">has anatomical site</a> - Anatomical site associated with an entity.<ul>
+<li><a href="sample_has_anatomical_site/">sample➞has anatomical site</a> - Anatomical site from which the sample was retrieved.</li>
+</ul>
+</li>
+<li><a href="has_cell_line/">has cell line</a> - Cell line associated with an entity.<ul>
+<li><a href="sample_has_cell_line/">sample➞has cell line</a> - Type of cell line that was used.</li>
+</ul>
+</li>
+<li><a href="has_data_access_committee/">has data access committee</a> - Data Access Committee associated with an entity.<ul>
+<li><a href="data_access_policy_has_data_access_committee/">data access policy➞has data access committee</a> - The Data Access Committee linked to this policy.</li>
+</ul>
+</li>
+<li><a href="has_data_access_policy/">has data access policy</a> - Data Access Policy associated with an entity.<ul>
+<li><a href="dataset_has_data_access_policy/">dataset➞has data access policy</a> - The Data Access Policy that applies to this dataset.</li>
+</ul>
+</li>
+<li><a href="has_disease_of_phenotypic_feature/">has disease of phenotypic feature</a> - Disease or phenotype that the entity is associated with.<ul>
+<li><a href="sample_has_disease_of_phenotypic_feature/">sample➞has disease of phenotypic feature</a> - The phenotype or disease associated with the individual from which the sample was taken.</li>
+</ul>
+</li>
+<li><a href="has_library/">has library</a> - The library associated with an entity.<ul>
+<li><a href="experiment_has_library/">experiment➞has library</a> - The library associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="has_members/">has members</a> - The members associated with a committee.<ul>
+<li><a href="data_access_committee_has_members/">data access committee➞has members</a> - All the members that are part of this data access committee.</li>
+</ul>
+</li>
+<li><a href="has_protocol/">has protocol</a> - The protocol associated with an entity.<ul>
+<li><a href="experiment_has_protocol/">experiment➞has protocol</a> - The protocol associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="has_sample/">has sample</a> - The sample associated with an entity.<ul>
+<li><a href="experiment_has_sample/">experiment➞has sample</a> - The sample associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="has_study/">has study</a> - The study associated with an entity.<ul>
+<li><a href="experiment_has_study/">experiment➞has study</a> - The study associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="id/">id</a> - An identifier that uniquely represents an entity.<ul>
+<li><a href="publication_id/">publication➞id</a> - A PMID or DOI for the publication.</li>
+</ul>
+</li>
+<li><a href="instrument_model/">instrument model</a> - The instrument on which the data was generated.<ul>
+<li><a href="experiment_instrument_model/">experiment➞instrument model</a> - The instrument model.</li>
+</ul>
+</li>
+<li><a href="key/">key</a> - The key of an attribute.<ul>
+<li><a href="attribute_key/">attribute➞key</a></li>
+</ul>
+</li>
+<li><a href="key_type/">key type</a> - The semantic type for the key of an attribute.</li>
+<li><a href="layout/">layout</a> - The layout of the library. Whether it is single-end, paired-end.<ul>
+<li><a href="library_layout/">library➞layout</a></li>
+</ul>
+</li>
+<li><a href="main_contact/">main contact</a> - The person who is the main contact for a committee.<ul>
+<li><a href="data_access_committee_main_contact/">data access committee➞main contact</a> - The main contact for the data access committee.</li>
+<li><a href="member_main_contact/">member➞main contact</a></li>
+</ul>
+</li>
+<li><a href="md5sum/">md5sum</a> - The MD5 Checksum for a file.<ul>
+<li><a href="file_md5sum/">file➞md5sum</a> - The MD5 Checksum for the file.</li>
+</ul>
+</li>
+<li><a href="name/">name</a> - The name for an entity.<ul>
+<li><a href="experiment_name/">experiment➞name</a> - Name for the experiment.</li>
+<li><a href="library_name/">library➞name</a> - Name for the library.</li>
+<li><a href="member_name/">member➞name</a></li>
+<li><a href="sample_name/">sample➞name</a> - Name of the sample.</li>
+<li><a href="study_name/">study➞name</a> - A short name for the study.</li>
+</ul>
+</li>
+<li><a href="organization/">organization</a> - The organization associated with a person.<ul>
+<li><a href="member_organization/">member➞organization</a></li>
+</ul>
+</li>
+<li><a href="policy_text/">policy text</a> - The complete text for the Data Access Policy.<ul>
+<li><a href="data_access_policy_policy_text/">data access policy➞policy text</a></li>
+</ul>
+</li>
+<li><a href="policy_url/">policy url</a> - Alternative to pasting the Data Access Policy text.<ul>
+<li><a href="data_access_policy_policy_url/">data access policy➞policy url</a> - The URL for the policy, if available.</li>
+</ul>
+</li>
+<li><a href="publications/">publications</a> - The publications related to an entity.<ul>
+<li><a href="study_publications/">study➞publications</a> - The publication(s) associated with this study.</li>
+</ul>
+</li>
+<li><a href="selection/">selection</a> - Library selection process. For example, random, cDNA, etc.<ul>
+<li><a href="library_selection/">library➞selection</a></li>
+</ul>
+</li>
+<li><a href="size/">size</a> - The size of a file in bytes.<ul>
+<li><a href="file_size/">file➞size</a> - The file size in bytes.</li>
+</ul>
+</li>
+<li><a href="source/">source</a> - The source of the library. For example, Metagenome, Transcriptome, etc.<ul>
+<li><a href="library_source/">library➞source</a></li>
+</ul>
+</li>
+<li><a href="strategy/">strategy</a> - Library strategy. For example, ChIP-Seq, RNA-Seq, DNA-Seq, etc.<ul>
+<li><a href="library_strategy/">library➞strategy</a></li>
+</ul>
+</li>
+<li><a href="subject/">subject</a> - The subject/individual associated with an entity.<ul>
+<li><a href="sample_subject/">sample➞subject</a></li>
+</ul>
+</li>
+<li><a href="telephone/">telephone</a> - The telephone number associated with a person.<ul>
+<li><a href="member_telephone/">member➞telephone</a></li>
+</ul>
+</li>
+<li><a href="title/">title</a> - The title that describes an entity.<ul>
+<li><a href="data_access_committee_title/">data access committee➞title</a></li>
+<li><a href="dataset_title/">dataset➞title</a></li>
+<li><a href="study_title/">study➞title</a> - A descriptive title for the study.</li>
+</ul>
+</li>
+<li><a href="type/">type</a> - The type of an entity.<ul>
+<li><a href="dataset_type/">dataset➞type</a></li>
+<li><a href="file_type/">file➞type</a> - The file type: Aligned Reads, Unaligned Reads, etc.</li>
+<li><a href="sample_type/">sample➞type</a> - Type of sample: 'Case' or 'Control'.</li>
+<li><a href="study_type/">study➞type</a> - The study type. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
+</ul>
+</li>
+<li><a href="value/">value</a> - The value of an attribute<ul>
+<li><a href="attribute_value/">attribute➞value</a></li>
+</ul>
+</li>
+<li><a href="value_type/">value type</a> - The semantic type for the value of an attribute.</li>
+</ul>
+<h3 id="types">Types</h3>
+<h4 id="built-in">Built in</h4>
+<ul>
+<li><strong>Bool</strong></li>
+<li><strong>Decimal</strong></li>
+<li><strong>ElementIdentifier</strong></li>
+<li><strong>NCName</strong></li>
+<li><strong>NodeIdentifier</strong></li>
+<li><strong>URI</strong></li>
+<li><strong>URIorCURIE</strong></li>
+<li><strong>XSDDate</strong></li>
+<li><strong>XSDDateTime</strong></li>
+<li><strong>XSDTime</strong></li>
+<li><strong>float</strong></li>
+<li><strong>int</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined</h4>
+<ul>
+<li><a href="types/Boolean/">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
+<li><a href="types/Date/">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
+<li><a href="types/Datetime/">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
+<li><a href="types/Decimal/">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
+<li><a href="types/Double/">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
+<li><a href="types/Float/">Float</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:float specification</li>
+<li><a href="types/Integer/">Integer</a>  (<strong>int</strong>)  - An integer</li>
+<li><a href="types/Ncname/">Ncname</a>  (<strong>NCName</strong>)  - Prefix part of CURIE</li>
+<li><a href="types/Nodeidentifier/">Nodeidentifier</a>  (<strong>NodeIdentifier</strong>)  - A URI, CURIE or BNODE that represents a node in a model.</li>
+<li><a href="types/Objectidentifier/">Objectidentifier</a>  (<strong>ElementIdentifier</strong>)  - A URI or CURIE that represents an object in the model.</li>
+<li><a href="types/String/">String</a>  (<strong>str</strong>)  - A character string</li>
+<li><a href="types/Time/">Time</a>  (<strong>XSDTime</strong>)  - A time object represents a (local) time of day, independent of any particular day</li>
+<li><a href="types/Uri/">Uri</a>  (<strong>URI</strong>)  - a complete URI</li>
+<li><a href="types/Uriorcurie/">Uriorcurie</a>  (<strong>URIorCURIE</strong>)  - a URI or a CURIE</li>
+</ul>
               
             </div>
           </div>
@@ -169,5 +433,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-05-17 18:04:59.629102+00:00
+Build Date UTC : 2021-06-01 17:09:16.433932+00:00
 -->

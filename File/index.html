@@ -93,7 +93,7 @@
               
                 <h1 id="class-file">Class: File</h1>
 <p>URI: <a href="https://w3id.org/GHGA/File">GHGA:File</a></p>
-<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[InformationContentEntity],[Dataset]-%20files%201..*&gt;[File&#124;name:string%20%3F;format:string%20%3F;type:string%20%3F;size:string%20%3F;md5sum:string%20%3F;index:string%20%3F;category:string%20%3F;id(i):string],[Sample]-%20files(i)%200..*&gt;[File],[Dataset]-%20files(i)%200..*&gt;[File],[Sample]-%20files%201..*&gt;[File],[InformationContentEntity]^-[File],[Dataset]" /></p>
+<p><img alt="img" src="http://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[InformationContentEntity],[Dataset]-%20files%201..*&gt;[File&#124;name:string%20%3F;format:string%20%3F;type:string%20%3F;size:string%20%3F;md5sum:string%20%3F;file_index:string%20%3F;category:string%20%3F;id(i):string],[Sample]-%20files(i)%200..*&gt;[File],[Dataset]-%20files(i)%200..*&gt;[File],[Sample]-%20files%201..*&gt;[File],[InformationContentEntity]^-[File],[Dataset]" /></p>
 <h2 id="parents">Parents</h2>
 <ul>
 <li>is_a: <a href="../InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.</li>
@@ -112,13 +112,13 @@
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../file_format/">file➞format</a>  <sub>OPT</sub><ul>
-<li>Description: The format of the file: BAM, SAM, CRAM, BAI, etc.</li>
+<li><a href="../file_file_index/">file➞file_index</a>  <sub>OPT</sub><ul>
+<li>Description: The index for this file. Commonly for BAM/VCF files.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../file_index/">file➞index</a>  <sub>OPT</sub><ul>
-<li>Description: The index for this file. Commonly for BAM/VCF files.</li>
+<li><a href="../file_format/">file➞format</a>  <sub>OPT</sub><ul>
+<li>Description: The format of the file: BAM, SAM, CRAM, BAI, etc.</li>
 <li>range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
