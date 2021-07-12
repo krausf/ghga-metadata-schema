@@ -14,7 +14,7 @@
     
     
       
-        <title>GHGA Metadata Schema</title>
+        <title>Referencing Ontologies - GHGA Metadata Schema</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#referencing-ontologies-controlled-vocabularies-and-thesauri" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Referencing Ontologies
             
           </span>
         </div>
@@ -201,21 +201,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -271,11 +261,65 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="referencing-ontologies.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Referencing Ontologies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="referencing-ontologies.html" class="md-nav__link md-nav__link--active">
         Referencing Ontologies
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-reference-external-resources" class="md-nav__link">
+    Why reference external resources?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-reference-an-external-concept-or-term" class="md-nav__link">
+    How to reference an external concept or term
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -352,66 +396,101 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/referencing-ontologies.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>The <a href="https://ghga.dkfz.de/">German Human Genome-Phenome Archive (GHGA)</a> is
-funded by the <a href="https://www.dfg.de/en/">German Research Foundation (DFG)</a>
-within the framework of the
-<a href="https://www.nfdi.de/en-gb">National Research Data Infrastructure (NFDI)</a>.</p>
-<p>The main goal of GHGA is to address the needs for establishing a national
-genome archive for human genome data while tackling challenges in data
-access, sharing, and privacy. GHGA aims to provide a national infrastructure
-for secure and safe storage,access management, dissemination, and analysis of
-human omics data under a coherent ethical-legal framework. </p>
-<p>This repository aims to serve as the source of truth for the metadata schema
-used by the German Human Genome-Phenome Archive.</p>
-<p>The schema is modeled using LinkML and exists as a YAML, which can be
-found in <code>src/schema/</code>.</p>
-<p>Using the YAML, and the <a href="https://github.com/linkml/linkml">LinkML framework</a>,
-we autogenerate vendor/technology specific artifacts like:</p>
+                <h1 id="referencing-ontologies-controlled-vocabularies-and-thesauri">Referencing Ontologies, Controlled Vocabularies, and Thesauri<a class="headerlink" href="#referencing-ontologies-controlled-vocabularies-and-thesauri" title="Permanent link">&para;</a></h1>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<p><strong>Controlled Vocabulary</strong>: A Controlled Vocabulary is an organized selection of
+words or phrases that are used to tag pieces of information.</p>
+<p><strong>Thesaurus</strong>: A Thesaurus is a form of controlled vocabulary that provides a 
+dictionary of synonyms, near-synonyms, and other semantically related terms to
+facilitate unambiguous interpretation of terms or concepts.</p>
+<p><strong>Ontology</strong>: An ontology is a formal specification of concepts, from a
+particular domain of knowledge, that are arranged in a hierarchy, as a directed
+acyclic graph, where concepts are defined in relation to other concepts in
+the graph. </p>
+<p>In the biological and biomedical domain, knowledge is organized in
+various forms. Some are human readable, some are machine readable,
+while seldom few are both human and machine readable. Of the many forms of
+knowledge representation, ontologies have been gaining popularity with
+several domain specific ontologies being developed in the last two decades.
+The most familiar one is the <a href="http://geneontology.org/">Gene Ontology</a>
+that describes functions of gene products.</p>
+<p><strong>OBO Foundry</strong>: The <a href="http://www.obofoundry.org/">Open Biological and Biomedical Ontology (OBO) Foundry</a>
+is a community for developing interoperable ontologies that are logically
+well-formed and scientifically accurate. They do so by putting forth a set
+of design principles that promotes open-use, collaborative development,
+well defined scope, common syntax, and relations. All the well known
+ontologies are catalogued in the OBO Foundry.</p>
+<h2 id="why-reference-external-resources">Why reference external resources?<a class="headerlink" href="#why-reference-external-resources" title="Permanent link">&para;</a></h2>
+<p>In the presence of well developed, curated, and maintained resources, it is
+crucial that new projects and initiatives be aware of these resources before
+developing new ones.</p>
+<p>When developing a new data model or schema, there will always be a need
+to be semantically precise. While one can achieve precision by being verbose
+with their model, it is immensely beneficial to map elements in their model
+to other controlled vocabularies, thesauri, and ontologies.</p>
+<p>In the case of GHGA Metadata Schema following are a few reasons
+why mapping to external semantic resources would be useful:</p>
 <ul>
-<li>JSON Schema<ul>
-<li>JSON Schema definitions of all classes and properties</li>
+<li>To define our concepts (or classes) in relation to other concepts which are
+well defined, richly annotated, and widely used</li>
+<li>To achieve semantic clarity and consistency where when we define a class
+as equivalent to a term in an ontology, we are making a statement that the
+class is identical in its meaning, not just by its lexical definition but also
+by its semantic structure</li>
+<li>To be able to translate external heterogenous data onto our schema
+by the way of mappings</li>
+<li>To be able to translate our data to external data models by the way of 
+mappings</li>
 </ul>
-</li>
-<li>Python Dataclasses<ul>
-<li>Python Dataclasses for each defined class</li>
+<h2 id="how-to-reference-an-external-concept-or-term">How to reference an external concept or term<a class="headerlink" href="#how-to-reference-an-external-concept-or-term" title="Permanent link">&para;</a></h2>
+<p>There are a few things to keep in mind before defining mappings in the GHGA
+Metadata Schema.</p>
+<p><strong>URI</strong>: A Uniform Resource Identifier (URI) is a sequence of characters that can
+be used to to identify an abstract or a physical resource. URIs can be used to
+identify real world objects, concepts, or information resources. URIs are used
+by web browsers and are also used to identify any resource described using
+the Resource Description Framework (RDF). </p>
+<p><strong>IRI</strong>: An Internationalized Resource Identifier (IRI) is an extension to a URI
+where the sequence of characters are expanded to include international
+characters.</p>
+<p><strong>CURIE</strong>: A Compact Uniform Resource Identifier (CURIE) is an abbreviated
+representation of a URI/IRI. Such representations are common when describing
+resources in RDF, which includes ontologies.</p>
+<p>A CURIE is generated by first defining a mapping between the IRI and a 
+short prefix. Such a mapping is called a prefix mapping.</p>
+<p>For example, <code>www.example.com</code> can be mapped to <code>ex</code>. </p>
+<p>Systems that are aware of this prefix mapping can then contract IRIs that have
+<code>www.example.com</code> in it.</p>
+<p>For example, <code>www.example.com/foo</code> can be contracted to its CURIE
+representation of <code>ex:foo</code></p>
+<p><strong>Defining prefix to IRI mappings</strong></p>
+<p>Before we reference external resources, it is crucial that we define the IRI to
+prefix mappings for those resources.</p>
+<p>Lets say we want to map a class in our schema to the
+<a href="https://www.ebi.ac.uk/efo/">Experiment Factor Ontology</a>.</p>
+<p>First, we need to check if there exists a mapping from an IRI to the prefix <code>EFO</code>
+in our default CURI maps (defined via <code>default_curi_maps</code> in the schema YAML).</p>
+<p>If not, then we should define a mapping in the <code>prefixes</code> block. But what is
+the base IRI for EFO?</p>
+<p>Lets say we want to map a class to the term <code>EFO:0000311 cancer</code>, and
+the actual IRI for this term is <code>http://www.ebi.ac.uk/efo/EFO_0000311</code>.</p>
+<p>Here, the base IRI would be <code>http://www.ebi.ac.uk/efo/EFO_</code>, such that when
+this IRI is contracted to the <code>EFO</code> prefix, we get <code>EFO:0000311</code>.</p>
+<p>Most of the prefix to IRI mappings are already defined by other
+open-source initiatives like:</p>
+<ul>
+<li><a href="https://github.com/prefixcommons/biocontext/tree/master/registry">Prefix Commons Registry</a></li>
+<li><a href="https://bioregistry.io/">Bioregistry</a></li>
 </ul>
-</li>
-<li>SQL DDL<ul>
-<li>SQL Data Definition Language to create SQL tables for all classes</li>
-</ul>
-</li>
-<li>SQLAlchemy classes<ul>
-<li>SQLAlchemy classes to map SQL tables and columns to each defined class
-and slot, respectively</li>
-</ul>
-</li>
-<li>GraphQL<ul>
-<li>GraphQL types for each defined class</li>
-</ul>
-</li>
-<li>ShEx<ul>
-<li>Shape Expressions for each defined class</li>
-</ul>
-</li>
-<li>RDF<ul>
-<li>The model represented as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>OWL<ul>
-<li>The model in Web Ontology Language (OWL), serialized as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>CSV<ul>
-<li>A CSV summary of the model and its classes</li>
-</ul>
-</li>
-</ul>
+<p>And these mappings exist in a JSON-LD file.</p>
+<p><strong>Use the defined prefix</strong></p>
+<p>Once the prefix mapping is defined, use the CURIE form of the concept
+or term as reference in the GHGA Metadata Schema.</p>
                 
               
               
@@ -434,15 +513,30 @@ and slot, respectively</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="linkml-quickstart.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: LinkML Quickstart Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              LinkML Quickstart Guide
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="docs/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Documentation" rel="next">
+        <a href="style-guide.html" class="md-footer__link md-footer__link--next" aria-label="Next: Style Guide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Documentation
+              Style Guide
             </div>
           </div>
           <div class="md-footer__button md-icon">

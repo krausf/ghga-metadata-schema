@@ -1,0 +1,789 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>Documentation - GHGA Metadata Schema</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tilium+Web:300,400,400i,700%7CCourier+Prime&display=fallback">
+        <style>:root{--md-text-font-family:"Tilium Web";--md-code-font-family:"Courier Prime"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ghga-metadata-schema-schema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GHGA Metadata Schema
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ghga-de/ghga-metadata-schema/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ghga-de/ghga-metadata-schema
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="GHGA Metadata Schema" class="md-nav__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    GHGA Metadata Schema
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ghga-de/ghga-metadata-schema/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ghga-de/ghga-metadata-schema
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        Documentation
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    Mixins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    Slots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    Enums
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in" class="md-nav__link">
+    Built in
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined" class="md-nav__link">
+    Defined
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing.html" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkml-quickstart.html" class="md-nav__link">
+        LinkML Quickstart Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencing-ontologies.html" class="md-nav__link">
+        Referencing Ontologies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style-guide.html" class="md-nav__link">
+        Style Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing.html" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning.html" class="md-nav__link">
+        Versioning
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-process.html" class="md-nav__link">
+        Release Process
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="ghga-metadata-schema-schema">GHGA-Metadata-Schema schema<a class="headerlink" href="#ghga-metadata-schema-schema" title="Permanent link">&para;</a></h1>
+<p>The metadata schema for the German Human Genome-Phenome Archive (GHGA).</p>
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="Attribute.html">Attribute</a> - A key/value pair that further characterizes an entity.</li>
+<li><a href="NamedThing.html">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.<ul>
+<li><a href="Activity.html">Activity</a> - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.<ul>
+<li><a href="ResearchActivity.html">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.<ul>
+<li><a href="Experiment.html">Experiment</a> - An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis.</li>
+<li><a href="Study.html">Study</a> - Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="BiologicalEntity.html">BiologicalEntity</a> - A biological entity is a heterogeneous substance that contains genomic material or is the product of a biological process.<ul>
+<li><a href="AnatomicalEntity.html">AnatomicalEntity</a> - An anatomical entity is an object that is a structural part (material or immaterial) of a biological entity.</li>
+<li><a href="CellLine.html">CellLine</a> - A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history</li>
+<li><a href="DiseaseOrPhenotypicFeature.html">DiseaseOrPhenotypicFeature</a> - A disease or phenotypic feature.</li>
+<li><a href="Sample.html">Sample</a> - A sample is a limited quantity of something to be used for testing, analysis, inspection, investigation, demonstration, or trial use. This could be either an individual, or sets of individuals from a population, or a portion of a substance like an isolate or tissue.</li>
+</ul>
+</li>
+<li><a href="Committee.html">Committee</a> - A group of people organized for a specific purpose.<ul>
+<li><a href="DataAccessCommittee.html">DataAccessCommittee</a> - A group of members that are delegated to grant access to one or more datasets after ensuring the minimum criteria for data sharing has been met, and request for data use does not raise ethical and/or legal concerns.</li>
+</ul>
+</li>
+<li><a href="InformationContentEntity.html">InformationContentEntity</a> - A generically dependent continuant that is about some thing.<ul>
+<li><a href="DataAccessPolicy.html">DataAccessPolicy</a> - A data access policy specifies under which circumstances, legal or otherwise, a user can have access to one or more datasets belonging to one or more studies.</li>
+<li><a href="Dataset.html">Dataset</a> - A dataset is a collection of files that represents data generated from a particular sample.<ul>
+<li><a href="ProcessedDataset.html">ProcessedDataset</a> - A dataset that is generated by processing an existing dataset.</li>
+<li><a href="SyntheticDataset.html">SyntheticDataset</a> - A dataset that is built by combining one or more datasets.</li>
+</ul>
+</li>
+<li><a href="File.html">File</a></li>
+<li><a href="Protocol.html">Protocol</a> - A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</li>
+<li><a href="Publication.html">Publication</a> - Represents a publication.</li>
+</ul>
+</li>
+<li><a href="MaterialEntity.html">MaterialEntity</a> - A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass.<ul>
+<li><a href="Library.html">Library</a> - A library that is used in an experiment protocol to generate the input for an instrument.</li>
+</ul>
+</li>
+<li><a href="Person.html">Person</a> - A member of the species Homo sapiens.<ul>
+<li><a href="Individual.html">Individual</a></li>
+<li><a href="Member.html">Member</a> - Member of an organization or a committee.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
+<h3 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="abstract.html">abstract</a> - The abstract - a short blurb - associated with an entity.<ul>
+<li><a href="study_abstract.html">study➞abstract</a> - The study abstract that describes the goals. Can also hold abstract from a publication related to the study.</li>
+</ul>
+</li>
+<li><a href="age.html">age</a> - The age of a person.<ul>
+<li><a href="individual_age.html">individual➞age</a> - Age of an individual.</li>
+</ul>
+</li>
+<li><a href="attributes.html">attributes</a> - Key/value pairs corresponding to an entity.<ul>
+<li><a href="study_attributes.html">study➞attributes</a> - Custom key/value pairs that further characterizes the study.</li>
+</ul>
+</li>
+<li><a href="biosample_accession.html">biosample accession</a> - BioSample accession. For example, if the Sample is from EBI BioSamples.<ul>
+<li><a href="sample_biosample_accession.html">sample➞biosample accession</a></li>
+</ul>
+</li>
+<li><a href="category.html">category</a> - The file category.<ul>
+<li><a href="file_category.html">file➞category</a> - The category for this file: Whole Genome Sequencing, Whole Exome Sequencing, etc.</li>
+</ul>
+</li>
+<li><a href="construction_protocol.html">construction protocol</a> - Description of how the library was constructed.</li>
+<li><a href="description.html">description</a> - Description of an entity.<ul>
+<li><a href="data_access_policy_description.html">data access policy➞description</a> - A short description for the Data Access Policy.</li>
+<li><a href="dataset_description.html">dataset➞description</a></li>
+<li><a href="experiment_description.html">experiment➞description</a> - A description for the experiment.</li>
+<li><a href="sample_description.html">sample➞description</a> - Brief description of a sample.</li>
+</ul>
+</li>
+<li><a href="email.html">email</a> - Email of a person.</li>
+<li><a href="file_index.html">file_index</a> - The index file corresponding to the file.<ul>
+<li><a href="file_file_index.html">file➞file_index</a> - The index for this file. Commonly for BAM/VCF files.</li>
+</ul>
+</li>
+<li><a href="files.html">files</a> - One or more files that are linked to an entity.<ul>
+<li><a href="dataset_files.html">dataset➞files</a> - One or more files that collectively make this dataset.</li>
+<li><a href="sample_files.html">sample➞files</a> - One or more files that are linked to this Sample.</li>
+</ul>
+</li>
+<li><a href="format.html">format</a> - The format of a file.<ul>
+<li><a href="file_format.html">file➞format</a> - The format of the file: BAM, SAM, CRAM, BAI, etc.</li>
+</ul>
+</li>
+<li><a href="gender.html">gender</a> - The assemblage of properties that distinguish people on the basis of the societal role s expected for the two sexes. [NCI]<ul>
+<li><a href="individual_gender.html">individual➞gender</a> - Gender of an individual.</li>
+</ul>
+</li>
+<li><a href="geographical_region.html">geographical region</a> - The geographical region linked to an entity.<ul>
+<li><a href="sample_geographical_region.html">sample➞geographical region</a> - A geographical region associated with the sample.</li>
+</ul>
+</li>
+<li><a href="has_anatomical_site.html">has anatomical site</a> - Anatomical site associated with an entity.<ul>
+<li><a href="sample_has_anatomical_site.html">sample➞has anatomical site</a> - Anatomical site from which the sample was retrieved.</li>
+</ul>
+</li>
+<li><a href="has_cell_line.html">has cell line</a> - Cell line associated with an entity.<ul>
+<li><a href="sample_has_cell_line.html">sample➞has cell line</a> - Type of cell line that was used.</li>
+</ul>
+</li>
+<li><a href="has_data_access_committee.html">has data access committee</a> - Data Access Committee associated with an entity.<ul>
+<li><a href="data_access_policy_has_data_access_committee.html">data access policy➞has data access committee</a> - The Data Access Committee linked to this policy.</li>
+</ul>
+</li>
+<li><a href="has_data_access_policy.html">has data access policy</a> - Data Access Policy associated with an entity.<ul>
+<li><a href="dataset_has_data_access_policy.html">dataset➞has data access policy</a> - The Data Access Policy that applies to this dataset.</li>
+</ul>
+</li>
+<li><a href="has_disease_of_phenotypic_feature.html">has disease of phenotypic feature</a> - Disease or phenotype that the entity is associated with.<ul>
+<li><a href="sample_has_disease_of_phenotypic_feature.html">sample➞has disease of phenotypic feature</a> - The phenotype or disease associated with the individual from which the sample was taken.</li>
+</ul>
+</li>
+<li><a href="has_library.html">has library</a> - The library associated with an entity.<ul>
+<li><a href="experiment_has_library.html">experiment➞has library</a> - The library associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="has_members.html">has members</a> - The members associated with a committee.<ul>
+<li><a href="data_access_committee_has_members.html">data access committee➞has members</a> - All the members that are part of this data access committee.</li>
+</ul>
+</li>
+<li><a href="has_protocol.html">has protocol</a> - The protocol associated with an entity.<ul>
+<li><a href="experiment_has_protocol.html">experiment➞has protocol</a> - The protocol associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="has_sample.html">has sample</a> - The sample associated with an entity.<ul>
+<li><a href="experiment_has_sample.html">experiment➞has sample</a> - The sample associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="has_study.html">has study</a> - The study associated with an entity.<ul>
+<li><a href="experiment_has_study.html">experiment➞has study</a> - The study associated with this experiment.</li>
+</ul>
+</li>
+<li><a href="id.html">id</a> - An identifier that uniquely represents an entity.<ul>
+<li><a href="publication_id.html">publication➞id</a> - A PMID or DOI for the publication.</li>
+</ul>
+</li>
+<li><a href="instrument_model.html">instrument model</a> - The instrument on which the data was generated.<ul>
+<li><a href="experiment_instrument_model.html">experiment➞instrument model</a> - The instrument model.</li>
+</ul>
+</li>
+<li><a href="key.html">key</a> - The key of an attribute.<ul>
+<li><a href="attribute_key.html">attribute➞key</a></li>
+</ul>
+</li>
+<li><a href="key_type.html">key type</a> - The semantic type for the key of an attribute.</li>
+<li><a href="layout.html">layout</a> - The layout of the library. Whether it is single-end, paired-end.<ul>
+<li><a href="library_layout.html">library➞layout</a></li>
+</ul>
+</li>
+<li><a href="main_contact.html">main contact</a> - The person who is the main contact for a committee.<ul>
+<li><a href="data_access_committee_main_contact.html">data access committee➞main contact</a> - The main contact for the data access committee.</li>
+<li><a href="member_main_contact.html">member➞main contact</a></li>
+</ul>
+</li>
+<li><a href="md5sum.html">md5sum</a> - The MD5 Checksum for a file.<ul>
+<li><a href="file_md5sum.html">file➞md5sum</a> - The MD5 Checksum for the file.</li>
+</ul>
+</li>
+<li><a href="name.html">name</a> - The name for an entity.<ul>
+<li><a href="experiment_name.html">experiment➞name</a> - Name for the experiment.</li>
+<li><a href="library_name.html">library➞name</a> - Name for the library.</li>
+<li><a href="member_name.html">member➞name</a></li>
+<li><a href="sample_name.html">sample➞name</a> - Name of the sample.</li>
+<li><a href="study_name.html">study➞name</a> - A short name for the study.</li>
+</ul>
+</li>
+<li><a href="organization.html">organization</a> - The organization associated with a person.<ul>
+<li><a href="member_organization.html">member➞organization</a></li>
+</ul>
+</li>
+<li><a href="policy_text.html">policy text</a> - The complete text for the Data Access Policy.<ul>
+<li><a href="data_access_policy_policy_text.html">data access policy➞policy text</a></li>
+</ul>
+</li>
+<li><a href="policy_url.html">policy url</a> - Alternative to pasting the Data Access Policy text.<ul>
+<li><a href="data_access_policy_policy_url.html">data access policy➞policy url</a> - The URL for the policy, if available.</li>
+</ul>
+</li>
+<li><a href="publications.html">publications</a> - The publications related to an entity.<ul>
+<li><a href="study_publications.html">study➞publications</a> - The publication(s) associated with this study.</li>
+</ul>
+</li>
+<li><a href="selection.html">selection</a> - Library selection process. For example, random, cDNA, etc.<ul>
+<li><a href="library_selection.html">library➞selection</a></li>
+</ul>
+</li>
+<li><a href="size.html">size</a> - The size of a file in bytes.<ul>
+<li><a href="file_size.html">file➞size</a> - The file size in bytes.</li>
+</ul>
+</li>
+<li><a href="source.html">source</a> - The source of the library. For example, Metagenome, Transcriptome, etc.<ul>
+<li><a href="library_source.html">library➞source</a></li>
+</ul>
+</li>
+<li><a href="strategy.html">strategy</a> - Library strategy. For example, ChIP-Seq, RNA-Seq, DNA-Seq, etc.<ul>
+<li><a href="library_strategy.html">library➞strategy</a></li>
+</ul>
+</li>
+<li><a href="subject.html">subject</a> - The subject/individual associated with an entity.<ul>
+<li><a href="sample_subject.html">sample➞subject</a></li>
+</ul>
+</li>
+<li><a href="telephone.html">telephone</a> - The telephone number associated with a person.<ul>
+<li><a href="member_telephone.html">member➞telephone</a></li>
+</ul>
+</li>
+<li><a href="title.html">title</a> - The title that describes an entity.<ul>
+<li><a href="data_access_committee_title.html">data access committee➞title</a></li>
+<li><a href="dataset_title.html">dataset➞title</a></li>
+<li><a href="study_title.html">study➞title</a> - A descriptive title for the study.</li>
+</ul>
+</li>
+<li><a href="type.html">type</a> - The type of an entity.<ul>
+<li><a href="dataset_type.html">dataset➞type</a></li>
+<li><a href="file_type.html">file➞type</a> - The file type: Aligned Reads, Unaligned Reads, etc.</li>
+<li><a href="sample_type.html">sample➞type</a> - Type of sample: 'Case' or 'Control'.</li>
+<li><a href="study_type.html">study➞type</a> - The study type. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
+</ul>
+</li>
+<li><a href="value.html">value</a> - The value of an attribute<ul>
+<li><a href="attribute_value.html">attribute➞value</a></li>
+</ul>
+</li>
+<li><a href="value_type.html">value type</a> - The semantic type for the value of an attribute.</li>
+</ul>
+<h3 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h3>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<h4 id="built-in">Built in<a class="headerlink" href="#built-in" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Bool</strong></li>
+<li><strong>Decimal</strong></li>
+<li><strong>ElementIdentifier</strong></li>
+<li><strong>NCName</strong></li>
+<li><strong>NodeIdentifier</strong></li>
+<li><strong>URI</strong></li>
+<li><strong>URIorCURIE</strong></li>
+<li><strong>XSDDate</strong></li>
+<li><strong>XSDDateTime</strong></li>
+<li><strong>XSDTime</strong></li>
+<li><strong>float</strong></li>
+<li><strong>int</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined<a class="headerlink" href="#defined" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="types/Boolean.html">Boolean</a>  (<strong>Bool</strong>)  - A binary (true or false) value</li>
+<li><a href="types/Date.html">Date</a>  (<strong>XSDDate</strong>)  - a date (year, month and day) in an idealized calendar</li>
+<li><a href="types/Datetime.html">Datetime</a>  (<strong>XSDDateTime</strong>)  - The combination of a date and time</li>
+<li><a href="types/Decimal.html">Decimal</a>  (<strong>Decimal</strong>)  - A real number with arbitrary precision that conforms to the xsd:decimal specification</li>
+<li><a href="types/Double.html">Double</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:double specification</li>
+<li><a href="types/Float.html">Float</a>  (<strong>float</strong>)  - A real number that conforms to the xsd:float specification</li>
+<li><a href="types/Integer.html">Integer</a>  (<strong>int</strong>)  - An integer</li>
+<li><a href="types/Ncname.html">Ncname</a>  (<strong>NCName</strong>)  - Prefix part of CURIE</li>
+<li><a href="types/Nodeidentifier.html">Nodeidentifier</a>  (<strong>NodeIdentifier</strong>)  - A URI, CURIE or BNODE that represents a node in a model.</li>
+<li><a href="types/Objectidentifier.html">Objectidentifier</a>  (<strong>ElementIdentifier</strong>)  - A URI or CURIE that represents an object in the model.</li>
+<li><a href="types/String.html">String</a>  (<strong>str</strong>)  - A character string</li>
+<li><a href="types/Time.html">Time</a>  (<strong>XSDTime</strong>)  - A time object represents a (local) time of day, independent of any particular day</li>
+<li><a href="types/Uri.html">Uri</a>  (<strong>URI</strong>)  - a complete URI</li>
+<li><a href="types/Uriorcurie.html">Uriorcurie</a>  (<strong>URIorCURIE</strong>)  - a URI or a CURIE</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../contributing.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Contributing
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>

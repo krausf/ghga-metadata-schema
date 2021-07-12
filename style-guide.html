@@ -14,7 +14,7 @@
     
     
       
-        <title>GHGA Metadata Schema</title>
+        <title>Style Guide - GHGA Metadata Schema</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#style-guide-for-curating-the-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Style Guide
             
           </span>
         </div>
@@ -201,21 +201,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -286,11 +276,72 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="style-guide.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Style Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="style-guide.html" class="md-nav__link md-nav__link--active">
         Style Guide
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#schema-properties" class="md-nav__link">
+    Schema Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    Slots
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -352,65 +403,56 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/style-guide.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>The <a href="https://ghga.dkfz.de/">German Human Genome-Phenome Archive (GHGA)</a> is
-funded by the <a href="https://www.dfg.de/en/">German Research Foundation (DFG)</a>
-within the framework of the
-<a href="https://www.nfdi.de/en-gb">National Research Data Infrastructure (NFDI)</a>.</p>
-<p>The main goal of GHGA is to address the needs for establishing a national
-genome archive for human genome data while tackling challenges in data
-access, sharing, and privacy. GHGA aims to provide a national infrastructure
-for secure and safe storage,access management, dissemination, and analysis of
-human omics data under a coherent ethical-legal framework. </p>
-<p>This repository aims to serve as the source of truth for the metadata schema
-used by the German Human Genome-Phenome Archive.</p>
-<p>The schema is modeled using LinkML and exists as a YAML, which can be
-found in <code>src/schema/</code>.</p>
-<p>Using the YAML, and the <a href="https://github.com/linkml/linkml">LinkML framework</a>,
-we autogenerate vendor/technology specific artifacts like:</p>
+                <h1 id="style-guide-for-curating-the-schema">Style Guide for Curating the Schema<a class="headerlink" href="#style-guide-for-curating-the-schema" title="Permanent link">&para;</a></h1>
+<p>The GHGA metadata schema exists as a YAML and can be found at <code>src/schema/</code>.</p>
+<p>The YAML is organized into 4 parts:</p>
 <ul>
-<li>JSON Schema<ul>
-<li>JSON Schema definitions of all classes and properties</li>
+<li><strong><a href="#schema-properties">Schema Properties</a></strong>: Section that defines properties
+regarding the schema</li>
+<li><strong><a href="#classes">Classes</a></strong>: Section that defines all the classes</li>
+<li><strong><a href="#slots">Slots</a></strong>: Section that defines all the slots</li>
+<li><strong><a href="#types">Types</a></strong>: Section that defines all the custom data types</li>
 </ul>
-</li>
-<li>Python Dataclasses<ul>
-<li>Python Dataclasses for each defined class</li>
+<h2 id="schema-properties">Schema Properties<a class="headerlink" href="#schema-properties" title="Permanent link">&para;</a></h2>
+<p>In this section the following must be defined,</p>
+<ul>
+<li>Any property that describes the metadata schema</li>
+<li>Any schema imports</li>
+<li>Default CURI maps</li>
+<li>Prefix to IRI mappings that do not exist in the referenced
+default CURI maps</li>
 </ul>
-</li>
-<li>SQL DDL<ul>
-<li>SQL Data Definition Language to create SQL tables for all classes</li>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<p>All classes in the schema must be defined in this section, where:</p>
+<ul>
+<li>Class names must be in <code>sentence case</code></li>
+<li>Class names must be unambiguous and must be a noun</li>
+<li>A class should have a definition that describes the class and gives an
+idea of its intended usage</li>
 </ul>
-</li>
-<li>SQLAlchemy classes<ul>
-<li>SQLAlchemy classes to map SQL tables and columns to each defined class
-and slot, respectively</li>
+<h2 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h2>
+<p>All slots (also known as fields or properties) must be defined in this
+section, where:</p>
+<ul>
+<li>Slot names must be in <code>sentence case</code></li>
+<li>Slot names must be unambiguous to avoid misuse</li>
+<li>A slot should have a definition that describes the slot and gives an
+idea of its indended usage</li>
 </ul>
-</li>
-<li>GraphQL<ul>
-<li>GraphQL types for each defined class</li>
-</ul>
-</li>
-<li>ShEx<ul>
-<li>Shape Expressions for each defined class</li>
-</ul>
-</li>
-<li>RDF<ul>
-<li>The model represented as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>OWL<ul>
-<li>The model in Web Ontology Language (OWL), serialized as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>CSV<ul>
-<li>A CSV summary of the model and its classes</li>
-</ul>
-</li>
+<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h2>
+<p>All custom data types must be defined in this section, where:</p>
+<ul>
+<li>Type names must be in <code>sentence case</code></li>
+<li>Type names must be unambiguous to avoid misuse</li>
+<li>A type must clarify what its value space is, by the way of inheritance
+or by defining its <code>range</code></li>
+<li>A type should have a definition that describes the type and gives an
+idea of its indended usage</li>
 </ul>
                 
               
@@ -434,15 +476,30 @@ and slot, respectively</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="referencing-ontologies.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Referencing Ontologies" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Referencing Ontologies
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="docs/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Documentation" rel="next">
+        <a href="testing.html" class="md-footer__link md-footer__link--next" aria-label="Next: Testing" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Documentation
+              Testing
             </div>
           </div>
           <div class="md-footer__button md-icon">

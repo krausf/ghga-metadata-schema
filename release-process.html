@@ -14,7 +14,7 @@
     
     
       
-        <title>GHGA Metadata Schema</title>
+        <title>Release Process - GHGA Metadata Schema</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#release-process" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Release Process
             
           </span>
         </div>
@@ -201,21 +201,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -331,11 +321,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="release-process.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="release-process.html" class="md-nav__link md-nav__link--active">
         Release Process
       </a>
+      
     </li>
   
 
@@ -352,66 +352,32 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/release-process.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>The <a href="https://ghga.dkfz.de/">German Human Genome-Phenome Archive (GHGA)</a> is
-funded by the <a href="https://www.dfg.de/en/">German Research Foundation (DFG)</a>
-within the framework of the
-<a href="https://www.nfdi.de/en-gb">National Research Data Infrastructure (NFDI)</a>.</p>
-<p>The main goal of GHGA is to address the needs for establishing a national
-genome archive for human genome data while tackling challenges in data
-access, sharing, and privacy. GHGA aims to provide a national infrastructure
-for secure and safe storage,access management, dissemination, and analysis of
-human omics data under a coherent ethical-legal framework. </p>
-<p>This repository aims to serve as the source of truth for the metadata schema
-used by the German Human Genome-Phenome Archive.</p>
-<p>The schema is modeled using LinkML and exists as a YAML, which can be
-found in <code>src/schema/</code>.</p>
-<p>Using the YAML, and the <a href="https://github.com/linkml/linkml">LinkML framework</a>,
-we autogenerate vendor/technology specific artifacts like:</p>
-<ul>
-<li>JSON Schema<ul>
-<li>JSON Schema definitions of all classes and properties</li>
-</ul>
-</li>
-<li>Python Dataclasses<ul>
-<li>Python Dataclasses for each defined class</li>
-</ul>
-</li>
-<li>SQL DDL<ul>
-<li>SQL Data Definition Language to create SQL tables for all classes</li>
-</ul>
-</li>
-<li>SQLAlchemy classes<ul>
-<li>SQLAlchemy classes to map SQL tables and columns to each defined class
-and slot, respectively</li>
-</ul>
-</li>
-<li>GraphQL<ul>
-<li>GraphQL types for each defined class</li>
-</ul>
-</li>
-<li>ShEx<ul>
-<li>Shape Expressions for each defined class</li>
-</ul>
-</li>
-<li>RDF<ul>
-<li>The model represented as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>OWL<ul>
-<li>The model in Web Ontology Language (OWL), serialized as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>CSV<ul>
-<li>A CSV summary of the model and its classes</li>
-</ul>
-</li>
-</ul>
+                <h1 id="release-process">Release Process<a class="headerlink" href="#release-process" title="Permanent link">&para;</a></h1>
+<p>This section is relevant to core developers who are responsible for making
+stable releases of the schema and its artifacts.</p>
+<p>Following are the steps for making a new release of the GHGA Metadata Schema.</p>
+<p><strong>Update Version</strong></p>
+<p>First check whether the <code>version</code> in schema YAML matches with the
+latest release tag. If the version is the same then bump the version
+in preparation for a new release.</p>
+<p>Follow <a href="versioning.html">Versioning guidelines</a> to decide whether the bump in
+version is major, minor, or patch.</p>
+<p><strong>Update Changelog</strong></p>
+<p>Update <code>changelog.md</code> and list all the new updates that constitutes
+this release.</p>
+<p><strong>Merge all changes from <code>dev</code> to <code>main</code></strong></p>
+<p>Merge the <code>dev</code> branch to the <code>main</code> branch to bring them in sync.</p>
+<p><strong>Release on GitHub</strong></p>
+<p>Go to <a href="">https://github.com/ghga-de/ghga-metadata-schema/releases</a>,
+create a new release, and add the contents from <code>changelog.md</code>
+corresponding to the new release.</p>
+<p><strong>Announcement</strong></p>
+<p>Announce the new release in relevant channels.</p>
                 
               
               
@@ -434,21 +400,21 @@ and slot, respectively</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-      
         
-        <a href="docs/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Documentation" rel="next">
+        <a href="versioning.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Versioning" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                Previous
               </span>
-              Documentation
+              Versioning
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   

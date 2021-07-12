@@ -14,7 +14,7 @@
     
     
       
-        <title>GHGA Metadata Schema</title>
+        <title>Contributing - GHGA Metadata Schema</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#contributing" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Contributing
             
           </span>
         </div>
@@ -201,21 +201,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -241,11 +231,72 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="contributing.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="contributing.html" class="md-nav__link md-nav__link--active">
         Contributing
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requesting-or-suggesting-changes-to-the-metadata-schema" class="md-nav__link">
+    Requesting or suggesting changes to the metadata schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-the-metadata-schema" class="md-nav__link">
+    Modifying the metadata schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-bugs" class="md-nav__link">
+    Reporting bugs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing-guidelines-for-core-developers" class="md-nav__link">
+    Contributing guidelines for core developers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -352,65 +403,90 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/contributing.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>The <a href="https://ghga.dkfz.de/">German Human Genome-Phenome Archive (GHGA)</a> is
-funded by the <a href="https://www.dfg.de/en/">German Research Foundation (DFG)</a>
-within the framework of the
-<a href="https://www.nfdi.de/en-gb">National Research Data Infrastructure (NFDI)</a>.</p>
-<p>The main goal of GHGA is to address the needs for establishing a national
-genome archive for human genome data while tackling challenges in data
-access, sharing, and privacy. GHGA aims to provide a national infrastructure
-for secure and safe storage,access management, dissemination, and analysis of
-human omics data under a coherent ethical-legal framework. </p>
-<p>This repository aims to serve as the source of truth for the metadata schema
-used by the German Human Genome-Phenome Archive.</p>
-<p>The schema is modeled using LinkML and exists as a YAML, which can be
-found in <code>src/schema/</code>.</p>
-<p>Using the YAML, and the <a href="https://github.com/linkml/linkml">LinkML framework</a>,
-we autogenerate vendor/technology specific artifacts like:</p>
+                <h1 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h1>
+<p>The following is a set of guidelines for contributing to the GHGA Metadata
+Schema.</p>
+<p>Before you start, please refer to the <a href="code-of-conduct.md">Code of Conduct</a>.
+By participating, you are expected to uphold its principles.</p>
+<p>The GHGA Metadata Schema is authored using the LinkML framework. For
+contributors who are interested in improving the schema it would be good to
+first familiarize yourself with LinkML. There is a quick
+start guide available <a href="linkml-quickstart.html">here</a>.</p>
+<h2 id="requesting-or-suggesting-changes-to-the-metadata-schema">Requesting or suggesting changes to the metadata schema<a class="headerlink" href="#requesting-or-suggesting-changes-to-the-metadata-schema" title="Permanent link">&para;</a></h2>
+<p>To request or suggest a change to the schema, first make sure you capture all
+information required to incorporate the change or to facilitate a discussion
+which can then translate to changes that can be incorporated into
+the schema.</p>
+<p>Please make use of one of the GitHub Issue Templates to make a request via
+the GitHub Issue Tracker.</p>
+<h2 id="modifying-the-metadata-schema">Modifying the metadata schema<a class="headerlink" href="#modifying-the-metadata-schema" title="Permanent link">&para;</a></h2>
+<p>To add your contributions to the schema, we recomend using GitHub Fork and
+Pull workflow which involves the following principles:</p>
+<p><strong>Principle 1: Work from a personal fork</strong></p>
+<p>Prior to adopting the workflow, a developer will perform a one-time setup to
+create a personal fork of the
+<a href="https://github.com/ghga-de/ghga-metadata-schema">ghga-de/ghga-metadata-schema</a>
+repository. This forked repository will be associated with the developer's
+GitHub account, and is distinct from the main (upstream) repository.</p>
+<p><strong>Principle 2: Commit to personal branches of that fork</strong></p>
+<p>Changes should never be committed directly to the <code>main</code> or the <code>dev</code> branch
+of the main repository. Instead, they should be composed as branches within
+the developer's forked repository, where the developer can interate and
+refine their code prior to submitting it for review.
+The name of the branch should reflect a GitHub issue ticket
+(For example, <code>issue-123</code>).</p>
+<p><strong>Principle 3: Propose changes via pull request of personal branches</strong></p>
+<p>Each set of changes will be developed in a task-specific branch in the
+developer's forked repository, and then a pull request will be created to
+develop and propose changes to the <code>dev</code> branch of the main repository.
+Also, tag the maintainers to the PR for review. This mechanism provides a
+way for developers to discuss, revise, and ultimately merge changes from
+the forked repository to the main repository.</p>
+<p><strong>Principle 4: Delete or ignore stale branches, but don't recycle merged ones</strong></p>
+<p>Once a pull request has been merged, the task-specific branch is no longer
+needed and may be deleted or ignored. It is bad practice to reuse an existing
+branch once it has been merged. Instead, a subsequent branch and pull-request
+cycle should begin if there are more additions to be made, after the PR has
+been merged.</p>
+<p>You may create a pull request in order to get feedback, but if you wish to
+continue working on the branch, so state with "DO NOT MERGE YET" in the PR
+title OR mark the pull request as a Draft OR label the pull request with a
+'Do Not Merge' label.</p>
+<p><strong>TL;DR</strong></p>
 <ul>
-<li>JSON Schema<ul>
-<li>JSON Schema definitions of all classes and properties</li>
+<li>Fork the <a href="https://github.com/ghga-de/ghga-metadata-schema">ghga-de/ghga-metadata-schema</a>
+repository</li>
+<li>Create a new branch off of <code>dev</code> branch where the name of the new branch
+reflects the issue ticket (for example, <code>issue-123</code>)</li>
+<li>Make the desired changes to the YAML</li>
+<li>Commit the changes</li>
+<li>Issue a new PR from your new branch to the <code>dev</code> branch</li>
+<li>Tag the maintainers for a PR review</li>
+<li>Do not recycle merged branches</li>
 </ul>
-</li>
-<li>Python Dataclasses<ul>
-<li>Python Dataclasses for each defined class</li>
+<p><strong>Note:</strong> Please do not commit changes to the files in the <code>artifacts</code> folder.
+These will be autogenerated once the PR is approved and merged.</p>
+<h2 id="reporting-bugs">Reporting bugs<a class="headerlink" href="#reporting-bugs" title="Permanent link">&para;</a></h2>
+<p>To report bugs, please make use of one of the GitHub Issue Templates to make a
+ticket via the GitHub Issue Tracker.</p>
+<p>Please provide as much information as you can regarding the bug:</p>
+<ul>
+<li>Description of the bug</li>
+<li>How to reproduce it</li>
+<li>Which version of the schema was used</li>
+<li>Any additional information that would be relevant (stacktrace, logs, etc.)</li>
 </ul>
-</li>
-<li>SQL DDL<ul>
-<li>SQL Data Definition Language to create SQL tables for all classes</li>
-</ul>
-</li>
-<li>SQLAlchemy classes<ul>
-<li>SQLAlchemy classes to map SQL tables and columns to each defined class
-and slot, respectively</li>
-</ul>
-</li>
-<li>GraphQL<ul>
-<li>GraphQL types for each defined class</li>
-</ul>
-</li>
-<li>ShEx<ul>
-<li>Shape Expressions for each defined class</li>
-</ul>
-</li>
-<li>RDF<ul>
-<li>The model represented as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>OWL<ul>
-<li>The model in Web Ontology Language (OWL), serialized as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>CSV<ul>
-<li>A CSV summary of the model and its classes</li>
-</ul>
-</li>
+<h2 id="contributing-guidelines-for-core-developers">Contributing guidelines for core developers<a class="headerlink" href="#contributing-guidelines-for-core-developers" title="Permanent link">&para;</a></h2>
+<p>Core developers should follow these rules when processing pull requests:</p>
+<ul>
+<li>Ensure that all PRs originate from a fork</li>
+<li>Always wait for tests to pass before merging PRs</li>
+<li>Use "squash and merge" to merge PRs to maintain a clean commit history</li>
 </ul>
                 
               
@@ -434,15 +510,30 @@ and slot, respectively</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="docs/index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Documentation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Documentation
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="docs/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Documentation" rel="next">
+        <a href="linkml-quickstart.html" class="md-footer__link md-footer__link--next" aria-label="Next: LinkML Quickstart Guide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Documentation
+              LinkML Quickstart Guide
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -14,7 +14,7 @@
     
     
       
-        <title>GHGA Metadata Schema</title>
+        <title>LinkML Quickstart Guide - GHGA Metadata Schema</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#quickstart-guide-for-using-linkml" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              LinkML Quickstart Guide
             
           </span>
         </div>
@@ -201,21 +201,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -256,11 +246,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="linkml-quickstart.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="linkml-quickstart.html" class="md-nav__link md-nav__link--active">
         LinkML Quickstart Guide
       </a>
+      
     </li>
   
 
@@ -352,66 +352,138 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ghga-de/ghga-metadata-schema/edit/master/docs/linkml-quickstart.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>The <a href="https://ghga.dkfz.de/">German Human Genome-Phenome Archive (GHGA)</a> is
-funded by the <a href="https://www.dfg.de/en/">German Research Foundation (DFG)</a>
-within the framework of the
-<a href="https://www.nfdi.de/en-gb">National Research Data Infrastructure (NFDI)</a>.</p>
-<p>The main goal of GHGA is to address the needs for establishing a national
-genome archive for human genome data while tackling challenges in data
-access, sharing, and privacy. GHGA aims to provide a national infrastructure
-for secure and safe storage,access management, dissemination, and analysis of
-human omics data under a coherent ethical-legal framework. </p>
-<p>This repository aims to serve as the source of truth for the metadata schema
-used by the German Human Genome-Phenome Archive.</p>
-<p>The schema is modeled using LinkML and exists as a YAML, which can be
-found in <code>src/schema/</code>.</p>
-<p>Using the YAML, and the <a href="https://github.com/linkml/linkml">LinkML framework</a>,
-we autogenerate vendor/technology specific artifacts like:</p>
+                <h1 id="quickstart-guide-for-using-linkml">Quickstart guide for using LinkML<a class="headerlink" href="#quickstart-guide-for-using-linkml" title="Permanent link">&para;</a></h1>
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<p>The LinkML framework provides a variety of idioms, called slots, to define the
+semantics of classes and slots.</p>
+<p>This quickstart guide will provide a brief description of commonly used LinkML
+slots to define various aspects of the GHGA Metadata Schema.</p>
+<p>Please refer to 
+<a href="https://linkml.github.io/linkml-model/docs/">LinkML documentation</a> for an
+exhaustive list of slots provided by the modeling language.</p>
+<hr />
+<h2 id="inheritance-related-slots">Inheritance Related Slots<a class="headerlink" href="#inheritance-related-slots" title="Permanent link">&para;</a></h2>
+<h3 id="is_a">is_a<a class="headerlink" href="#is_a" title="Permanent link">&para;</a></h3>
+<p>The <code>is_a</code> slot can be used to define a hierarchy for your class, mixin
+or slot where a new class, mixin or slot is defined as a subclass of another
+defined class, mixin or slot.</p>
+<p>Note that <code>is_a</code> has the characteristics of homeomorphicity.</p>
+<p>i.e. <code>is_a</code> should be used to connect,</p>
 <ul>
-<li>JSON Schema<ul>
-<li>JSON Schema definitions of all classes and properties</li>
+<li>two mixins</li>
+<li>two classes</li>
+<li>two slots</li>
 </ul>
-</li>
-<li>Python Dataclasses<ul>
-<li>Python Dataclasses for each defined class</li>
+<h3 id="abstract">abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h3>
+<p>A class (or slot) may be tagged with its <code>abstract</code> slot set to the boolean
+value <code>true</code>, to define whether it is abstract in nature. This has comparable
+meaning to that in the Object Oriented Programming where another
+class can use the abstract class as part of its inheritance hierarchy,
+but the abstract class itself cannot be directly instantiated.</p>
+<h3 id="mixin">mixin<a class="headerlink" href="#mixin" title="Permanent link">&para;</a></h3>
+<p>The <code>mixin:true</code> declaration is used to extend the properties (or slots) of
+a class, without changing its position in the class hierarchy.</p>
+<p>Mixins can be extremely helpful in a number of ways:</p>
+<ul>
+<li>to generalize a set of attributes that can apply to classes in different
+parts of the class hierarchy</li>
+<li>to reduce duplication of shared attributes between classes that do not
+inherit from one another</li>
+<li>to prevent the sometimes confusing nature of multiple inheritance
+noted in the <a href="https://tinyurl.com/4zdw9tsb">diamond problem</a></li>
 </ul>
-</li>
-<li>SQL DDL<ul>
-<li>SQL Data Definition Language to create SQL tables for all classes</li>
-</ul>
-</li>
-<li>SQLAlchemy classes<ul>
-<li>SQLAlchemy classes to map SQL tables and columns to each defined class
-and slot, respectively</li>
-</ul>
-</li>
-<li>GraphQL<ul>
-<li>GraphQL types for each defined class</li>
-</ul>
-</li>
-<li>ShEx<ul>
-<li>Shape Expressions for each defined class</li>
-</ul>
-</li>
-<li>RDF<ul>
-<li>The model represented as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>OWL<ul>
-<li>The model in Web Ontology Language (OWL), serialized as RDF Turtle (TTL)</li>
-</ul>
-</li>
-<li>CSV<ul>
-<li>A CSV summary of the model and its classes</li>
-</ul>
-</li>
-</ul>
+<p>Mixins provide the means for reusing semantics, generally by the inclusion
+of specific property slots or other semantic constraint, in different classes
+or slots, without the need to tie slots to the hierarchy of the class itself.</p>
+<h3 id="mixins">mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
+<p>The <code>mixins</code> slot (not to be confused with <a href="#mixin"><code>mixin</code></a>) can be used to
+specify a list of mixins that a class (or slot) can use to  include the added
+semantics of the mixins.</p>
+<p>The <code>mixins</code> are separate from the <code>is_a</code> hierarchy and the mixin classes do
+not contribute to a classes inheritance hierarchy.</p>
+<hr />
+<h2 id="identification-description-and-indexing-related-slots">Identification, Description, and Indexing Related Slots<a class="headerlink" href="#identification-description-and-indexing-related-slots" title="Permanent link">&para;</a></h2>
+<h3 id="aliases">aliases<a class="headerlink" href="#aliases" title="Permanent link">&para;</a></h3>
+<p>The <code>aliases</code> slot can be used to define a list of aliases for a class
+(or slot). This is useful for adding synonymous names to your class (or slot).</p>
+<h3 id="description">description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<p>The <code>description</code> slot can be used to provide a human-readable description of
+a class (or slot).</p>
+<h3 id="slot_uri">slot_uri<a class="headerlink" href="#slot_uri" title="Permanent link">&para;</a></h3>
+<p>The <code>slot_uri</code> slot can be used to define a canonical URI that is the true
+representation for that particular slot. That is, the value of <code>slot_uri</code> can
+be used interchangably with the slot being defined.</p>
+<h3 id="in_subset">in_subset<a class="headerlink" href="#in_subset" title="Permanent link">&para;</a></h3>
+<p>The <code>in_subset</code> slot can be used tag your class (or slot) to belong to a
+pre-defined subset.</p>
+<p>The actual subset names are defined as part of the Schema definition.</p>
+<h3 id="id_prefixes">id_prefixes<a class="headerlink" href="#id_prefixes" title="Permanent link">&para;</a></h3>
+<p>The <code>id_prefixes</code> slot can be used to define a list of valid ID prefixes that
+instances of this class ought to have as part of their CURIE.</p>
+<p>The order of the list matters since its a prioritized list where the prefix
+with the highest priority appears at the top of the list.</p>
+<hr />
+<h2 id="class-composition-related-slots">Class Composition Related Slots<a class="headerlink" href="#class-composition-related-slots" title="Permanent link">&para;</a></h2>
+<h3 id="slots">slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
+<p>The <code>slots</code> property enumerates the names of slots which a given class,
+mixin, or its subclasses are generally permitted to have.
+Unless it is designated as one of the <a href="#defining_slots"><code>defining_slots</code></a>, or
+<a href="#slot_usage"><code>slot_usage</code></a> specifies that a given slot is required,
+then it is <strong>not</strong> mandatory that such a slot is instantiated in all instances
+of the given class, mixin, or its subclasses.</p>
+<h3 id="defining_slots">defining_slots<a class="headerlink" href="#defining_slots" title="Permanent link">&para;</a></h3>
+<p>The <code>defining_slots</code> slot can be used to specify which slots of an instance are
+necessary for defining an instance as a member of a class.</p>
+<p>Listing a slot as one of the <code>defining_slots</code> slots effectively makes
+it a required slot.</p>
+<h3 id="slot_usage">slot_usage<a class="headerlink" href="#slot_usage" title="Permanent link">&para;</a></h3>
+<p>The <code>slot_usage</code> slot can be used to specify how a particular slot ought to be
+used in a class.</p>
+<p>This is useful for documenting what a particular slot means for instances of a
+particular class.</p>
+<p>In the <code>slot_usage</code> section we define the range and provide a description for
+the slot's <code>subject</code> and <code>object</code>, to better document what entities this slot
+is supposed to link.</p>
+<h3 id="required">required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<p>The <code>required</code> slot can be used to define whether a slot is required.</p>
+<p>When a slot is declared as required, via <code>required: true</code>, any class that uses
+that slot must have a value for that slot.</p>
+<hr />
+<h2 id="slots-related-to-constraints-on-slot-composition">Slots Related to Constraints on Slot Composition<a class="headerlink" href="#slots-related-to-constraints-on-slot-composition" title="Permanent link">&para;</a></h2>
+<h3 id="domain">domain<a class="headerlink" href="#domain" title="Permanent link">&para;</a></h3>
+<p>The <code>domain</code> slot mimics the idea of <code>rdfs:domain</code> where you constrain the type
+of classes that a given slot can be a part of.</p>
+<h3 id="range">range<a class="headerlink" href="#range" title="Permanent link">&para;</a></h3>
+<p>The <code>range</code> slot mimics the idea of <code>rdfs:range</code> where you can constrain the
+type of classes (or data types) a given slot can have as its
+value.</p>
+<hr />
+<h2 id="slots-related-to-semantic-mappings">Slots Related to Semantic Mappings<a class="headerlink" href="#slots-related-to-semantic-mappings" title="Permanent link">&para;</a></h2>
+<h3 id="exact_mappings">exact_mappings<a class="headerlink" href="#exact_mappings" title="Permanent link">&para;</a></h3>
+<p>The <code>exact_mappings</code> slot can be used to define external concepts, predicates,
+or properties which are considered to be exact mappings to the class (or slot)
+being defined.</p>
+<h3 id="close_mappings">close_mappings<a class="headerlink" href="#close_mappings" title="Permanent link">&para;</a></h3>
+<p>The <code>close_mappings</code> slot can be used to define external concepts, predicates,
+or properties which are considered to be close mappings to the class (or slot)
+being defined.</p>
+<h3 id="narrow_mappings">narrow_mappings<a class="headerlink" href="#narrow_mappings" title="Permanent link">&para;</a></h3>
+<p>The <code>narrow_mappings</code> slot can be used to define external concepts, predicates,
+or properties which are considered to be narrow mappings to the class (or slot)
+being defined.</p>
+<h3 id="broad_mappings">broad_mappings<a class="headerlink" href="#broad_mappings" title="Permanent link">&para;</a></h3>
+<p>The <code>broad_mappings</code> slot can be used to define external concepts, predicates,
+or properties which are considered to be broad mappings to the class (or slot)
+being defined.</p>
+<h3 id="related_mappings">related_mappings<a class="headerlink" href="#related_mappings" title="Permanent link">&para;</a></h3>
+<p>The <code>related_mappings</code> slot can be used to define external concepts, predicates,
+or properties which are considered to be related mappings to the class (or slot)
+being defined.</p>
                 
               
               
@@ -434,15 +506,30 @@ and slot, respectively</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
+        
+        <a href="contributing.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contributing" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Contributing
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="docs/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Documentation" rel="next">
+        <a href="referencing-ontologies.html" class="md-footer__link md-footer__link--next" aria-label="Next: Referencing Ontologies" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Documentation
+              Referencing Ontologies
             </div>
           </div>
           <div class="md-footer__button md-icon">
