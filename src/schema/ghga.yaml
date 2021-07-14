@@ -114,7 +114,7 @@ classes:
       has study:
         description: >-
           The study associated with this experiment.
-        required: true
+        required: false
         range: study
       instrument model:
         description: >-
@@ -124,12 +124,12 @@ classes:
       has library:
         description: >-
           The library associated with this experiment.
-        required: true
+        required: false
         range: library
       has sample:
         description: >-
           The sample associated with this experiment.
-        required: true
+        required: false
         range: sample
       has protocol:
         description: >-
@@ -197,7 +197,7 @@ classes:
         description: >-
           Brief description of a sample.
       subject:
-        required: true
+        required: false
         range: individual
       biosample accession:
         description: >-
@@ -217,14 +217,14 @@ classes:
         description: >-
           The phenotype or disease associated with the individual from which
           the sample was taken.
-        required: true
+        required: false
         range: disease or phenotypic feature
       files:
         description: >-
           One or more files that are linked to this Sample.
         multivalued: true
         range: file
-        required: true
+        required: false
 
   protocol:
     is_a: information content entity
@@ -248,7 +248,7 @@ classes:
       slot_usage:
         gender:
           description: Gender of an individual.
-          required: true
+          required: false
           # TODO: Enumerate values for this slot via GenderType
         age:
           description: Age of an individual.
@@ -309,11 +309,11 @@ classes:
       files:
         description: >-
           One or more files that collectively make this dataset.
-        required: true
+        required: false
       has data access policy:
         description: >-
           The Data Access Policy that applies to this dataset.
-        required: true
+        required: false
         range: data access policy
 
   synthetic dataset:
@@ -349,7 +349,7 @@ classes:
         description: The URL for the policy, if available.
       has data access committee:
         description: The Data Access Committee linked to this policy.
-        required: true
+        required: false
         range: data access committee
 
   data access committee:
