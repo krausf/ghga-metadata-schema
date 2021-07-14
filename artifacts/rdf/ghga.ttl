@@ -41,18 +41,18 @@
         "semweb_context" ;
     linkml:default_prefix "GHGA" ;
     linkml:default_range <https://w3id.org/GHGA/string> ;
-    linkml:generation_date "2021-07-13 14:31"^^xsd:dateTime ;
+    linkml:generation_date "2021-07-14 10:53"^^xsd:dateTime ;
     linkml:id <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:imports linkml:types ;
     linkml:metamodel_version "1.7.0" ;
     linkml:prefixes [ linkml:prefix_prefix "linkml" ;
             linkml:prefix_reference linkml: ],
-        [ linkml:prefix_prefix "GHGA" ;
-            linkml:prefix_reference <https://w3id.org/GHGA/> ],
         [ linkml:prefix_prefix "SIO" ;
             linkml:prefix_reference <http://semanticscience.org/resource/SIO_> ],
         [ linkml:prefix_prefix "biolink" ;
-            linkml:prefix_reference <https://w3id.org/biolink/vocab/> ] ;
+            linkml:prefix_reference <https://w3id.org/biolink/vocab/> ],
+        [ linkml:prefix_prefix "GHGA" ;
+            linkml:prefix_reference <https://w3id.org/GHGA/> ] ;
     linkml:slots <https://w3id.org/GHGA/abstract>,
         <https://w3id.org/GHGA/age>,
         <https://w3id.org/GHGA/attribute_key>,
@@ -154,8 +154,8 @@
         <https://w3id.org/GHGA/value>,
         <https://w3id.org/GHGA/value_type> ;
     linkml:source_file "ghga.yaml" ;
-    linkml:source_file_date "Tue Jul 13 14:30:44 2021"^^xsd:dateTime ;
-    linkml:source_file_size 17552 ;
+    linkml:source_file_date "Wed Jul 14 10:48:30 2021"^^xsd:dateTime ;
+    linkml:source_file_size 17562 ;
     linkml:types <https://w3id.org/GHGA/boolean>,
         <https://w3id.org/GHGA/date>,
         <https://w3id.org/GHGA/datetime>,
@@ -369,7 +369,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/DataAccessPolicy> ;
     linkml:range <https://w3id.org/GHGA/DataAccessCommittee> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/has_data_access_committee> ;
     linkml:usage_slot_name "has data access committee" .
 
@@ -422,7 +421,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/Experiment> ;
     linkml:range <https://w3id.org/GHGA/Library> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/has_library> ;
     linkml:usage_slot_name "has library" .
 
@@ -449,7 +447,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/Experiment> ;
     linkml:range <https://w3id.org/GHGA/Sample> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/has_sample> ;
     linkml:usage_slot_name "has sample" .
 
@@ -463,7 +460,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/Experiment> ;
     linkml:range <https://w3id.org/GHGA/Study> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/has_study> ;
     linkml:usage_slot_name "has study" .
 
@@ -596,7 +592,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/Individual> ;
     linkml:range <https://w3id.org/GHGA/string> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/gender> ;
     linkml:usage_slot_name "gender" .
 
@@ -769,7 +764,6 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/GHGA/Sample> ;
     linkml:range <https://w3id.org/GHGA/File> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/files> ;
     linkml:usage_slot_name "files" .
 
@@ -822,7 +816,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/Sample> ;
     linkml:range <https://w3id.org/GHGA/DiseaseOrPhenotypicFeature> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/has_disease_of_phenotypic_feature> ;
     linkml:usage_slot_name "has disease of phenotypic feature" .
 
@@ -848,7 +841,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/Sample> ;
     linkml:range <https://w3id.org/GHGA/Individual> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/subject> ;
     linkml:usage_slot_name "subject" .
 
@@ -1007,7 +999,7 @@
 
 <https://w3id.org/GHGA/MaterialEntity> a linkml:ClassDefinition ;
     skos:definition "A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass." ;
-    skos:exactMatch <https://w3id.org/GHGA/SIO:000004> ;
+    skos:exactMatch <sio:000004> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/MaterialEntity> ;
     linkml:definition_uri <https://w3id.org/GHGA/MaterialEntity> ;
@@ -1048,7 +1040,6 @@
     linkml:multivalued true ;
     linkml:owner <https://w3id.org/GHGA/Dataset> ;
     linkml:range <https://w3id.org/GHGA/File> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/files> ;
     linkml:usage_slot_name "files" .
 
@@ -1062,7 +1053,6 @@
     linkml:is_usage_slot true ;
     linkml:owner <https://w3id.org/GHGA/Dataset> ;
     linkml:range <https://w3id.org/GHGA/DataAccessPolicy> ;
-    linkml:required true ;
     linkml:slot_uri <https://w3id.org/GHGA/has_data_access_policy> ;
     linkml:usage_slot_name "has data access policy" .
 
@@ -1121,7 +1111,7 @@
 
 <https://w3id.org/GHGA/AnatomicalEntity> a linkml:ClassDefinition ;
     skos:definition "An anatomical entity is an object that is a structural part (material or immaterial) of a biological entity." ;
-    skos:exactMatch <https://w3id.org/GHGA/UBERON:0001062> ;
+    skos:exactMatch <uberon:0001062> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/AnatomicalEntity> ;
     linkml:definition_uri <https://w3id.org/GHGA/AnatomicalEntity> ;
@@ -1131,9 +1121,9 @@
 
 <https://w3id.org/GHGA/CellLine> a linkml:ClassDefinition ;
     skos:definition "A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history" ;
-    skos:exactMatch <https://w3id.org/GHGA/CLO:0000031>,
-        <https://w3id.org/GHGA/EFO:0000322>,
-        <https://w3id.org/GHGA/SIO:010054> ;
+    skos:exactMatch <clo:0000031>,
+        <efo:0000322>,
+        <sio:010054> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/CellLine> ;
     linkml:definition_uri <https://w3id.org/GHGA/CellLine> ;
@@ -1153,9 +1143,9 @@
 
 <https://w3id.org/GHGA/Person> a linkml:ClassDefinition ;
     skos:definition "A member of the species Homo sapiens." ;
-    skos:exactMatch <https://w3id.org/GHGA/SIO:000498>,
-        <ncit:C25190>,
-        <prov:Person> ;
+    skos:exactMatch <ncit:C25190>,
+        <prov:Person>,
+        <sio:000498> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/Person> ;
     linkml:definition_uri <https://w3id.org/GHGA/Person> ;
@@ -1166,8 +1156,8 @@
 <https://w3id.org/GHGA/Protocol> a linkml:ClassDefinition ;
     skos:altLabel "library protocol" ;
     skos:definition "A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process." ;
-    skos:exactMatch <https://w3id.org/GHGA/OBI:0000272>,
-        <ncit:C41111> ;
+    skos:exactMatch <ncit:C41111>,
+        <obi:0000272> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/Protocol> ;
     linkml:definition_uri <https://w3id.org/GHGA/Protocol> ;
@@ -1177,8 +1167,8 @@
 
 <https://w3id.org/GHGA/ResearchActivity> a linkml:ClassDefinition ;
     skos:definition "A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world." ;
-    skos:exactMatch <https://w3id.org/GHGA/SEPIO:0000004>,
-        <ncit:C15429> ;
+    skos:exactMatch <ncit:C15429>,
+        <sepio:0000004> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/ResearchActivity> ;
     linkml:definition_uri <https://w3id.org/GHGA/ResearchActivity> ;
@@ -1658,7 +1648,7 @@
 
 <https://w3id.org/GHGA/Dataset> a linkml:ClassDefinition ;
     skos:definition "A dataset is a collection of files that represents data generated from a particular sample." ;
-    skos:exactMatch <https://w3id.org/GHGA/SIO:000089> ;
+    skos:exactMatch <sio:000089> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/Dataset> ;
     linkml:definition_uri <https://w3id.org/GHGA/Dataset> ;
@@ -1740,8 +1730,8 @@
 
 <https://w3id.org/GHGA/Experiment> a linkml:ClassDefinition ;
     skos:definition "An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis." ;
-    skos:exactMatch <https://w3id.org/GHGA/SIO:000994>,
-        <ncit:C42790> ;
+    skos:exactMatch <ncit:C42790>,
+        <sio:000994> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/Experiment> ;
     linkml:definition_uri <https://w3id.org/GHGA/Experiment> ;
@@ -1776,7 +1766,7 @@
     skos:altLabel "biosample" ;
     skos:definition "A sample is a limited quantity of something to be used for testing, analysis, inspection, investigation, demonstration, or trial use. This could be either an individual, or sets of individuals from a population, or a portion of a substance like an isolate or tissue." ;
     skos:exactMatch <biolink:MaterialSample>,
-        <https://w3id.org/GHGA/SIO:001050> ;
+        <sio:001050> ;
     skos:inScheme <https://w3id.org/GHGA-Metadata-Schema> ;
     linkml:class_uri <https://w3id.org/GHGA/Sample> ;
     linkml:definition_uri <https://w3id.org/GHGA/Sample> ;

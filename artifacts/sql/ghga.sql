@@ -45,7 +45,7 @@ CREATE TABLE file (
 CREATE TABLE individual (
 	id TEXT NOT NULL, 
 	name TEXT, 
-	gender TEXT NOT NULL, 
+	gender TEXT, 
 	age INTEGER, 
 	PRIMARY KEY (id)
 );
@@ -145,13 +145,13 @@ CREATE TABLE sample (
 	name TEXT, 
 	type TEXT, 
 	description TEXT, 
-	subject TEXT NOT NULL, 
+	subject TEXT, 
 	biosample_accession TEXT, 
 	has_anatomical_site TEXT, 
 	has_cell_line TEXT, 
 	geographical_region TEXT, 
-	has_disease_of_phenotypic_feature TEXT NOT NULL, 
-	files TEXT NOT NULL, 
+	has_disease_of_phenotypic_feature TEXT, 
+	files TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(subject) REFERENCES individual (id), 
 	FOREIGN KEY(has_anatomical_site) REFERENCES anatomical_entity (id), 
@@ -164,7 +164,7 @@ CREATE TABLE data_access_policy (
 	description TEXT NOT NULL, 
 	policy_text TEXT NOT NULL, 
 	policy_url TEXT, 
-	has_data_access_committee TEXT NOT NULL, 
+	has_data_access_committee TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(has_data_access_committee) REFERENCES data_access_committee (id)
 );
@@ -173,10 +173,10 @@ CREATE TABLE experiment (
 	id TEXT NOT NULL, 
 	name TEXT NOT NULL, 
 	description TEXT, 
-	has_study TEXT NOT NULL, 
+	has_study TEXT, 
 	instrument_model TEXT NOT NULL, 
-	has_library TEXT NOT NULL, 
-	has_sample TEXT NOT NULL, 
+	has_library TEXT, 
+	has_sample TEXT, 
 	has_protocol TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(has_study) REFERENCES study (id), 
@@ -190,8 +190,8 @@ CREATE TABLE dataset (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	files TEXT NOT NULL, 
-	has_data_access_policy TEXT NOT NULL, 
+	files TEXT, 
+	has_data_access_policy TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(has_data_access_policy) REFERENCES data_access_policy (id)
 );
@@ -201,8 +201,8 @@ CREATE TABLE processed_dataset (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	files TEXT NOT NULL, 
-	has_data_access_policy TEXT NOT NULL, 
+	files TEXT, 
+	has_data_access_policy TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(has_data_access_policy) REFERENCES data_access_policy (id)
 );
@@ -212,8 +212,8 @@ CREATE TABLE synthetic_dataset (
 	title TEXT NOT NULL, 
 	description TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	files TEXT NOT NULL, 
-	has_data_access_policy TEXT NOT NULL, 
+	files TEXT, 
+	has_data_access_policy TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(has_data_access_policy) REFERENCES data_access_policy (id)
 );

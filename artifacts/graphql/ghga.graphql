@@ -46,7 +46,7 @@ type DataAccessPolicy
     description: String!
     policyText: String!
     policyUrl: String
-    hasDataAccessCommittee: DataAccessCommittee!
+    hasDataAccessCommittee: DataAccessCommittee
   }
 
 type Dataset
@@ -55,8 +55,8 @@ type Dataset
     title: String!
     description: String!
     type: String!
-    files: [File]!
-    hasDataAccessPolicy: DataAccessPolicy!
+    files: [File]
+    hasDataAccessPolicy: DataAccessPolicy
   }
 
 type DiseaseOrPhenotypicFeature
@@ -69,10 +69,10 @@ type Experiment
     id: String!
     name: String!
     description: String
-    hasStudy: Study!
+    hasStudy: Study
     instrumentModel: String!
-    hasLibrary: Library!
-    hasSample: Sample!
+    hasLibrary: Library
+    hasSample: Sample
     hasProtocol: Protocol
   }
 
@@ -92,7 +92,7 @@ type Individual
   {
     id: String!
     name: String
-    gender: String!
+    gender: String
     age: Integer
   }
 
@@ -144,8 +144,8 @@ type ProcessedDataset
     title: String!
     description: String!
     type: String!
-    files: [File]!
-    hasDataAccessPolicy: DataAccessPolicy!
+    files: [File]
+    hasDataAccessPolicy: DataAccessPolicy
   }
 
 type Protocol
@@ -170,13 +170,13 @@ type Sample
     name: String
     type: String
     description: String
-    subject: Individual!
+    subject: Individual
     biosampleAccession: String
     hasAnatomicalSite: AnatomicalEntity
     hasCellLine: CellLine
     geographicalRegion: String
-    hasDiseaseOfPhenotypicFeature: DiseaseOrPhenotypicFeature!
-    files: [File]!
+    hasDiseaseOfPhenotypicFeature: DiseaseOrPhenotypicFeature
+    files: [File]
   }
 
 type Study
@@ -196,8 +196,8 @@ type SyntheticDataset
     title: String!
     description: String!
     type: String!
-    files: [File]!
-    hasDataAccessPolicy: DataAccessPolicy!
+    files: [File]
+    hasDataAccessPolicy: DataAccessPolicy
   }
 
 

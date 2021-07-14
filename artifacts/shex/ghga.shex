@@ -106,7 +106,7 @@ linkml:Nodeidentifier NONLITERAL
           <description> @linkml:String ;
           <policy_text> @linkml:String ;
           <policy_url> @linkml:String ? ;
-          <has_data_access_committee> @<DataAccessCommittee>
+          <has_data_access_committee> @<DataAccessCommittee> ?
        ) ;
        rdf:type [ <DataAccessPolicy> ]
     )
@@ -119,8 +119,8 @@ linkml:Nodeidentifier NONLITERAL
              <title> @linkml:String ;
              <description> @linkml:String ;
              <type> @linkml:String ;
-             <files> @<File> + ;
-             <has_data_access_policy> @<DataAccessPolicy>
+             <files> @<File> * ;
+             <has_data_access_policy> @<DataAccessPolicy> ?
           ) ;
           rdf:type [ <Dataset> ]
        )
@@ -140,10 +140,10 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <ResearchActivity> ] ? ;
           <name> @linkml:String ;
           <description> @linkml:String ? ;
-          <has_study> @<Study> ;
+          <has_study> @<Study> ? ;
           <instrument_model> @linkml:String ;
-          <has_library> @<Library> ;
-          <has_sample> @<Sample> ;
+          <has_library> @<Library> ? ;
+          <has_sample> @<Sample> ? ;
           <has_protocol> @<Protocol> ?
        ) ;
        rdf:type [ <Experiment> ]
@@ -169,7 +169,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<Individual_tes> (  &<Person_tes> ;
           rdf:type [ <Person> ] ? ;
           <name> @linkml:String ? ;
-          <gender> @linkml:String ;
+          <gender> @linkml:String ? ;
           <age> @linkml:Integer ?
        ) ;
        rdf:type [ <Individual> ]
@@ -283,13 +283,13 @@ linkml:Nodeidentifier NONLITERAL
           <name> @linkml:String ? ;
           <type> @linkml:String ? ;
           <description> @linkml:String ? ;
-          <subject> @<Individual> ;
+          <subject> @<Individual> ? ;
           <biosample_accession> @linkml:String ? ;
           <has_anatomical_site> @<AnatomicalEntity> ? ;
           <has_cell_line> @<CellLine> ? ;
           <geographical_region> @linkml:String ? ;
-          <has_disease_of_phenotypic_feature> @<DiseaseOrPhenotypicFeature> ;
-          <files> @<File> +
+          <has_disease_of_phenotypic_feature> @<DiseaseOrPhenotypicFeature> ? ;
+          <files> @<File> *
        ) ;
        rdf:type [ <Sample> ]
     )

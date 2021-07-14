@@ -1,5 +1,5 @@
 # Auto generated from ghga.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-07-13 14:31
+# Generation date: 2021-07-14 10:53
 # Schema: GHGA-Metadata-Schema
 #
 # id: https://w3id.org/GHGA-Metadata-Schema
@@ -383,11 +383,11 @@ class Experiment(ResearchActivity):
 
     id: Union[str, ExperimentId] = None
     name: str = None
-    has_study: Union[str, StudyId] = None
     instrument_model: str = None
-    has_library: Union[str, LibraryId] = None
-    has_sample: Union[str, SampleId] = None
     description: Optional[str] = None
+    has_study: Optional[Union[str, StudyId]] = None
+    has_library: Optional[Union[str, LibraryId]] = None
+    has_sample: Optional[Union[str, SampleId]] = None
     has_protocol: Optional[Union[str, ProtocolId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -401,28 +401,22 @@ class Experiment(ResearchActivity):
         if not isinstance(self.name, str):
             self.name = str(self.name)
 
-        if self._is_empty(self.has_study):
-            self.MissingRequiredField("has_study")
-        if not isinstance(self.has_study, StudyId):
-            self.has_study = StudyId(self.has_study)
-
         if self._is_empty(self.instrument_model):
             self.MissingRequiredField("instrument_model")
         if not isinstance(self.instrument_model, str):
             self.instrument_model = str(self.instrument_model)
 
-        if self._is_empty(self.has_library):
-            self.MissingRequiredField("has_library")
-        if not isinstance(self.has_library, LibraryId):
-            self.has_library = LibraryId(self.has_library)
-
-        if self._is_empty(self.has_sample):
-            self.MissingRequiredField("has_sample")
-        if not isinstance(self.has_sample, SampleId):
-            self.has_sample = SampleId(self.has_sample)
-
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
+
+        if self.has_study is not None and not isinstance(self.has_study, StudyId):
+            self.has_study = StudyId(self.has_study)
+
+        if self.has_library is not None and not isinstance(self.has_library, LibraryId):
+            self.has_library = LibraryId(self.has_library)
+
+        if self.has_sample is not None and not isinstance(self.has_sample, SampleId):
+            self.has_sample = SampleId(self.has_sample)
 
         if self.has_protocol is not None and not isinstance(self.has_protocol, ProtocolId):
             self.has_protocol = ProtocolId(self.has_protocol)
@@ -469,38 +463,22 @@ class Sample(BiologicalEntity):
     class_model_uri: ClassVar[URIRef] = GHGA.Sample
 
     id: Union[str, SampleId] = None
-    subject: Union[str, IndividualId] = None
-    has_disease_of_phenotypic_feature: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    files: Union[Union[str, FileId], List[Union[str, FileId]]] = None
     name: Optional[str] = None
     type: Optional[str] = None
     description: Optional[str] = None
+    subject: Optional[Union[str, IndividualId]] = None
     biosample_accession: Optional[str] = None
     has_anatomical_site: Optional[Union[str, AnatomicalEntityId]] = None
     has_cell_line: Optional[Union[str, CellLineId]] = None
     geographical_region: Optional[str] = None
+    has_disease_of_phenotypic_feature: Optional[Union[str, DiseaseOrPhenotypicFeatureId]] = None
+    files: Optional[Union[Union[str, FileId], List[Union[str, FileId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SampleId):
             self.id = SampleId(self.id)
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, IndividualId):
-            self.subject = IndividualId(self.subject)
-
-        if self._is_empty(self.has_disease_of_phenotypic_feature):
-            self.MissingRequiredField("has_disease_of_phenotypic_feature")
-        if not isinstance(self.has_disease_of_phenotypic_feature, DiseaseOrPhenotypicFeatureId):
-            self.has_disease_of_phenotypic_feature = DiseaseOrPhenotypicFeatureId(self.has_disease_of_phenotypic_feature)
-
-        if self._is_empty(self.files):
-            self.MissingRequiredField("files")
-        if not isinstance(self.files, list):
-            self.files = [self.files] if self.files is not None else []
-        self.files = [v if isinstance(v, FileId) else FileId(v) for v in self.files]
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -510,6 +488,9 @@ class Sample(BiologicalEntity):
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
+
+        if self.subject is not None and not isinstance(self.subject, IndividualId):
+            self.subject = IndividualId(self.subject)
 
         if self.biosample_accession is not None and not isinstance(self.biosample_accession, str):
             self.biosample_accession = str(self.biosample_accession)
@@ -522,6 +503,13 @@ class Sample(BiologicalEntity):
 
         if self.geographical_region is not None and not isinstance(self.geographical_region, str):
             self.geographical_region = str(self.geographical_region)
+
+        if self.has_disease_of_phenotypic_feature is not None and not isinstance(self.has_disease_of_phenotypic_feature, DiseaseOrPhenotypicFeatureId):
+            self.has_disease_of_phenotypic_feature = DiseaseOrPhenotypicFeatureId(self.has_disease_of_phenotypic_feature)
+
+        if not isinstance(self.files, list):
+            self.files = [self.files] if self.files is not None else []
+        self.files = [v if isinstance(v, FileId) else FileId(v) for v in self.files]
 
         super().__post_init__(**kwargs)
 
@@ -685,8 +673,8 @@ class Dataset(InformationContentEntity):
     title: str = None
     description: str = None
     type: str = None
-    files: Union[Union[str, FileId], List[Union[str, FileId]]] = None
-    has_data_access_policy: Union[str, DataAccessPolicyId] = None
+    files: Optional[Union[Union[str, FileId], List[Union[str, FileId]]]] = empty_list()
+    has_data_access_policy: Optional[Union[str, DataAccessPolicyId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -709,15 +697,11 @@ class Dataset(InformationContentEntity):
         if not isinstance(self.type, str):
             self.type = str(self.type)
 
-        if self._is_empty(self.files):
-            self.MissingRequiredField("files")
         if not isinstance(self.files, list):
             self.files = [self.files] if self.files is not None else []
         self.files = [v if isinstance(v, FileId) else FileId(v) for v in self.files]
 
-        if self._is_empty(self.has_data_access_policy):
-            self.MissingRequiredField("has_data_access_policy")
-        if not isinstance(self.has_data_access_policy, DataAccessPolicyId):
+        if self.has_data_access_policy is not None and not isinstance(self.has_data_access_policy, DataAccessPolicyId):
             self.has_data_access_policy = DataAccessPolicyId(self.has_data_access_policy)
 
         super().__post_init__(**kwargs)
@@ -739,8 +723,6 @@ class SyntheticDataset(Dataset):
     title: str = None
     description: str = None
     type: str = None
-    files: Union[Union[str, FileId], List[Union[str, FileId]]] = None
-    has_data_access_policy: Union[str, DataAccessPolicyId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -767,8 +749,6 @@ class ProcessedDataset(Dataset):
     title: str = None
     description: str = None
     type: str = None
-    files: Union[Union[str, FileId], List[Union[str, FileId]]] = None
-    has_data_access_policy: Union[str, DataAccessPolicyId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -795,8 +775,8 @@ class DataAccessPolicy(InformationContentEntity):
     id: Union[str, DataAccessPolicyId] = None
     description: str = None
     policy_text: str = None
-    has_data_access_committee: Union[str, DataAccessCommitteeId] = None
     policy_url: Optional[str] = None
+    has_data_access_committee: Optional[Union[str, DataAccessCommitteeId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -814,13 +794,11 @@ class DataAccessPolicy(InformationContentEntity):
         if not isinstance(self.policy_text, str):
             self.policy_text = str(self.policy_text)
 
-        if self._is_empty(self.has_data_access_committee):
-            self.MissingRequiredField("has_data_access_committee")
-        if not isinstance(self.has_data_access_committee, DataAccessCommitteeId):
-            self.has_data_access_committee = DataAccessCommitteeId(self.has_data_access_committee)
-
         if self.policy_url is not None and not isinstance(self.policy_url, str):
             self.policy_url = str(self.policy_url)
+
+        if self.has_data_access_committee is not None and not isinstance(self.has_data_access_committee, DataAccessCommitteeId):
+            self.has_data_access_committee = DataAccessCommitteeId(self.has_data_access_committee)
 
         super().__post_init__(**kwargs)
 
@@ -987,8 +965,8 @@ class Individual(Person):
     class_model_uri: ClassVar[URIRef] = GHGA.Individual
 
     id: Union[str, IndividualId] = None
-    gender: str = None
     name: Optional[str] = None
+    gender: Optional[str] = None
     age: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -997,13 +975,11 @@ class Individual(Person):
         if not isinstance(self.id, IndividualId):
             self.id = IndividualId(self.id)
 
-        if self._is_empty(self.gender):
-            self.MissingRequiredField("gender")
-        if not isinstance(self.gender, str):
-            self.gender = str(self.gender)
-
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
+
+        if self.gender is not None and not isinstance(self.gender, str):
+            self.gender = str(self.gender)
 
         if self.age is not None and not isinstance(self.age, int):
             self.age = int(self.age)
@@ -1239,16 +1215,16 @@ slots.experiment_description = Slot(uri=GHGA.description, name="experiment_descr
                    model_uri=GHGA.experiment_description, domain=Experiment, range=Optional[str])
 
 slots.experiment_has_study = Slot(uri=GHGA.has_study, name="experiment_has study", curie=GHGA.curie('has_study'),
-                   model_uri=GHGA.experiment_has_study, domain=Experiment, range=Union[str, StudyId])
+                   model_uri=GHGA.experiment_has_study, domain=Experiment, range=Optional[Union[str, StudyId]])
 
 slots.experiment_instrument_model = Slot(uri=GHGA.instrument_model, name="experiment_instrument model", curie=GHGA.curie('instrument_model'),
                    model_uri=GHGA.experiment_instrument_model, domain=Experiment, range=str)
 
 slots.experiment_has_library = Slot(uri=GHGA.has_library, name="experiment_has library", curie=GHGA.curie('has_library'),
-                   model_uri=GHGA.experiment_has_library, domain=Experiment, range=Union[str, LibraryId])
+                   model_uri=GHGA.experiment_has_library, domain=Experiment, range=Optional[Union[str, LibraryId]])
 
 slots.experiment_has_sample = Slot(uri=GHGA.has_sample, name="experiment_has sample", curie=GHGA.curie('has_sample'),
-                   model_uri=GHGA.experiment_has_sample, domain=Experiment, range=Union[str, SampleId])
+                   model_uri=GHGA.experiment_has_sample, domain=Experiment, range=Optional[Union[str, SampleId]])
 
 slots.experiment_has_protocol = Slot(uri=GHGA.has_protocol, name="experiment_has protocol", curie=GHGA.curie('has_protocol'),
                    model_uri=GHGA.experiment_has_protocol, domain=Experiment, range=Optional[Union[str, ProtocolId]])
@@ -1278,7 +1254,7 @@ slots.sample_description = Slot(uri=GHGA.description, name="sample_description",
                    model_uri=GHGA.sample_description, domain=Sample, range=Optional[str])
 
 slots.sample_subject = Slot(uri=GHGA.subject, name="sample_subject", curie=GHGA.curie('subject'),
-                   model_uri=GHGA.sample_subject, domain=Sample, range=Union[str, IndividualId])
+                   model_uri=GHGA.sample_subject, domain=Sample, range=Optional[Union[str, IndividualId]])
 
 slots.sample_biosample_accession = Slot(uri=GHGA.biosample_accession, name="sample_biosample accession", curie=GHGA.curie('biosample_accession'),
                    model_uri=GHGA.sample_biosample_accession, domain=Sample, range=Optional[str])
@@ -1293,13 +1269,13 @@ slots.sample_geographical_region = Slot(uri=GHGA.geographical_region, name="samp
                    model_uri=GHGA.sample_geographical_region, domain=Sample, range=Optional[str])
 
 slots.sample_has_disease_of_phenotypic_feature = Slot(uri=GHGA.has_disease_of_phenotypic_feature, name="sample_has disease of phenotypic feature", curie=GHGA.curie('has_disease_of_phenotypic_feature'),
-                   model_uri=GHGA.sample_has_disease_of_phenotypic_feature, domain=Sample, range=Union[str, DiseaseOrPhenotypicFeatureId])
+                   model_uri=GHGA.sample_has_disease_of_phenotypic_feature, domain=Sample, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
 
 slots.sample_files = Slot(uri=GHGA.files, name="sample_files", curie=GHGA.curie('files'),
-                   model_uri=GHGA.sample_files, domain=Sample, range=Union[Union[str, FileId], List[Union[str, FileId]]])
+                   model_uri=GHGA.sample_files, domain=Sample, range=Optional[Union[Union[str, FileId], List[Union[str, FileId]]]])
 
 slots.individual_gender = Slot(uri=GHGA.gender, name="individual_gender", curie=GHGA.curie('gender'),
-                   model_uri=GHGA.individual_gender, domain=Individual, range=str)
+                   model_uri=GHGA.individual_gender, domain=Individual, range=Optional[str])
 
 slots.individual_age = Slot(uri=GHGA.age, name="individual_age", curie=GHGA.curie('age'),
                    model_uri=GHGA.individual_age, domain=Individual, range=Optional[int])
@@ -1332,10 +1308,10 @@ slots.dataset_type = Slot(uri=GHGA.type, name="dataset_type", curie=GHGA.curie('
                    model_uri=GHGA.dataset_type, domain=Dataset, range=str)
 
 slots.dataset_files = Slot(uri=GHGA.files, name="dataset_files", curie=GHGA.curie('files'),
-                   model_uri=GHGA.dataset_files, domain=Dataset, range=Union[Union[str, FileId], List[Union[str, FileId]]])
+                   model_uri=GHGA.dataset_files, domain=Dataset, range=Optional[Union[Union[str, FileId], List[Union[str, FileId]]]])
 
 slots.dataset_has_data_access_policy = Slot(uri=GHGA.has_data_access_policy, name="dataset_has data access policy", curie=GHGA.curie('has_data_access_policy'),
-                   model_uri=GHGA.dataset_has_data_access_policy, domain=Dataset, range=Union[str, DataAccessPolicyId])
+                   model_uri=GHGA.dataset_has_data_access_policy, domain=Dataset, range=Optional[Union[str, DataAccessPolicyId]])
 
 slots.data_access_policy_description = Slot(uri=GHGA.description, name="data access policy_description", curie=GHGA.curie('description'),
                    model_uri=GHGA.data_access_policy_description, domain=DataAccessPolicy, range=str)
@@ -1347,7 +1323,7 @@ slots.data_access_policy_policy_url = Slot(uri=GHGA.policy_url, name="data acces
                    model_uri=GHGA.data_access_policy_policy_url, domain=DataAccessPolicy, range=Optional[str])
 
 slots.data_access_policy_has_data_access_committee = Slot(uri=GHGA.has_data_access_committee, name="data access policy_has data access committee", curie=GHGA.curie('has_data_access_committee'),
-                   model_uri=GHGA.data_access_policy_has_data_access_committee, domain=DataAccessPolicy, range=Union[str, DataAccessCommitteeId])
+                   model_uri=GHGA.data_access_policy_has_data_access_committee, domain=DataAccessPolicy, range=Optional[Union[str, DataAccessCommitteeId]])
 
 slots.data_access_committee_title = Slot(uri=GHGA.title, name="data access committee_title", curie=GHGA.curie('title'),
                    model_uri=GHGA.data_access_committee_title, domain=DataAccessCommittee, range=str)

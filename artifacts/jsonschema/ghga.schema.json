@@ -164,8 +164,7 @@
          "required": [
             "id",
             "description",
-            "policy_text",
-            "has_data_access_committee"
+            "policy_text"
          ],
          "title": "DataAccessPolicy",
          "type": "object"
@@ -203,9 +202,7 @@
             "id",
             "title",
             "description",
-            "type",
-            "files",
-            "has_data_access_policy"
+            "type"
          ],
          "title": "Dataset",
          "type": "object"
@@ -265,10 +262,7 @@
          "required": [
             "id",
             "name",
-            "has_study",
-            "instrument_model",
-            "has_library",
-            "has_sample"
+            "instrument_model"
          ],
          "title": "Experiment",
          "type": "object"
@@ -338,8 +332,7 @@
             }
          },
          "required": [
-            "id",
-            "gender"
+            "id"
          ],
          "title": "Individual",
          "type": "object"
@@ -515,9 +508,7 @@
             "id",
             "title",
             "description",
-            "type",
-            "files",
-            "has_data_access_policy"
+            "type"
          ],
          "title": "ProcessedDataset",
          "type": "object"
@@ -623,10 +614,7 @@
             }
          },
          "required": [
-            "id",
-            "subject",
-            "has_disease_of_phenotypic_feature",
-            "files"
+            "id"
          ],
          "title": "Sample",
          "type": "object"
@@ -712,9 +700,7 @@
             "id",
             "title",
             "description",
-            "type",
-            "files",
-            "has_data_access_policy"
+            "type"
          ],
          "title": "SyntheticDataset",
          "type": "object"
