@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -352,28 +357,63 @@
                 
                 
                 <h1 id="class-publication">Class: publication<a class="headerlink" href="#class-publication" title="Permanent link">&para;</a></h1>
-<p>Represents a publication.</p>
+<p>The Publication entity represents a publication. While a publication can be any article that is published, the minimum expectation is that the publication has a valid DOI.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Publication">GHGA:Publication</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Study]-%20publications(i)%200..*&gt;[Publication&#124;id:string;title:string%20%3F],[Study]-%20publications%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[InformationContentEntity]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Study]-%20publications(i)%200..*&gt;[Publication&#124;id:string;title:string%20%3F],[Study]-%20publications%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[InformationContentEntity]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Dataset]-%20has%20publication%200..*&gt;[Publication&#124;title:string%20%3F;id:string;xref:string%20*;accession(i):string%20%3F;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Investigation]-%20has%20publication%200..1&gt;[Publication],[ResearchActivity]-%20has%20publication%200..1&gt;[Publication],[Dataset]-%20has%20publication(i)%200..1&gt;[Publication],[Project]-%20has%20publication%200..*&gt;[Publication],[Study]-%20has%20publication%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[ResearchActivity],[Project],[Investigation],[InformationContentEntity],[Dataset],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Dataset]-%20has%20publication%200..*&gt;[Publication&#124;title:string%20%3F;id:string;xref:string%20*;accession(i):string%20%3F;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Investigation]-%20has%20publication%200..1&gt;[Publication],[ResearchActivity]-%20has%20publication%200..1&gt;[Publication],[Dataset]-%20has%20publication(i)%200..1&gt;[Publication],[Project]-%20has%20publication%200..*&gt;[Publication],[Study]-%20has%20publication%200..*&gt;[Publication],[InformationContentEntity]^-[Publication],[ResearchActivity],[Project],[Investigation],[InformationContentEntity],[Dataset],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.</li>
 </ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>None</strong> <em><a href="../publications/">publications</a></em>  <sub>0..*</sub>  <strong><a href="./">Publication</a></strong></li>
-<li><strong><a href="../Study/">Study</a></strong> <em><a href="../study_publications/">study➞publications</a></em>  <sub>0..*</sub>  <strong><a href="./">Publication</a></strong></li>
+<li><strong><a href="../Dataset/">Dataset</a></strong> <em><a href="../dataset_has_publication/">dataset➞has publication</a></em>  <sub>0..*</sub>  <strong><a href="./">Publication</a></strong></li>
+<li><strong>None</strong> <em><a href="../has_publication/">has publication</a></em>  <sub>0..1</sub>  <strong><a href="./">Publication</a></strong></li>
+<li><strong><a href="../Project/">Project</a></strong> <em><a href="../project_has_publication/">project➞has publication</a></em>  <sub>0..*</sub>  <strong><a href="./">Publication</a></strong></li>
+<li><strong><a href="../Study/">Study</a></strong> <em><a href="../study_has_publication/">study➞has publication</a></em>  <sub>0..*</sub>  <strong><a href="./">Publication</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../publication_id/">publication➞id</a>  <sub>1..1</sub><ul>
-<li>Description: A PMID or DOI for the publication.</li>
+<li><a href="../publication_title/">publication➞title</a>  <sub>0..1</sub><ul>
+<li>Description: The title for the Publication.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../title/">title</a>  <sub>0..1</sub><ul>
-<li>Description: The title that describes an entity.</li>
+<li><a href="../publication_id/">publication➞id</a>  <sub>1..1</sub><ul>
+<li>Description: A PMID or DOI for the Publication.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../publication_xref/">publication➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: One or more cross-references for this Publication.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-information-content-entity">Inherited from information content entity:<a class="headerlink" href="#inherited-from-information-content-entity" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
+<li>Description: The type of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_has_attribute/">named thing➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more Attribute entities that further characterizes this entity.</li>
+<li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -403,10 +443,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -418,10 +460,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

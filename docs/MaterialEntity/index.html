@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -354,21 +359,55 @@
                 <h1 id="class-material-entity">Class: material entity<a class="headerlink" href="#class-material-entity" title="Permanent link">&para;</a></h1>
 <p>A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass.</p>
 <p>URI: <a href="https://w3id.org/GHGA/MaterialEntity">GHGA:MaterialEntity</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[MaterialEntity&#124;id(i):string]^-[Library],[NamedThing]^-[MaterialEntity],[Library]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[MaterialEntity&#124;id(i):string]^-[Library],[NamedThing]^-[MaterialEntity],[Library]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Population],[NamedThing],[MaterialEntity&#124;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F]^-[Sample],[MaterialEntity]^-[Population],[MaterialEntity]^-[CellLine],[MaterialEntity]^-[Biospecimen],[MaterialEntity]^-[AnatomicalEntity],[NamedThing]^-[MaterialEntity],[CellLine],[Biospecimen],[Attribute],[AnatomicalEntity]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Population],[NamedThing],[MaterialEntity&#124;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F]^-[Sample],[MaterialEntity]^-[Population],[MaterialEntity]^-[CellLine],[MaterialEntity]^-[Biospecimen],[MaterialEntity]^-[AnatomicalEntity],[NamedThing]^-[MaterialEntity],[CellLine],[Biospecimen],[Attribute],[AnatomicalEntity]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.</li>
 </ul>
 <h2 id="children">Children<a class="headerlink" href="#children" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../Library/">Library</a> - A library that is used in an experiment protocol to generate the input for an instrument.</li>
+<li><a href="../AnatomicalEntity/">AnatomicalEntity</a> - Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species.</li>
+<li><a href="../Biospecimen/">Biospecimen</a> - A Biospecimen is any natural material taken from a biological entity (usually a human) for testing, diagnostics, treatment, or research purposes. The Biospecimen is linked to the Individual from which the Biospecimen is derived.</li>
+<li><a href="../CellLine/">CellLine</a> - A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history.</li>
+<li><a href="../Population/">Population</a> - A population is a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area.</li>
+<li><a href="../Sample/">Sample</a> - A sample is a limited quantity of something to be used for testing, analysis, inspection, investigation, demonstration, or trial use. A sample is prepared from a Biospecimen (isolate or tissue).</li>
 </ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="inherited-from-named-thing">Inherited from named thing:<a class="headerlink" href="#inherited-from-named-thing" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
+<li><a href="../named_thing_id/">named thing➞id</a>  <sub>1..1</sub><ul>
+<li>Description: The internal unique identifier for an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more database cross references.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
+<li>Description: The type of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_has_attribute/">named thing➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more Attribute entities that further characterizes this entity.</li>
+<li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -415,10 +454,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -430,10 +471,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

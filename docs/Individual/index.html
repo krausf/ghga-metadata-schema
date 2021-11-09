@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -352,43 +357,131 @@
                 
                 
                 <h1 id="class-individual">Class: individual<a class="headerlink" href="#class-individual" title="Permanent link">&para;</a></h1>
+<p>An Individual is a Person who is participating in a Study.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Individual">GHGA:Individual</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Person],[Sample]-%20subject%201..1&gt;[Individual&#124;name:string%20%3F;gender:string;sex:string;age:integer%20%3F;id(i):string],[Sample]-%20subject(i)%200..1&gt;[Individual],[Person]^-[Individual]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Person],[Sample]-%20subject%201..1&gt;[Individual&#124;name:string%20%3F;gender:string;sex:string;age:integer%20%3F;id(i):string],[Sample]-%20subject(i)%200..1&gt;[Individual],[Person]^-[Individual]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Person],[Biospecimen]-%20has%20individual%200..1&gt;[Individual&#124;gender:string%20%3F;sex:biological_sex_enum;age:integer%20%3F;year_of_birth:string%20%3F;vital_status:string%20%3F;geographical_region:string%20%3F;ethnicity:string%20%3F;ancestry:string%20%3F;has_parent:string%20%3F;has_children:string%20%3F;given_name(i):string%20%3F;family_name(i):string%20%3F;additional_name(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Cohort]-%20has%20member%200..*&gt;[Individual],[Family]-%20has%20member%200..*&gt;[Individual],[Family]-%20proband%200..1&gt;[Individual],[Biospecimen]-%20has%20individual(i)%200..1&gt;[Individual],[Sample]-%20has%20individual(i)%200..1&gt;[Individual],[Family]-%20proband(i)%200..1&gt;[Individual],[Sample]-%20has%20individual%201..1&gt;[Individual],[Individual]^-[Donor],[Person]^-[Individual],[Family],[Donor],[Cohort],[Biospecimen],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Person],[Biospecimen]-%20has%20individual%200..1&gt;[Individual&#124;gender:string%20%3F;sex:biological_sex_enum;age:integer%20%3F;year_of_birth:string%20%3F;vital_status:string%20%3F;geographical_region:string%20%3F;ethnicity:string%20%3F;ancestry:string%20%3F;has_parent:string%20%3F;has_children:string%20%3F;given_name(i):string%20%3F;family_name(i):string%20%3F;additional_name(i):string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Cohort]-%20has%20member%200..*&gt;[Individual],[Family]-%20has%20member%200..*&gt;[Individual],[Family]-%20proband%200..1&gt;[Individual],[Biospecimen]-%20has%20individual(i)%200..1&gt;[Individual],[Sample]-%20has%20individual(i)%200..1&gt;[Individual],[Family]-%20proband(i)%200..1&gt;[Individual],[Sample]-%20has%20individual%201..1&gt;[Individual],[Individual]^-[Donor],[Person]^-[Individual],[Family],[Donor],[Cohort],[Biospecimen],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../Person/">Person</a> - A member of the species Homo sapiens.</li>
 </ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<h2 id="children">Children<a class="headerlink" href="#children" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../Sample/">Sample</a></strong> <em><a href="../sample_subject/">sample➞subject</a></em>  <sub>1..1</sub>  <strong><a href="./">Individual</a></strong></li>
-<li><strong>None</strong> <em><a href="../subject/">subject</a></em>  <sub>0..1</sub>  <strong><a href="./">Individual</a></strong></li>
+<li><a href="../Donor/">Donor</a> - A Donor is an Individual that participates in a research Study by donating a Biospecimen. The use of the Biospecimen is restricted to the consent provided by the Donor.</li>
+</ul>
+<h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../Biospecimen/">Biospecimen</a></strong> <em><a href="../biospecimen_has_individual/">biospecimen➞has individual</a></em>  <sub>0..1</sub>  <strong><a href="./">Individual</a></strong></li>
+<li><strong><a href="../Cohort/">Cohort</a></strong> <em><a href="../cohort_has_member/">cohort➞has member</a></em>  <sub>0..*</sub>  <strong><a href="./">Individual</a></strong></li>
+<li><strong><a href="../Family/">Family</a></strong> <em><a href="../family_has_member/">family➞has member</a></em>  <sub>0..*</sub>  <strong><a href="./">Individual</a></strong></li>
+<li><strong><a href="../Family/">Family</a></strong> <em><a href="../family_proband/">family➞proband</a></em>  <sub>0..1</sub>  <strong><a href="./">Individual</a></strong></li>
+<li><strong>None</strong> <em><a href="../has_individual/">has individual</a></em>  <sub>0..1</sub>  <strong><a href="./">Individual</a></strong></li>
+<li><strong>None</strong> <em><a href="../proband/">proband</a></em>  <sub>0..1</sub>  <strong><a href="./">Individual</a></strong></li>
+<li><strong><a href="../Sample/">Sample</a></strong> <em><a href="../sample_has_individual/">sample➞has individual</a></em>  <sub>1..1</sub>  <strong><a href="./">Individual</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
-<li>Range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
-<li>Description: The name for an entity.</li>
-<li>Range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../individual_gender/">individual➞gender</a>  <sub>1..1</sub><ul>
-<li>Description: Gender of an individual.</li>
+<li><a href="../individual_gender/">individual➞gender</a>  <sub>0..1</sub><ul>
+<li>Description: Gender of an Individual.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 <li><a href="../individual_sex/">individual➞sex</a>  <sub>1..1</sub><ul>
-<li>Description: Biological Sex of an individual</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li>Description: Biological Sex of an Individual.</li>
+<li>Range: <a href="../biological_sex_enum/">biological_sex_enum</a></li>
 </ul>
 </li>
 <li><a href="../individual_age/">individual➞age</a>  <sub>0..1</sub><ul>
-<li>Description: Age of an individual.</li>
+<li>Description: Age of an Individual.</li>
 <li>Range: <a href="../types/Integer/">Integer</a></li>
+</ul>
+</li>
+<li><a href="../individual_year_of_birth/">individual➞year of birth</a>  <sub>0..1</sub><ul>
+<li>Description: Year of Birth of an Individual.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../individual_vital_status/">individual➞vital status</a>  <sub>0..1</sub><ul>
+<li>Description: Vital status of an Individual.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../individual_geographical_region/">individual➞geographical region</a>  <sub>0..1</sub><ul>
+<li>Description: The geographical region where the Individual is located. Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0047' signifies this Individual is from 'Western Europe' region.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../individual_ethnicity/">individual➞ethnicity</a>  <sub>0..1</sub><ul>
+<li>Description: Ethnicity of an Individual.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../individual_ancestry/">individual➞ancestry</a>  <sub>0..1</sub><ul>
+<li>Description: Ancestry of an Individual.  Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0005' signifies this Individual belongs to the 'European' ancestry.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../individual_has_parent/">individual➞has parent</a>  <sub>0..1</sub><ul>
+<li>Description: One or more parent for this Individual.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../individual_has_children/">individual➞has children</a>  <sub>0..1</sub><ul>
+<li>Description: One or more children for this Individual.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-person">Inherited from person:<a class="headerlink" href="#inherited-from-person" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../named_thing_id/">named thing➞id</a>  <sub>1..1</sub><ul>
+<li>Description: The internal unique identifier for an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more database cross references.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
+<li>Description: The type of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_has_attribute/">named thing➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more Attribute entities that further characterizes this entity.</li>
+<li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../given_name/">given name</a>  <sub>0..1</sub><ul>
+<li>Description: First name.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../family_name/">family name</a>  <sub>0..1</sub><ul>
+<li>Description: Last name.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../additional_name/">additional name</a>  <sub>0..1</sub><ul>
+<li>Description: Additional name(s).</li>
+<li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 </ul>
@@ -439,10 +532,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -454,10 +549,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

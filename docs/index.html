@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -241,6 +246,8 @@
       </a>
       
         
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -451,20 +458,15 @@
 <h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="Attribute/">Attribute</a> - A key/value pair that further characterizes an entity.</li>
+<li><a href="DataUseCondition/">DataUseCondition</a> - Data Use Condition represents the use conditions associated with a Dataset. A permission field can have one or more terms that collectively defines the data use condition. The modifier determines the interpretation of the use permission(s).</li>
 <li><a href="NamedThing/">NamedThing</a> - A databased entity, concept or class. This is a generic class that is the root of all the other classes.<ul>
-<li><a href="Activity/">Activity</a> - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.<ul>
-<li><a href="ResearchActivity/">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.<ul>
-<li><a href="Experiment/">Experiment</a> - An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis.</li>
-<li><a href="Study/">Study</a> - Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</li>
+<li><a href="Agent/">Agent</a> - An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. Agents include a Person, Organization, or Software that performs an activity.</li>
+<li><a href="BiologicalQuality/">BiologicalQuality</a> - A biological quality is a quality held by a biological entity.<ul>
+<li><a href="DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> - Disease or Phenotypic Feature that the entity is associated with. This entity is a union of Disease and Phenotypic Feature and exists to accommodate situations where Disease concepts are used interchangeably with Phenotype concepts or vice-versa.<ul>
+<li><a href="Disease/">Disease</a> - A disease is a disposition to undergo pathological processes that exists in an organism because of one or more disorders in that organism.</li>
+<li><a href="PhenotypicFeature/">PhenotypicFeature</a> - The observable form taken by some character (or group of characters) in an individual or an organism, excluding pathology and disease. The detectable outward manifestations of a specific genotype.</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="BiologicalEntity/">BiologicalEntity</a> - A biological entity is a heterogeneous substance that contains genomic material or is the product of a biological process.<ul>
-<li><a href="AnatomicalEntity/">AnatomicalEntity</a> - An anatomical entity is an object that is a structural part (material or immaterial) of a biological entity.</li>
-<li><a href="CellLine/">CellLine</a> - A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history</li>
-<li><a href="DiseaseOrPhenotypicFeature/">DiseaseOrPhenotypicFeature</a> - A disease or phenotypic feature.</li>
-<li><a href="Sample/">Sample</a> - A sample is a limited quantity of something to be used for testing, analysis, inspection, investigation, demonstration, or trial use. This could be either an individual, or sets of individuals from a population, or a portion of a substance like an isolate or tissue.</li>
 </ul>
 </li>
 <li><a href="Committee/">Committee</a> - A group of people organized for a specific purpose.<ul>
@@ -472,46 +474,79 @@
 </ul>
 </li>
 <li><a href="InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.<ul>
-<li><a href="DataAccessPolicy/">DataAccessPolicy</a> - A data access policy specifies under which circumstances, legal or otherwise, a user can have access to one or more datasets belonging to one or more studies.</li>
-<li><a href="Dataset/">Dataset</a> - A dataset is a collection of files that represents data generated from a particular sample.<ul>
-<li><a href="ProcessedDataset/">ProcessedDataset</a> - A dataset that is generated by processing an existing dataset.</li>
-<li><a href="SyntheticDataset/">SyntheticDataset</a> - A dataset that is built by combining one or more datasets.</li>
+<li><a href="DataAccessPolicy/">DataAccessPolicy</a> - A Data Access Policy specifies under which circumstances, legal or otherwise, a user can have access to one or more Datasets belonging to one or more Studies.</li>
+<li><a href="Dataset/">Dataset</a> - A Dataset is a collection of Files that is prepared for distribution.<ul>
+<li><a href="AggregateDataset/">AggregateDataset</a> - An Aggregate Dataset is a specialized dataset that is built by combining one or more Datasets together.</li>
+<li><a href="AnalysisDataset/">AnalysisDataset</a> - An Analysis Dataset is a collection of Files generated from one or more Analysis performed on data from one or more Studies.</li>
+<li><a href="ExperimentDataset/">ExperimentDataset</a> - An Experiment Dataset is a collection of Files linked to one or more Experiments from one or more Studies.</li>
 </ul>
 </li>
 <li><a href="File/">File</a></li>
 <li><a href="Protocol/">Protocol</a> - A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</li>
-<li><a href="Publication/">Publication</a> - Represents a publication.</li>
+<li><a href="Publication/">Publication</a> - The Publication entity represents a publication. While a publication can be any article that is published, the minimum expectation is that the publication has a valid DOI.</li>
+<li><a href="Technology/">Technology</a> - A Technology is an abstraction that represents the instrument used for an assay. The Technology entity captures instrument-specific attributes that are relevant for an Experiment entity. The Technology entity may be further characterized by its children where each child has fields that are relevant to that particular technology.</li>
+<li><a href="Workflow/">Workflow</a> - A Workflow is an abstraction that represents the workflow used to perform an analysis. The Workflow entity captures workflow-specific attributes that are relevant for an Analysis entity. The Workflow entity may be further characterized by its children where each child has fields that are relevant to that particular workflow.</li>
+<li><a href="WorkflowStep/">WorkflowStep</a> - A Workflow Step represents each individual step performed in a Workflow. If the Workflow is a single-step workflow then the Workflow has just one Workflow Step entity. If the Workflow is a multi-step workflow then the Workflow has a Workflow Step entity for each step. All Workflow step specific attributes like parameters, and metadata about execution environment are captured by the Workflow Step entity.</li>
 </ul>
 </li>
 <li><a href="MaterialEntity/">MaterialEntity</a> - A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass.<ul>
-<li><a href="Library/">Library</a> - A library that is used in an experiment protocol to generate the input for an instrument.</li>
+<li><a href="AnatomicalEntity/">AnatomicalEntity</a> - Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species.</li>
+<li><a href="Biospecimen/">Biospecimen</a> - A Biospecimen is any natural material taken from a biological entity (usually a human) for testing, diagnostics, treatment, or research purposes. The Biospecimen is linked to the Individual from which the Biospecimen is derived.</li>
+<li><a href="CellLine/">CellLine</a> - A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history.</li>
+<li><a href="Population/">Population</a> - A population is a collection of individuals from the same taxonomic class living, counted or sampled at a particular site or in a particular area.<ul>
+<li><a href="Cohort/">Cohort</a> - A cohort is a collection of individuals that share a common characteristic/observation and have been grouped together for a research study/investigation.</li>
+<li><a href="Family/">Family</a> - A domestic group, or a number of domestic groups linked through descent (demonstrated or stipulated) from a common ancestor, marriage, or adoption.</li>
+</ul>
+</li>
+<li><a href="Sample/">Sample</a> - A sample is a limited quantity of something to be used for testing, analysis, inspection, investigation, demonstration, or trial use. A sample is prepared from a Biospecimen (isolate or tissue).</li>
 </ul>
 </li>
 <li><a href="Person/">Person</a> - A member of the species Homo sapiens.<ul>
-<li><a href="Individual/">Individual</a></li>
-<li><a href="Member/">Member</a> - Member of an organization or a committee.</li>
+<li><a href="Individual/">Individual</a> - An Individual is a Person who is participating in a Study.<ul>
+<li><a href="Donor/">Donor</a> - A Donor is an Individual that participates in a research Study by donating a Biospecimen. The use of the Biospecimen is restricted to the consent provided by the Donor.</li>
+</ul>
+</li>
+<li><a href="Member/">Member</a> - Member of an Organization or a Committee.</li>
+<li><a href="User/">User</a> - A user in GHGA.</li>
+</ul>
+</li>
+<li><a href="PlannedProcess/">PlannedProcess</a> - A process is an entity that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity during the time it occurs.<ul>
+<li><a href="AnalysisProcess/">AnalysisProcess</a> - An analysis process is a process that describes how one or more Files, from a Study, are transformed to another set of Files via a Workflow. The analysis process also keeps track of the workflow metadata and the Agent that is running the Analysis.</li>
+<li><a href="DataTransformation/">DataTransformation</a> - A data transformation technique used to analyze and interpret data to gain a better understanding of it.<ul>
+<li><a href="Analysis/">Analysis</a> - An Analysis is a data transformation that transforms input data to output data. The workflow used to achieve this transformation and the individual steps are also captured.</li>
+</ul>
+</li>
+<li><a href="ExperimentProcess/">ExperimentProcess</a> - An Experiment Process is a process that describes how a Sample is transformed to a File via an assay. The Experiment Process also keeps track of the Protocol used and the Agent that is running the experiment.</li>
+<li><a href="Investigation/">Investigation</a> - Investigation is the process of carrying out a plan or procedure so as to discover fact or information about the object of study.<ul>
+<li><a href="Experiment/">Experiment</a> - An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis.</li>
+<li><a href="Study/">Study</a> - Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</li>
+</ul>
+</li>
+<li><a href="ResearchActivity/">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.<ul>
+<li><a href="Project/">Project</a> - Any specifically defined piece of work that is undertaken or attempted to meet a single requirement.</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="WorkflowParameter/">WorkflowParameter</a> - A key/value pair that represents a parameter used in a Workflow Step.</li>
 </ul>
 <h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
 <h3 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="abstract/">abstract</a> - The abstract - a short blurb - associated with an entity.<ul>
-<li><a href="study_abstract/">study➞abstract</a> - The study abstract that describes the goals. Can also hold abstract from a publication related to the study.</li>
+<li><a href="abstract/">abstract</a> - The abstract - a short blurb - associated with an entity.</li>
+<li><a href="accession/">accession</a> - A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.<ul>
+<li><a href="named_thing_accession/">named thing➞accession</a></li>
 </ul>
 </li>
+<li><a href="additional_name/">additional name</a> - Additional name(s).</li>
 <li><a href="age/">age</a> - The age of a person.<ul>
-<li><a href="individual_age/">individual➞age</a> - Age of an individual.</li>
+<li><a href="individual_age/">individual➞age</a> - Age of an Individual.</li>
 </ul>
 </li>
-<li><a href="attributes/">attributes</a> - Key/value pairs corresponding to an entity.<ul>
-<li><a href="study_attributes/">study➞attributes</a> - Custom key/value pairs that further characterizes the study.</li>
-</ul>
-</li>
-<li><a href="biosample_accession/">biosample accession</a> - BioSample accession. For example, if the Sample is from EBI BioSamples.<ul>
-<li><a href="sample_biosample_accession/">sample➞biosample accession</a></li>
+<li><a href="ancestry/">ancestry</a> - Ancestral group to which a person belongs to.<ul>
+<li><a href="individual_ancestry/">individual➞ancestry</a> - Ancestry of an Individual.  Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0005' signifies this Individual belongs to the 'European' ancestry.</li>
 </ul>
 </li>
 <li><a href="category/">category</a> - The file category.<ul>
@@ -522,22 +557,31 @@
 <li><a href="file_checksum/">file➞checksum</a> - The checksum for the file.</li>
 </ul>
 </li>
-<li><a href="construction_protocol/">construction protocol</a> - Description of how the library was constructed.</li>
+<li><a href="creation_date/">creation date</a> - Timestamp (in ISO 8601 format) when the entity was created.<ul>
+<li><a href="named_thing_creation_date/">named thing➞creation date</a></li>
+</ul>
+</li>
 <li><a href="description/">description</a> - Description of an entity.<ul>
 <li><a href="data_access_policy_description/">data access policy➞description</a> - A short description for the Data Access Policy.</li>
 <li><a href="dataset_description/">dataset➞description</a></li>
-<li><a href="experiment_description/">experiment➞description</a> - A description for the experiment.</li>
-<li><a href="sample_description/">sample➞description</a> - Brief description of a sample.</li>
+<li><a href="experiment_description/">experiment➞description</a> - A description for the Experiment.</li>
+<li><a href="project_description/">project➞description</a> - A detailed description about this Project.</li>
+<li><a href="protocol_description/">protocol➞description</a> - Detailed description of the Protocol.</li>
+<li><a href="sample_description/">sample➞description</a> - Brief description of the Sample.</li>
+<li><a href="study_description/">study➞description</a> - A detailed description (abstract) that describes the goals of this Study.</li>
 </ul>
 </li>
-<li><a href="email/">email</a> - Email of a person.</li>
+<li><a href="email/">email</a> - Email of a person.<ul>
+<li><a href="member_email/">member➞email</a> - The email of the Member.</li>
+</ul>
+</li>
+<li><a href="ethnicity/">ethnicity</a> - Ethnicity of a person.<ul>
+<li><a href="individual_ethnicity/">individual➞ethnicity</a> - Ethnicity of an Individual.</li>
+</ul>
+</li>
+<li><a href="family_name/">family name</a> - Last name.</li>
 <li><a href="file_index/">file_index</a> - The index file corresponding to the file.<ul>
 <li><a href="file_file_index/">file➞file_index</a> - The index for this file. Commonly for BAM/VCF files.</li>
-</ul>
-</li>
-<li><a href="files/">files</a> - One or more files that are linked to an entity.<ul>
-<li><a href="dataset_files/">dataset➞files</a> - One or more files that collectively make this dataset.</li>
-<li><a href="sample_files/">sample➞files</a> - One or more files that are linked to this Sample.</li>
 </ul>
 </li>
 <li><a href="format/">format</a> - The format of a file.<ul>
@@ -545,19 +589,46 @@
 </ul>
 </li>
 <li><a href="gender/">gender</a> - The assemblage of properties that distinguish people on the basis of the societal role s expected for the two sexes. [NCI]<ul>
-<li><a href="individual_gender/">individual➞gender</a> - Gender of an individual.</li>
+<li><a href="individual_gender/">individual➞gender</a> - Gender of an Individual.</li>
 </ul>
 </li>
 <li><a href="geographical_region/">geographical region</a> - The geographical region linked to an entity.<ul>
-<li><a href="sample_geographical_region/">sample➞geographical region</a> - A geographical region associated with the sample.</li>
+<li><a href="individual_geographical_region/">individual➞geographical region</a> - The geographical region where the Individual is located. Typically a value from Human Ancestry Ontology. For example, 'HANCESTRO:0047' signifies this Individual is from 'Western Europe' region.</li>
 </ul>
 </li>
-<li><a href="has_anatomical_site/">has anatomical site</a> - Anatomical site associated with an entity.<ul>
-<li><a href="sample_has_anatomical_site/">sample➞has anatomical site</a> - Anatomical site from which the sample was retrieved.</li>
+<li><a href="given_name/">given name</a> - First name.</li>
+<li><a href="has_agent/">has agent</a><ul>
+<li><a href="analysis_process_has_agent/">analysis process➞has agent</a> - The Agent - a software, institution, or human - that is executing or responsible for executing the workflow.</li>
+<li><a href="experiment_process_has_agent/">experiment process➞has agent</a> - The Agent - a software, institution, or human - that is executing or responsible for executing the Experiment Process.</li>
 </ul>
 </li>
-<li><a href="has_cell_line/">has cell line</a> - Cell line associated with an entity.<ul>
-<li><a href="sample_has_cell_line/">sample➞has cell line</a> - Type of cell line that was used.</li>
+<li><a href="has_analysis/">has analysis</a> - The analysis associated with an entity.<ul>
+<li><a href="study_has_analysis/">study➞has analysis</a> - One or more Analysis entities associated with this Study.</li>
+</ul>
+</li>
+<li><a href="has_analysis_process/">has analysis process</a><ul>
+<li><a href="analysis_has_analysis_process/">analysis➞has analysis process</a> - One or more Analysis Process entities associated with this Analysis.</li>
+</ul>
+</li>
+<li><a href="has_anatomical_entity/">has anatomical entity</a> - Anatomical site associated with an entity.<ul>
+<li><a href="biospecimen_has_anatomical_entity/">biospecimen➞has anatomical entity</a> - The Anatomical entity, that represents the site, from which the Biospecimen was retrieved. Typically, a concept from Uber-anatomy Ontology (UBERON). For example, 'UBERON:0008307' indicates that the Biospecimen was extracted from the 'Heart Endothelium' of an Individual.</li>
+</ul>
+</li>
+<li><a href="has_attribute/">has attribute</a> - Key/value pairs corresponding to an entity.<ul>
+<li><a href="named_thing_has_attribute/">named thing➞has attribute</a> - Holds one or more Attribute entities that further characterizes this entity.<ul>
+<li><a href="project_has_attribute/">project➞has attribute</a> - Custom key/value pairs that further characterizes this Project.</li>
+<li><a href="protocol_has_attribute/">protocol➞has attribute</a> - One or more attributes that further characterizes this Protocol.</li>
+<li><a href="study_has_attribute/">study➞has attribute</a> - Custom key/value pairs that further characterizes the Study.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="has_biospecimen/">has biospecimen</a><ul>
+<li><a href="sample_has_biospecimen/">sample➞has biospecimen</a> - The Biospecimen from which this Sample was prepared from.</li>
+</ul>
+</li>
+<li><a href="has_children/">has children</a> - The children of an entity.<ul>
+<li><a href="individual_has_children/">individual➞has children</a> - One or more children for this Individual.</li>
 </ul>
 </li>
 <li><a href="has_data_access_committee/">has data access committee</a> - Data Access Committee associated with an entity.<ul>
@@ -565,136 +636,230 @@
 </ul>
 </li>
 <li><a href="has_data_access_policy/">has data access policy</a> - Data Access Policy associated with an entity.<ul>
-<li><a href="dataset_has_data_access_policy/">dataset➞has data access policy</a> - The Data Access Policy that applies to this dataset.</li>
+<li><a href="analysis_dataset_has_data_access_policy/">analysis dataset➞has data access policy</a> - The Data Access Policy that applies to this Dataset.</li>
+<li><a href="experiment_dataset_has_data_access_policy/">experiment dataset➞has data access policy</a> - The Data Access Policy that applies to this Dataset.</li>
 </ul>
 </li>
-<li><a href="has_disease_of_phenotypic_feature/">has disease of phenotypic feature</a> - Disease or phenotype that the entity is associated with.<ul>
-<li><a href="sample_has_disease_of_phenotypic_feature/">sample➞has disease of phenotypic feature</a> - The phenotype or disease associated with the individual from which the sample was taken.</li>
+<li><a href="has_data_use_condition/">has data use condition</a> - Data Use Condition entities that are associated with an entity.<ul>
+<li><a href="data_access_policy_has_data_use_condition/">data access policy➞has data use condition</a> - Data Use Condition entities that are associated with the Data Access Policy.</li>
 </ul>
 </li>
-<li><a href="has_experiment/">has experiment</a> - The experiment associated with an entitiy.<ul>
-<li><a href="dataset_has_experiment/">dataset➞has experiment</a> - One or more experiments that collectively are part of the dataset</li>
+<li><a href="has_dataset/">has dataset</a><ul>
+<li><a href="aggregate_dataset_has_dataset/">aggregate dataset➞has dataset</a> - One or more Datasets that constitutes this Aggregate Dataset.</li>
 </ul>
 </li>
-<li><a href="has_file/">has file</a> - The file associated with an entitiy.<ul>
-<li><a href="dataset_has_file/">dataset➞has file</a> - One or more files that collectively are part of the dataset</li>
+<li><a href="has_disease/">has disease</a> - Disease concept that the entity is associated with.<ul>
+<li><a href="biospecimen_has_disease/">biospecimen➞has disease</a> - The Disease entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Mondo Disease Ontology. For example, 'MONDO:0003742' indicates that the Individual - from which the Biospecimen was extracted from - suffers from 'Heart Fibrosarcoma'.</li>
 </ul>
 </li>
-<li><a href="has_library/">has library</a> - The library associated with an entity.<ul>
-<li><a href="experiment_has_library/">experiment➞has library</a> - The library associated with this experiment.</li>
+<li><a href="has_experiment/">has experiment</a> - The experiment associated with an entity.<ul>
+<li><a href="analysis_dataset_has_experiment/">analysis dataset➞has experiment</a> - One or more Analysis entities that are referenced by this Dataset.</li>
+<li><a href="experiment_dataset_has_experiment/">experiment dataset➞has experiment</a> - One or more Experiment entities that are referenced by this Dataset.</li>
+<li><a href="study_has_experiment/">study➞has experiment</a> - One or more Experiment entities associated with this Study.</li>
 </ul>
 </li>
-<li><a href="has_members/">has members</a> - The members associated with a committee.<ul>
-<li><a href="data_access_committee_has_members/">data access committee➞has members</a> - All the members that are part of this data access committee.</li>
+<li><a href="has_experiment_process/">has experiment process</a><ul>
+<li><a href="experiment_has_experiment_process/">experiment➞has experiment process</a> - One or more Experiment Processes entities associated with this Experiment.</li>
+</ul>
+</li>
+<li><a href="has_file/">has file</a> - The file associated with an entity.<ul>
+<li><a href="dataset_has_file/">dataset➞has file</a> - One or more File entities that collectively are part of this Dataset.</li>
+<li><a href="experiment_has_file/">experiment➞has file</a> - One or more Files entities that are generated as output of this Experiment.</li>
+</ul>
+</li>
+<li><a href="has_individual/">has individual</a> - The subject/individual associated with an entity.<ul>
+<li><a href="biospecimen_has_individual/">biospecimen➞has individual</a> - The Individual entity from which this Biospecimen was derived.</li>
+<li><a href="sample_has_individual/">sample➞has individual</a> - The Individual from which this Sample was derived from.</li>
+</ul>
+</li>
+<li><a href="has_input/">has input</a><ul>
+<li><a href="analysis_process_has_input/">analysis process➞has input</a> - The input data File entities used in the Analysis Process.</li>
+<li><a href="analysis_has_input/">analysis➞has input</a> - The input data File entities used in the Analysis.</li>
+<li><a href="experiment_process_has_input/">experiment process➞has input</a> - The input to the Experiment Process. Usually a Sample entity.</li>
+</ul>
+</li>
+<li><a href="has_member/">has member</a> - The members associated with a committee.<ul>
+<li><a href="cohort_has_member/">cohort➞has member</a> - One or more Individuals that collectively define this Cohort.</li>
+<li><a href="data_access_committee_has_member/">data access committee➞has member</a> - All the members that are part of this Data Access Committee.</li>
+<li><a href="family_has_member/">family➞has member</a> - One or more Individuals that collectively define this Family.</li>
+</ul>
+</li>
+<li><a href="has_output/">has output</a><ul>
+<li><a href="analysis_process_has_output/">analysis process➞has output</a> - The output data File entities generated by the Analysis Process.</li>
+<li><a href="analysis_has_output/">analysis➞has output</a> - The output data File entities generated by this Analysis.</li>
+<li><a href="experiment_process_has_output/">experiment process➞has output</a> - The output of this Experiment Process. Usually a File entity.</li>
+</ul>
+</li>
+<li><a href="has_parameter/">has parameter</a><ul>
+<li><a href="workflow_step_has_parameter/">workflow step➞has parameter</a> - One or more parameters that are associated with this Workflow Step.</li>
+</ul>
+</li>
+<li><a href="has_parent/">has parent</a> - The parent of an entity.<ul>
+<li><a href="individual_has_parent/">individual➞has parent</a> - One or more parent for this Individual.</li>
+</ul>
+</li>
+<li><a href="has_phenotypic_feature/">has phenotypic feature</a> - Phenotypic feature concept that the entity is associated with.<ul>
+<li><a href="biospecimen_has_phenotypic_feature/">biospecimen➞has phenotypic feature</a> - The Phenotypic Feature entity that is associated with this Biospecimen at the time of retrieval from the organism. Typically, a concept from Human Phenotype Ontology. For example, 'HP:0100244' indicates that the Individual - from which the Biospecimen was extracted from - exhibits 'Fibrosarcoma' as one of its phenotype.</li>
 </ul>
 </li>
 <li><a href="has_protocol/">has protocol</a> - The protocol associated with an entity.<ul>
-<li><a href="experiment_has_protocol/">experiment➞has protocol</a> - The protocol associated with this experiment.</li>
+<li><a href="experiment_process_has_protocol/">experiment process➞has protocol</a> - The Protocol entity used by this Experiment Process.</li>
+</ul>
+</li>
+<li><a href="has_publication/">has publication</a> - The Publication associated with an entity.<ul>
+<li><a href="dataset_has_publication/">dataset➞has publication</a> - One or more Publication entities associated with this Dataset.</li>
+<li><a href="project_has_publication/">project➞has publication</a> - One or more Publication entities associated with this Project.</li>
+<li><a href="study_has_publication/">study➞has publication</a> - One or more Publication entities associated with this Study.</li>
 </ul>
 </li>
 <li><a href="has_sample/">has sample</a> - The sample associated with an entity.<ul>
-<li><a href="experiment_has_sample/">experiment➞has sample</a> - The sample associated with this experiment.</li>
+<li><a href="experiment_has_sample/">experiment➞has sample</a> - The Sample entity associated with this Experiment.</li>
 </ul>
 </li>
 <li><a href="has_study/">has study</a> - The study associated with an entity.<ul>
-<li><a href="dataset_has_study/">dataset➞has study</a> - One or more studies that collectively are part of the dataset</li>
-<li><a href="experiment_has_study/">experiment➞has study</a> - The study associated with this experiment.</li>
+<li><a href="analysis_dataset_has_study/">analysis dataset➞has study</a> - One or more Study entities that are referenced by this Dataset.</li>
+<li><a href="analysis_has_study/">analysis➞has study</a> - The Study entity associated with this Analysis.</li>
+<li><a href="experiment_dataset_has_study/">experiment dataset➞has study</a> - One or more Study entities that are referenced by this Dataset.</li>
+<li><a href="experiment_has_study/">experiment➞has study</a> - The Study entity associated with this Experiment.</li>
+<li><a href="project_has_study/">project➞has study</a> - One or more Study entities associated with this Project.</li>
+</ul>
+</li>
+<li><a href="has_technology/">has technology</a> - The technology associated with an entity.<ul>
+<li><a href="experiment_has_technology/">experiment➞has technology</a> - The Technology entity associated with this Experiment.</li>
+</ul>
+</li>
+<li><a href="has_workflow/">has workflow</a><ul>
+<li><a href="analysis_has_workflow/">analysis➞has workflow</a> - The Workflow entity associated with this Analysis.</li>
+</ul>
+</li>
+<li><a href="has_workflow_step/">has workflow step</a><ul>
+<li><a href="analysis_process_has_workflow_step/">analysis process➞has workflow step</a> - Workflow Step entity that performs a set of operations on the input data Files to generate a set of output data Files.</li>
 </ul>
 </li>
 <li><a href="id/">id</a> - An identifier that uniquely represents an entity.<ul>
-<li><a href="publication_id/">publication➞id</a> - A PMID or DOI for the publication.</li>
+<li><a href="named_thing_id/">named thing➞id</a> - The internal unique identifier for an entity.<ul>
+<li><a href="publication_id/">publication➞id</a> - A PMID or DOI for the Publication.</li>
 </ul>
 </li>
-<li><a href="instrument_model/">instrument model</a> - The instrument on which the data was generated.<ul>
-<li><a href="experiment_instrument_model/">experiment➞instrument model</a> - The instrument model.</li>
 </ul>
 </li>
 <li><a href="key/">key</a> - The key of an attribute.<ul>
-<li><a href="attribute_key/">attribute➞key</a></li>
+<li><a href="attribute_key/">attribute➞key</a> - The key for an attribute.</li>
+<li><a href="workflow_parameter_key/">workflow parameter➞key</a> - Key that represents the parameter name.</li>
 </ul>
 </li>
-<li><a href="key_type/">key type</a> - The semantic type for the key of an attribute.</li>
-<li><a href="layout/">layout</a> - The layout of the library. Whether it is single-end, paired-end.<ul>
-<li><a href="library_layout/">library➞layout</a></li>
+<li><a href="key_type/">key type</a> - The semantic type for the key of an attribute.<ul>
+<li><a href="attribute_key_type/">attribute➞key type</a> - A semantic type that characterizes the attribute key. Usually this is a term from an ontology. For example, 'MAXO:0000616' indicates that the attribute is a measurement of oxygen saturation in the blood.</li>
 </ul>
 </li>
 <li><a href="main_contact/">main contact</a> - The person who is the main contact for a committee.<ul>
-<li><a href="data_access_committee_main_contact/">data access committee➞main contact</a> - The main contact for the data access committee.</li>
-<li><a href="member_main_contact/">member➞main contact</a></li>
+<li><a href="data_access_committee_main_contact/">data access committee➞main contact</a> - The main contact for the Data Access Committee.</li>
+</ul>
+</li>
+<li><a href="modifier/">modifier</a> - Modifier for Data user permission.<ul>
+<li><a href="data_use_condition_modifier/">data use condition➞modifier</a> - Modifier for Data use permission. Preferable descendants of 'DUO:0000017 data use modifier'</li>
 </ul>
 </li>
 <li><a href="name/">name</a> - The name for an entity.<ul>
-<li><a href="experiment_name/">experiment➞name</a> - Name for the experiment.</li>
-<li><a href="library_name/">library➞name</a> - Name for the library.</li>
-<li><a href="member_name/">member➞name</a></li>
-<li><a href="sample_name/">sample➞name</a> - Name of the sample.</li>
-<li><a href="study_name/">study➞name</a> - A short name for the study.</li>
+<li><a href="data_access_committee_name/">data access committee➞name</a></li>
+<li><a href="experiment_name/">experiment➞name</a> - Name for the Experiment.</li>
+<li><a href="protocol_name/">protocol➞name</a> - Name of the Protocol.</li>
+<li><a href="sample_name/">sample➞name</a> - Name of the Sample.</li>
 </ul>
 </li>
 <li><a href="organization/">organization</a> - The organization associated with a person.<ul>
-<li><a href="member_organization/">member➞organization</a></li>
+<li><a href="member_organization/">member➞organization</a> - The organization that the Member is part of.</li>
+</ul>
+</li>
+<li><a href="parameters/">parameters</a> - Paramaters associated with a Workflow Step entity.</li>
+<li><a href="permission/">permission</a> - Data use permission.<ul>
+<li><a href="data_use_condition_permission/">data use condition➞permission</a> - Data use permission. Typically one or more terms from DUO. Preferably descendants of 'DUO:0000001 data use permission'.</li>
 </ul>
 </li>
 <li><a href="policy_text/">policy text</a> - The complete text for the Data Access Policy.<ul>
-<li><a href="data_access_policy_policy_text/">data access policy➞policy text</a></li>
+<li><a href="data_access_policy_policy_text/">data access policy➞policy text</a> - The terms of data use and policy verbiage should be captured here.</li>
 </ul>
 </li>
 <li><a href="policy_url/">policy url</a> - Alternative to pasting the Data Access Policy text.<ul>
-<li><a href="data_access_policy_policy_url/">data access policy➞policy url</a> - The URL for the policy, if available.</li>
+<li><a href="data_access_policy_policy_url/">data access policy➞policy url</a> - URL for the policy, if available. This is useful if the terms of the policy is made available online at a resolvable URL.</li>
 </ul>
 </li>
-<li><a href="publications/">publications</a> - The publications related to an entity.<ul>
-<li><a href="study_publications/">study➞publications</a> - The publication(s) associated with this study.</li>
+<li><a href="proband/">proband</a><ul>
+<li><a href="family_proband/">family➞proband</a> - The Individual that is reported to have a disorder which results in the Family being brought into a Study.</li>
 </ul>
 </li>
-<li><a href="selection/">selection</a> - Library selection process. For example, random, cDNA, etc.<ul>
-<li><a href="library_selection/">library➞selection</a></li>
+<li><a href="role/">role</a><ul>
+<li><a href="user_role/">user➞role</a> - The role of the user</li>
 </ul>
 </li>
-<li><a href="sex/">sex</a> - The assemblage of physical properties or qualities  by which male is distinguished from female.[NCI]<ul>
-<li><a href="individual_sex/">individual➞sex</a> - Biological Sex of an individual</li>
+<li><a href="sex/">sex</a> - The assemblage of physical properties or qualities by which male is distinguished from female.[NCI]<ul>
+<li><a href="individual_sex/">individual➞sex</a> - Biological Sex of an Individual.</li>
 </ul>
 </li>
 <li><a href="size/">size</a> - The size of a file in bytes.<ul>
 <li><a href="file_size/">file➞size</a> - The file size in bytes.</li>
 </ul>
 </li>
-<li><a href="source/">source</a> - The source of the library. For example, Metagenome, Transcriptome, etc.<ul>
-<li><a href="library_source/">library➞source</a></li>
-</ul>
-</li>
-<li><a href="strategy/">strategy</a> - Library strategy. For example, ChIP-Seq, RNA-Seq, DNA-Seq, etc.<ul>
-<li><a href="library_strategy/">library➞strategy</a></li>
-</ul>
-</li>
-<li><a href="subject/">subject</a> - The subject/individual associated with an entity.<ul>
-<li><a href="sample_subject/">sample➞subject</a></li>
-</ul>
-</li>
 <li><a href="telephone/">telephone</a> - The telephone number associated with a person.<ul>
-<li><a href="member_telephone/">member➞telephone</a></li>
+<li><a href="member_telephone/">member➞telephone</a> - The telephone number of the Member.</li>
 </ul>
 </li>
 <li><a href="title/">title</a> - The title that describes an entity.<ul>
-<li><a href="data_access_committee_title/">data access committee➞title</a></li>
 <li><a href="dataset_title/">dataset➞title</a></li>
-<li><a href="study_title/">study➞title</a> - A descriptive title for the study.</li>
+<li><a href="publication_title/">publication➞title</a> - The title for the Publication.</li>
+<li><a href="study_title/">study➞title</a> - A descriptive title for the Study.</li>
 </ul>
 </li>
 <li><a href="type/">type</a> - The type of an entity.<ul>
+<li><a href="named_thing_type/">named thing➞type</a><ul>
 <li><a href="dataset_type/">dataset➞type</a></li>
 <li><a href="file_type/">file➞type</a> - The file type: Aligned Reads, Unaligned Reads, etc.</li>
 <li><a href="sample_type/">sample➞type</a> - Type of sample: 'Case' or 'Control'.</li>
-<li><a href="study_type/">study➞type</a> - The study type. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
+</ul>
+</li>
+<li><a href="study_type/">study➞type</a> - The type of Study. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
+</ul>
+</li>
+<li><a href="update_date/">update date</a> - Timestamp (in ISO 8601 format) when the entity was updated.<ul>
+<li><a href="named_thing_update_date/">named thing➞update date</a></li>
+</ul>
+</li>
+<li><a href="url/">url</a> - A URL to a resource.<ul>
+<li><a href="protocol_url/">protocol➞url</a> - URL for the resource that describes this Protocol.</li>
 </ul>
 </li>
 <li><a href="value/">value</a> - The value of an attribute<ul>
-<li><a href="attribute_value/">attribute➞value</a></li>
+<li><a href="attribute_value/">attribute➞value</a> - The value for an attribute. Usually this is a numerical value (without the units).</li>
+<li><a href="workflow_parameter_value/">workflow parameter➞value</a> - Value corresponding to the the parameter key.</li>
 </ul>
 </li>
-<li><a href="value_type/">value type</a> - The semantic type for the value of an attribute.</li>
+<li><a href="value_type/">value type</a> - The semantic type for the value of an attribute.<ul>
+<li><a href="attribute_value_type/">attribute➞value type</a> - The value type that characterizes the attribute value. Usually this is a term from an ontology that describes how to interpret the value. For example, 'SIO:001413' indicates that the value is to be interpreted as a percentage.</li>
+</ul>
+</li>
+<li><a href="vital_status/">vital status</a> - Vital status of a person.<ul>
+<li><a href="individual_vital_status/">individual➞vital status</a> - Vital status of an Individual.</li>
+</ul>
+</li>
+<li><a href="xref/">xref</a> - Alternate identifiers for an entity.<ul>
+<li><a href="named_thing_xref/">named thing➞xref</a> - Holds one or more database cross references.<ul>
+<li><a href="publication_xref/">publication➞xref</a> - One or more cross-references for this Publication.</li>
+<li><a href="sample_xref/">sample➞xref</a> - One or more cross-references for this Sample. For example, this Sample may have an EBI BioSamples accession or an EGA Sample accession.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="year_of_birth/">year of birth</a> - Year of Birth of a person.<ul>
+<li><a href="individual_year_of_birth/">individual➞year of birth</a> - Year of Birth of an Individual.</li>
+</ul>
+</li>
 </ul>
 <h3 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="biological_sex_enum/">biological_sex_enum</a> - The biological sex of an Individual as determined by their chromosomes.</li>
+<li><a href="case_control_enum/">case_control_enum</a> - Enum to capture whether a Sample is to be considered as Case or Control.</li>
+<li><a href="user_role_enum/">user_role_enum</a> - Enum to capture the different roles a GHGA User can have.</li>
+</ul>
 <h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
 <h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
 <h4 id="built-in">Built in<a class="headerlink" href="#built-in" title="Permanent link">&para;</a></h4>
@@ -790,10 +955,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -805,10 +972,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

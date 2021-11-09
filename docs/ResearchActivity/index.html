@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -354,22 +359,69 @@
                 <h1 id="class-research-activity">Class: research activity<a class="headerlink" href="#class-research-activity" title="Permanent link">&para;</a></h1>
 <p>A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.</p>
 <p>URI: <a href="https://w3id.org/GHGA/ResearchActivity">GHGA:ResearchActivity</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[ResearchActivity&#124;id(i):string]^-[Study],[ResearchActivity]^-[Experiment],[Activity]^-[ResearchActivity],[Experiment],[Activity]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[ResearchActivity&#124;id(i):string]^-[Study],[ResearchActivity]^-[Experiment],[Activity]^-[ResearchActivity],[Experiment],[Activity]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Publication]&lt;has%20publication%200..1-%20[ResearchActivity&#124;title:string%20%3F;description:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[ResearchActivity]^-[Project],[PlannedProcess]^-[ResearchActivity],[Publication],[Project],[PlannedProcess],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Publication]&lt;has%20publication%200..1-%20[ResearchActivity&#124;title:string%20%3F;description:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[ResearchActivity]^-[Project],[PlannedProcess]^-[ResearchActivity],[Publication],[Project],[PlannedProcess],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
-<li>is_a: <a href="../Activity/">Activity</a> - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</li>
+<li>is_a: <a href="../PlannedProcess/">PlannedProcess</a> - A process is an entity that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity during the time it occurs.</li>
 </ul>
 <h2 id="children">Children<a class="headerlink" href="#children" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../Experiment/">Experiment</a> - An experiment is an investigation that consists of a coordinated set of actions and observations designed to generate data with the goal of verifying, falsifying, or establishing the validity of a hypothesis.</li>
-<li><a href="../Study/">Study</a> - Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</li>
+<li><a href="../Project/">Project</a> - Any specifically defined piece of work that is undertaken or attempted to meet a single requirement.</li>
 </ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
-<h3 id="inherited-from-activity">Inherited from activity:<a class="headerlink" href="#inherited-from-activity" title="Permanent link">&para;</a></h3>
+<h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
+<li><a href="../title/">title</a>  <sub>0..1</sub><ul>
+<li>Description: The title that describes an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../description/">description</a>  <sub>0..1</sub><ul>
+<li>Description: Description of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../has_publication/">has publication</a>  <sub>0..1</sub><ul>
+<li>Description: The Publication associated with an entity.</li>
+<li>Range: <a href="../Publication/">Publication</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-planned-process">Inherited from planned process:<a class="headerlink" href="#inherited-from-planned-process" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../named_thing_id/">named thing➞id</a>  <sub>1..1</sub><ul>
+<li>Description: The internal unique identifier for an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more database cross references.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
+<li>Description: The type of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_has_attribute/">named thing➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more Attribute entities that further characterizes this entity.</li>
+<li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -390,7 +442,7 @@
 <td>SEPIO:0000004</td>
 </tr>
 <tr>
-<td></td>
+<td><strong>Close Mappings:</strong></td>
 <td></td>
 <td>NCIT:C15429</td>
 </tr>
@@ -421,10 +473,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -436,10 +490,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

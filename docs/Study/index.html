@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -354,53 +359,83 @@
                 <h1 id="class-study">Class: study<a class="headerlink" href="#class-study" title="Permanent link">&para;</a></h1>
 <p>Studies are experimental investigations of a particular phenomenon. It involves a detailed examination and analysis of a subject to learn more about the phenomenon being studied.</p>
 <p>URI: <a href="https://w3id.org/GHGA/Study">GHGA:Study</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]&lt;attributes%200..*-++[Study&#124;title:string;type:string;name:string%20%3F;abstract:string;id(i):string],[Publication]&lt;publications%200..*-%20[Study],[Dataset]-%20has%20study%201..1&gt;[Study],[Experiment]-%20has%20study%201..1&gt;[Study],[Experiment]-%20has%20study(i)%200..1&gt;[Study],[Dataset]-%20has%20study(i)%200..1&gt;[Study],[ResearchActivity]^-[Study],[ResearchActivity],[Publication],[Experiment],[Dataset],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]&lt;attributes%200..*-++[Study&#124;title:string;type:string;name:string%20%3F;abstract:string;id(i):string],[Publication]&lt;publications%200..*-%20[Study],[Dataset]-%20has%20study%201..1&gt;[Study],[Experiment]-%20has%20study%201..1&gt;[Study],[Experiment]-%20has%20study(i)%200..1&gt;[Study],[Dataset]-%20has%20study(i)%200..1&gt;[Study],[ResearchActivity]^-[Study],[ResearchActivity],[Publication],[Experiment],[Dataset],[Attribute]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]&lt;has%20attribute%200..*-++[Study&#124;title:string;description:string;type:string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Publication]&lt;has%20publication%200..*-%20[Study],[Analysis]&lt;has%20analysis%200..*-%20[Study],[Experiment]&lt;has%20experiment%200..*-%20[Study],[AnalysisDataset]-%20has%20study%201..*&gt;[Study],[Analysis]-%20has%20study%200..1&gt;[Study],[ExperimentDataset]-%20has%20study%201..*&gt;[Study],[Experiment]-%20has%20study%201..1&gt;[Study],[Project]-%20has%20study(i)%200..1&gt;[Study],[Experiment]-%20has%20study(i)%200..1&gt;[Study],[Analysis]-%20has%20study(i)%200..1&gt;[Study],[ExperimentDataset]-%20has%20study(i)%200..1&gt;[Study],[AnalysisDataset]-%20has%20study(i)%200..1&gt;[Study],[Investigation]^-[Study],[Publication],[Project],[Investigation],[ExperimentDataset],[Experiment],[Attribute],[AnalysisDataset],[Analysis]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]&lt;has%20attribute%200..*-++[Study&#124;title:string;description:string;type:string;id(i):string;accession(i):string%20%3F;xref(i):string%20*;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Publication]&lt;has%20publication%200..*-%20[Study],[Analysis]&lt;has%20analysis%200..*-%20[Study],[Experiment]&lt;has%20experiment%200..*-%20[Study],[AnalysisDataset]-%20has%20study%201..*&gt;[Study],[Analysis]-%20has%20study%200..1&gt;[Study],[ExperimentDataset]-%20has%20study%201..*&gt;[Study],[Experiment]-%20has%20study%201..1&gt;[Study],[Project]-%20has%20study(i)%200..1&gt;[Study],[Experiment]-%20has%20study(i)%200..1&gt;[Study],[Analysis]-%20has%20study(i)%200..1&gt;[Study],[ExperimentDataset]-%20has%20study(i)%200..1&gt;[Study],[AnalysisDataset]-%20has%20study(i)%200..1&gt;[Study],[Investigation]^-[Study],[Publication],[Project],[Investigation],[ExperimentDataset],[Experiment],[Attribute],[AnalysisDataset],[Analysis]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
-<li>is_a: <a href="../ResearchActivity/">ResearchActivity</a> - A planned process executed in the performance of scientific research wherein systematic investigations are performed to establish facts and reach new conclusions about phenomena in the world.</li>
+<li>is_a: <a href="../Investigation/">Investigation</a> - Investigation is the process of carrying out a plan or procedure so as to discover fact or information about the object of study.</li>
 </ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../Dataset/">Dataset</a></strong> <em><a href="../dataset_has_study/">dataset➞has study</a></em>  <sub>1..1</sub>  <strong><a href="./">Study</a></strong></li>
+<li><strong><a href="../AnalysisDataset/">AnalysisDataset</a></strong> <em><a href="../analysis_dataset_has_study/">analysis dataset➞has study</a></em>  <sub>1..*</sub>  <strong><a href="./">Study</a></strong></li>
+<li><strong><a href="../Analysis/">Analysis</a></strong> <em><a href="../analysis_has_study/">analysis➞has study</a></em>  <sub>0..1</sub>  <strong><a href="./">Study</a></strong></li>
+<li><strong><a href="../ExperimentDataset/">ExperimentDataset</a></strong> <em><a href="../experiment_dataset_has_study/">experiment dataset➞has study</a></em>  <sub>1..*</sub>  <strong><a href="./">Study</a></strong></li>
 <li><strong><a href="../Experiment/">Experiment</a></strong> <em><a href="../experiment_has_study/">experiment➞has study</a></em>  <sub>1..1</sub>  <strong><a href="./">Study</a></strong></li>
 <li><strong>None</strong> <em><a href="../has_study/">has study</a></em>  <sub>0..1</sub>  <strong><a href="./">Study</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
-<li>Range: <a href="../types/String/">String</a></li>
+<li><a href="../study_has_experiment/">study➞has experiment</a>  <sub>0..*</sub><ul>
+<li>Description: One or more Experiment entities associated with this Study.</li>
+<li>Range: <a href="../Experiment/">Experiment</a></li>
+</ul>
+</li>
+<li><a href="../study_has_analysis/">study➞has analysis</a>  <sub>0..*</sub><ul>
+<li>Description: One or more Analysis entities associated with this Study.</li>
+<li>Range: <a href="../Analysis/">Analysis</a></li>
 </ul>
 </li>
 <li><a href="../study_title/">study➞title</a>  <sub>1..1</sub><ul>
-<li>Description: A descriptive title for the study.</li>
+<li>Description: A descriptive title for the Study.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../study_description/">study➞description</a>  <sub>1..1</sub><ul>
+<li>Description: A detailed description (abstract) that describes the goals of this Study.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 <li><a href="../study_type/">study➞type</a>  <sub>1..1</sub><ul>
-<li>Description: The study type. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
+<li>Description: The type of Study. For example, "Cancer Genomics", "Epigenetics", "Exome Sequencing".</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
-<li><a href="../study_name/">study➞name</a>  <sub>0..1</sub><ul>
-<li>Description: A short name for the study.</li>
-<li>Range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../study_abstract/">study➞abstract</a>  <sub>1..1</sub><ul>
-<li>Description: The study abstract that describes the goals. Can also hold abstract from a publication related to the study.</li>
-<li>Range: <a href="../types/String/">String</a></li>
-</ul>
-</li>
-<li><a href="../study_publications/">study➞publications</a>  <sub>0..*</sub><ul>
-<li>Description: The publication(s) associated with this study.</li>
+<li><a href="../study_has_publication/">study➞has publication</a>  <sub>0..*</sub><ul>
+<li>Description: One or more Publication entities associated with this Study.</li>
 <li>Range: <a href="../Publication/">Publication</a></li>
 </ul>
 </li>
-<li><a href="../study_attributes/">study➞attributes</a>  <sub>0..*</sub><ul>
-<li>Description: Custom key/value pairs that further characterizes the study.</li>
+<li><a href="../study_has_attribute/">study➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Custom key/value pairs that further characterizes the Study.</li>
 <li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-investigation">Inherited from investigation:<a class="headerlink" href="#inherited-from-investigation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../named_thing_id/">named thing➞id</a>  <sub>1..1</sub><ul>
+<li>Description: The internal unique identifier for an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more database cross references.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
+<li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 </ul>
@@ -429,10 +464,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -444,10 +481,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

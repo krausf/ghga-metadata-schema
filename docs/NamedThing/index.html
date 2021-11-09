@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -354,26 +359,84 @@
                 <h1 id="class-named-thing">Class: named thing<a class="headerlink" href="#class-named-thing" title="Permanent link">&para;</a></h1>
 <p>A databased entity, concept or class. This is a generic class that is the root of all the other classes.</p>
 <p>URI: <a href="https://w3id.org/GHGA/NamedThing">GHGA:NamedThing</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Person],[NamedThing&#124;id:string]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalEntity],[NamedThing]^-[Activity],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalEntity],[Activity]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Person],[NamedThing&#124;id:string]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalEntity],[NamedThing]^-[Activity],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalEntity],[Activity]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Person],[Attribute]&lt;has%20attribute%200..*-++[NamedThing&#124;id:string;accession:string%20%3F;xref:string%20*;type:string%20%3F;creation_date:string%20%3F;update_date:string%20%3F],[NamedThing]^-[PlannedProcess],[NamedThing]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalQuality],[NamedThing]^-[Agent],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalQuality],[Attribute],[Agent]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[PlannedProcess],[Person],[Attribute]&lt;has%20attribute%200..*-++[NamedThing&#124;id:string;accession:string%20%3F;xref:string%20*;type:string%20%3F;creation_date:string%20%3F;update_date:string%20%3F],[NamedThing]^-[PlannedProcess],[NamedThing]^-[Person],[NamedThing]^-[MaterialEntity],[NamedThing]^-[InformationContentEntity],[NamedThing]^-[Committee],[NamedThing]^-[BiologicalQuality],[NamedThing]^-[Agent],[MaterialEntity],[InformationContentEntity],[Committee],[BiologicalQuality],[Attribute],[Agent]" /></a></p>
 <h2 id="children">Children<a class="headerlink" href="#children" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../Activity/">Activity</a> - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</li>
-<li><a href="../BiologicalEntity/">BiologicalEntity</a> - A biological entity is a heterogeneous substance that contains genomic material or is the product of a biological process.</li>
+<li><a href="../Agent/">Agent</a> - An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. Agents include a Person, Organization, or Software that performs an activity.</li>
+<li><a href="../BiologicalQuality/">BiologicalQuality</a> - A biological quality is a quality held by a biological entity.</li>
 <li><a href="../Committee/">Committee</a> - A group of people organized for a specific purpose.</li>
 <li><a href="../InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.</li>
 <li><a href="../MaterialEntity/">MaterialEntity</a> - A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass.</li>
 <li><a href="../Person/">Person</a> - A member of the species Homo sapiens.</li>
+<li><a href="../PlannedProcess/">PlannedProcess</a> - A process is an entity that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity during the time it occurs.</li>
 </ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
+<li><a href="../named_thing_id/">named thing➞id</a>  <sub>1..1</sub><ul>
+<li>Description: The internal unique identifier for an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more database cross references.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
+<li>Description: The type of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_has_attribute/">named thing➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more Attribute entities that further characterizes this entity.</li>
+<li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 </ul>
+<h2 id="other-properties">Other properties<a class="headerlink" href="#other-properties" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aliases:</strong></td>
+<td></td>
+<td>named entity</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>entity</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
                 
               
               
@@ -399,10 +462,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -414,10 +479,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

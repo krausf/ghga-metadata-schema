@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -352,23 +357,48 @@
                 
                 
                 <h1 id="class-cell-line">Class: cell line<a class="headerlink" href="#class-cell-line" title="Permanent link">&para;</a></h1>
-<p>A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history</p>
+<p>A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history.</p>
 <p>URI: <a href="https://w3id.org/GHGA/CellLine">GHGA:CellLine</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Sample]-%20has%20cell%20line(i)%200..1&gt;[CellLine&#124;id(i):string],[Sample]-%20has%20cell%20line%200..1&gt;[CellLine],[BiologicalEntity]^-[CellLine],[BiologicalEntity]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[Sample],[Sample]-%20has%20cell%20line(i)%200..1&gt;[CellLine&#124;id(i):string],[Sample]-%20has%20cell%20line%200..1&gt;[CellLine],[BiologicalEntity]^-[CellLine],[BiologicalEntity]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[MaterialEntity],[MaterialEntity]^-[CellLine&#124;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Attribute]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[MaterialEntity],[MaterialEntity]^-[CellLine&#124;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[Attribute]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
-<li>is_a: <a href="../BiologicalEntity/">BiologicalEntity</a> - A biological entity is a heterogeneous substance that contains genomic material or is the product of a biological process.</li>
-</ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>None</strong> <em><a href="../has_cell_line/">has cell line</a></em>  <sub>0..1</sub>  <strong><a href="./">CellLine</a></strong></li>
-<li><strong><a href="../Sample/">Sample</a></strong> <em><a href="../sample_has_cell_line/">sample➞has cell line</a></em>  <sub>0..1</sub>  <strong><a href="./">CellLine</a></strong></li>
+<li>is_a: <a href="../MaterialEntity/">MaterialEntity</a> - A material entity is a physical entity that is spatially extended, exists as a whole at any point in time and has mass.</li>
 </ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
-<h3 id="inherited-from-biological-entity">Inherited from biological entity:<a class="headerlink" href="#inherited-from-biological-entity" title="Permanent link">&para;</a></h3>
+<h3 id="inherited-from-material-entity">Inherited from material entity:<a class="headerlink" href="#inherited-from-material-entity" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
+<li><a href="../named_thing_id/">named thing➞id</a>  <sub>1..1</sub><ul>
+<li>Description: The internal unique identifier for an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more database cross references.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
+<li>Description: The type of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_has_attribute/">named thing➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more Attribute entities that further characterizes this entity.</li>
+<li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -387,11 +417,6 @@
 <td><strong>Exact Mappings:</strong></td>
 <td></td>
 <td>CLO:0000031</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>EFO:0000322</td>
 </tr>
 <tr>
 <td></td>
@@ -425,10 +450,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -440,10 +467,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>

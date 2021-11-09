@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -74,7 +74,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="GHGA Metadata Schema" class="md-header__button md-logo" aria-label="GHGA Metadata Schema" data-md-component="logo">
       
@@ -153,11 +155,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -352,23 +357,24 @@
                 
                 
                 <h1 id="class-data-access-policy">Class: data access policy<a class="headerlink" href="#class-data-access-policy" title="Permanent link">&para;</a></h1>
-<p>A data access policy specifies under which circumstances, legal or otherwise, a user can have access to one or more datasets belonging to one or more studies.</p>
+<p>A Data Access Policy specifies under which circumstances, legal or otherwise, a user can have access to one or more Datasets belonging to one or more Studies.</p>
 <p>URI: <a href="https://w3id.org/GHGA/DataAccessPolicy">GHGA:DataAccessPolicy</a></p>
-<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[Dataset],[DataAccessCommittee]&lt;has%20data%20access%20committee%201..1-%20[DataAccessPolicy&#124;description:string;policy_text:string;policy_url:string%20%3F;id(i):string],[Dataset]-%20has%20data%20access%20policy%201..1&gt;[DataAccessPolicy],[Dataset]-%20has%20data%20access%20policy(i)%200..1&gt;[DataAccessPolicy],[InformationContentEntity]^-[DataAccessPolicy],[DataAccessCommittee]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[Dataset],[DataAccessCommittee]&lt;has%20data%20access%20committee%201..1-%20[DataAccessPolicy&#124;description:string;policy_text:string;policy_url:string%20%3F;id(i):string],[Dataset]-%20has%20data%20access%20policy%201..1&gt;[DataAccessPolicy],[Dataset]-%20has%20data%20access%20policy(i)%200..1&gt;[DataAccessPolicy],[InformationContentEntity]^-[DataAccessPolicy],[DataAccessCommittee]" /></a></p>
+<p><a href="https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[ExperimentDataset],[DataUseCondition],[DataUseCondition]&lt;has%20data%20use%20condition%200..*-++[DataAccessPolicy&#124;name:string%20%3F;description:string;policy_text:string;policy_url:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[DataAccessCommittee]&lt;has%20data%20access%20committee%201..1-%20[DataAccessPolicy],[AnalysisDataset]-%20has%20data%20access%20policy%201..*&gt;[DataAccessPolicy],[ExperimentDataset]-%20has%20data%20access%20policy%201..*&gt;[DataAccessPolicy],[ExperimentDataset]-%20has%20data%20access%20policy(i)%200..1&gt;[DataAccessPolicy],[AnalysisDataset]-%20has%20data%20access%20policy(i)%200..1&gt;[DataAccessPolicy],[InformationContentEntity]^-[DataAccessPolicy],[DataAccessCommittee],[Attribute],[AnalysisDataset]"><img alt="img" src="https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[ExperimentDataset],[DataUseCondition],[DataUseCondition]&lt;has%20data%20use%20condition%200..*-++[DataAccessPolicy&#124;name:string%20%3F;description:string;policy_text:string;policy_url:string%20%3F;id(i):string;accession(i):string%20%3F;xref(i):string%20*;type(i):string%20%3F;creation_date(i):string%20%3F;update_date(i):string%20%3F],[DataAccessCommittee]&lt;has%20data%20access%20committee%201..1-%20[DataAccessPolicy],[AnalysisDataset]-%20has%20data%20access%20policy%201..*&gt;[DataAccessPolicy],[ExperimentDataset]-%20has%20data%20access%20policy%201..*&gt;[DataAccessPolicy],[ExperimentDataset]-%20has%20data%20access%20policy(i)%200..1&gt;[DataAccessPolicy],[AnalysisDataset]-%20has%20data%20access%20policy(i)%200..1&gt;[DataAccessPolicy],[InformationContentEntity]^-[DataAccessPolicy],[DataAccessCommittee],[Attribute],[AnalysisDataset]" /></a></p>
 <h2 id="parents">Parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>is_a: <a href="../InformationContentEntity/">InformationContentEntity</a> - A generically dependent continuant that is about some thing.</li>
 </ul>
-<h2 id="referenced-by-class">Referenced by class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
+<h2 id="referenced-by-class">Referenced by Class<a class="headerlink" href="#referenced-by-class" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><a href="../Dataset/">Dataset</a></strong> <em><a href="../dataset_has_data_access_policy/">dataset➞has data access policy</a></em>  <sub>1..1</sub>  <strong><a href="./">DataAccessPolicy</a></strong></li>
+<li><strong><a href="../AnalysisDataset/">AnalysisDataset</a></strong> <em><a href="../analysis_dataset_has_data_access_policy/">analysis dataset➞has data access policy</a></em>  <sub>1..*</sub>  <strong><a href="./">DataAccessPolicy</a></strong></li>
+<li><strong><a href="../ExperimentDataset/">ExperimentDataset</a></strong> <em><a href="../experiment_dataset_has_data_access_policy/">experiment dataset➞has data access policy</a></em>  <sub>1..*</sub>  <strong><a href="./">DataAccessPolicy</a></strong></li>
 <li><strong>None</strong> <em><a href="../has_data_access_policy/">has data access policy</a></em>  <sub>0..1</sub>  <strong><a href="./">DataAccessPolicy</a></strong></li>
 </ul>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <h3 id="own">Own<a class="headerlink" href="#own" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="../id/">id</a>  <sub>1..1</sub><ul>
-<li>Description: An identifier that uniquely represents an entity.</li>
+<li><a href="../name/">name</a>  <sub>0..1</sub><ul>
+<li>Description: The name for an entity.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
@@ -378,17 +384,61 @@
 </ul>
 </li>
 <li><a href="../data_access_policy_policy_text/">data access policy➞policy text</a>  <sub>1..1</sub><ul>
+<li>Description: The terms of data use and policy verbiage should be captured here.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 <li><a href="../data_access_policy_policy_url/">data access policy➞policy url</a>  <sub>0..1</sub><ul>
-<li>Description: The URL for the policy, if available.</li>
+<li>Description: URL for the policy, if available. This is useful if the terms of the policy is made available online at a resolvable URL.</li>
 <li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 <li><a href="../data_access_policy_has_data_access_committee/">data access policy➞has data access committee</a>  <sub>1..1</sub><ul>
 <li>Description: The Data Access Committee linked to this policy.</li>
 <li>Range: <a href="../DataAccessCommittee/">DataAccessCommittee</a></li>
+</ul>
+</li>
+<li><a href="../data_access_policy_has_data_use_condition/">data access policy➞has data use condition</a>  <sub>0..*</sub><ul>
+<li>Description: Data Use Condition entities that are associated with the Data Access Policy.</li>
+<li>Range: <a href="../DataUseCondition/">DataUseCondition</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="inherited-from-information-content-entity">Inherited from information content entity:<a class="headerlink" href="#inherited-from-information-content-entity" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../named_thing_id/">named thing➞id</a>  <sub>1..1</sub><ul>
+<li>Description: The internal unique identifier for an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_accession/">named thing➞accession</a>  <sub>0..1</sub><ul>
+<li>Description: A unique identifier assigned to an entity for the sole purpose of referring to that entity in a global scope.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_xref/">named thing➞xref</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more database cross references.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_type/">named thing➞type</a>  <sub>0..1</sub><ul>
+<li>Description: The type of an entity.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_has_attribute/">named thing➞has attribute</a>  <sub>0..*</sub><ul>
+<li>Description: Holds one or more Attribute entities that further characterizes this entity.</li>
+<li>Range: <a href="../Attribute/">Attribute</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_creation_date/">named thing➞creation date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was created.</li>
+<li>Range: <a href="../types/String/">String</a></li>
+</ul>
+</li>
+<li><a href="../named_thing_update_date/">named thing➞update date</a>  <sub>0..1</sub><ul>
+<li>Description: Timestamp (in ISO 8601 format) when the entity was updated.</li>
+<li>Range: <a href="../types/String/">String</a></li>
 </ul>
 </li>
 </ul>
@@ -417,10 +467,12 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
         
       </div>
       
@@ -432,10 +484,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
