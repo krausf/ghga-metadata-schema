@@ -498,19 +498,21 @@ being defined.</p>
 <p>What does it mean for an external concept to be one of <code>related_mappings</code>,
 <code>broad_mappings</code>, <code>narrow_mappings</code>, <code>close_mappings</code>, <code>exact_mappings</code>?</p>
 <p>Here is an decision tree that will help you determine the granularity of your
-mappings:
-- An external concept can be considered as an exact mapping to class or slot if the
+mappings:</p>
+<ul>
+<li>An external concept can be considered as an exact mapping to class or slot if the
 former can be used interchangeably with the latter. That is, the semantics are
 identical and any transitive property that the external concept might bring into
-the model must not violate the internal consistency of the model.
-- If it is difficult to determine if an external concept can be considered an
-exact mapping then it is much safer to treat it as a close mapping
-- If an external concept can be treated a sub-class of the class or slot then
-it can be treated as a narrow mapping
-- If an external concept can be treated as a super-class of the class or slot
-then it can be treated as a broad mapping
-- If an external concept is distantly related to a class or slot then it can
-be treated as a related mapping</p>
+the model must not violate the internal consistency of the model.</li>
+<li>If it is difficult to determine if an external concept can be considered an
+exact mapping then it is much safer to treat it as a close mapping</li>
+<li>If an external concept can be treated a sub-class of the class or slot then
+it can be treated as a narrow mapping</li>
+<li>If an external concept can be treated as a super-class of the class or slot
+then it can be treated as a broad mapping</li>
+<li>If an external concept is distantly related to a class or slot then it can
+be treated as a related mapping</li>
+</ul>
                 
               
               
